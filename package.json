@@ -1,0 +1,19 @@
+{
+  "name": "cmsc129",
+  "version": "1.0.0",
+  "description": "This is a repository for a WIP Node.js project entitled LAGAW: Iloilo's First Travel App.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cmpdleon/cmsc129.git"
+  },
+  "author": "Rene Andre Jocsing, Ron Naragdao, Chancy Ponce de Leon, Laviele Trias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cmpdleon/cmsc129/issues"
+  },
+  "homepage": "https://github.com/Cmpdleon/cmsc129#readme"
+}

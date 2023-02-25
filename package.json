@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Cmpdleon/cmsc129/issues"
   },
-  "homepage": "https://github.com/Cmpdleon/cmsc129#readme"
+  "homepage": "https://github.com/Cmpdleon/cmsc129#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

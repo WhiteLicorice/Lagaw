@@ -19,16 +19,16 @@ port = 8080
 /* Main Code */
 
 // Importing of ExpressJS
-var exprs = require('express');
+var express = require('express');
 
 // Creating ExpressJS app
-var app = exprs();
+var app = express();
 
 // Set view engine as EJS
 app.set('view engine', 'ejs');
 
 // App uses CSS (under construction)
-app.use("/css",exprs.static(__dirname + "/css"));
+app.use(express.static(__dirname + '/public'));
 
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request

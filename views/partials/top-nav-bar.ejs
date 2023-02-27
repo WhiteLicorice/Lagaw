@@ -1,21 +1,31 @@
-<nav class="top-nav-bar">
+<ul class="top-nav-bar">
     <!--button for side navigation bar-->
-    <button>POG</button>
-
+    <li class="top-child"><button class="menu">MENU</button></li>
+        
     <!--top navigation bar elements-->
-    <a class="" href="views/pages/home">LAGAW</a>
-    <ul class="">
-
-        <!--search bar-->
+    <li class="top-child"><a class="home" href="/pages/home">LAGAW</a></li>
+        
+    
+    <!--search bar-->
+    <li class="top-child">
         <form>
-            <input type="search" id="query" placeholder="Search..">
+            <input class="search-bar" type="search" id="query" placeholder="Search..">
             <button>Search</button>
         </form>
+    </li>
+            
+    
+    <li class="top-child">
+        <button class="mode">MODE</button>
+    </li>
         
-        <!--put light/dark mode button here-->
-        <ul>
-            <p>Welcome to</p><p>Iloilo City!</p>
-        </ul>
-        <!--put clickable user profile picture here-->
-    </ul>
-</nav>
+    
+    <li class="top-child">
+        <p>Welcome to</p><p>Iloilo City!</p>
+    </li>
+        
+
+    <li class="top-child">
+        <a href="#about"><img class="user-picture" src="" alt="User picture"></a>
+    </li>
+</ul>

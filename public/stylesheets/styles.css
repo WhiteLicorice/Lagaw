@@ -1,0 +1,134 @@
+li{
+    border: 1px solid black;
+}
+
+/* TOP NAVIGATION BAR */
+
+.top-nav-bar {
+    box-sizing: border-box;
+
+    position: -webkit-sticky;
+    position: sticky;
+
+    top: 0;
+
+    width: 1520px;
+    height: 94px;
+
+    background: #1B1B1B;
+    box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;
+}
+
+.top-child{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.menu {
+    width: 40px;
+    height: 30px;
+
+    border: 2px solid #FFFFFF;
+}
+
+.mode {
+    width: 64px;
+    height: 64px;
+}
+
+.user-picture {
+    width: 285px;
+    height: 61px;
+}
+
+.home {
+    width: 191px;
+    height: 69px;
+
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 62px;
+    display: flex;
+    align-items: center;
+
+    color: #FDC28B;
+}
+
+.search-bar{
+    width: 600px;
+    height: 49px;
+}
+
+
+/* SIDE NAVIGATION BAR */
+
+.side-nav-bar{
+    position: absolute;
+    width: 85px;
+    height: 1080px;
+
+    background: #1B1B1B;
+}
+
+
+.side-child{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Traffic 
+
+
+position: absolute;
+width: 69.06px;
+height: 64.35px;
+
+
+
+/* Accommodation 
+
+
+position: absolute;
+width: 76px;
+height: 54px;
+
+
+
+/* Food 
+
+
+position: absolute;
+width: 40px;
+height: 51px;
+
+
+
+/* Culture & Festivals 
+
+
+position: absolute;
+width: 56px;
+height: 67px;
+
+
+
+/* Places & Landmarks 
+
+
+position: absolute;
+width: 56px;
+height: 73px;
+
+
+
+/* Settings 
+
+
+position: absolute;
+width: 69.06px;
+height: 68.4px;
+
+*/

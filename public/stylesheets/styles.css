@@ -2,11 +2,16 @@ li{
     border: 1px solid black;
 }
 
+/*body{
+    Inverts the color
+    filter: invert(1);
+}*/
+
 /* TOP NAVIGATION BAR */
 
 .top-nav-bar {
     box-sizing: border-box;
-
+    
     position: -webkit-sticky;
     position: sticky;
 
@@ -25,11 +30,42 @@ li{
     vertical-align: middle;
 }
 
-.menu {
+.font-white{
+
+
+    height: 20px;
+
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #EAF4FE;
+}
+
+.font-peach{
+
+    height: 20px;
+
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #FDC28B;
+
+}
+
+
+.menu-btn {
     width: 40px;
     height: 30px;
 
-    border: 2px solid #FFFFFF;
+    background-color: transparent;
 }
 
 .mode {
@@ -60,7 +96,13 @@ li{
 .search-bar{
     width: 600px;
     height: 49px;
+    border-radius: 25px 0px 0px 25px;
 }
+
+.search-bar-button{
+    border-radius: 0px 25px 25px 0px;
+}
+
 
 
 /* SIDE NAVIGATION BAR */
@@ -77,6 +119,7 @@ li{
 .side-child{
     display: inline-block;
     vertical-align: middle;
+    font-size: small;
 }
 
 /* Traffic 

@@ -1,7 +1,7 @@
 {
-  "name": "cmsc129",
+  "name": "lagawapp",
   "version": "1.0.0",
-  "description": "This is a repository for a WIP Node.js project entitled LAGAW: Iloilo's First Travel App.",
+  "description": "Iloilo lagaw app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,14 +10,22 @@
     "type": "git",
     "url": "git+https://github.com/Cmpdleon/cmsc129.git"
   },
-  "author": "Rene Andre Jocsing, Ron Naragdao, Chancy Ponce de Leon, Laviele Trias",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Cmpdleon/cmsc129/issues"
   },
   "homepage": "https://github.com/Cmpdleon/cmsc129#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "http-errors": "^2.0.0",
+    "mongodb": "^5.1.0",
+    "mongoose": "^6.10.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2"
   }
 }

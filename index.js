@@ -33,12 +33,62 @@ app.use(express.static(__dirname + '/public'));
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
 // res represents the HTTP response
-app.get('/', function(req,res)
+app.get('/home', function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
     res.render('pages/home');
 });
+
+app.get('/places-and-landmarks', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/places-and-landmarks');
+});
+
+app.get('/culture-and-festivals', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/culture-and-festivals');
+});
+
+app.get('/food', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/food');
+});
+
+app.get('/accommodation', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/accommodation');
+});
+
+app.get('/traffic', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/traffic');
+});
+
+app.get('/settings', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/settings');
+});
+
+app.get('/user', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/user');
+});
+
 
 // Binds and listens for connection on specified host and port.
 // Full syntax: app.listen(port, [host], [backlog], [callback]])

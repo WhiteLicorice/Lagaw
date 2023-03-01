@@ -2,6 +2,13 @@ li{
     border: 1px solid black;
 }
 
+a{
+    text-decoration: none;
+}
+
+body{
+    margin: 0px;
+}
 /*body{
     Inverts the color
     filter: invert(1);
@@ -15,10 +22,9 @@ li{
     position: -webkit-sticky;
     position: sticky;
 
-    top: 0;
-
-    width: 1520px;
-    height: 94px;
+    width: auto;
+    height: 100px;
+    margin: 0px;
 
     background: #1B1B1B;
     box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.25);
@@ -35,7 +41,7 @@ li{
 
     height: 20px;
 
-    font-family: 'Lexend';
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -49,7 +55,7 @@ li{
 
     height: 20px;
 
-    font-family: 'Lexend';
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -62,10 +68,8 @@ li{
 
 
 .menu-btn {
-    width: 40px;
-    height: 30px;
-
-    background-color: transparent;
+    width: 50px;
+    height: 50px;
 }
 
 .mode {
@@ -74,15 +78,17 @@ li{
 }
 
 .user-picture {
-    width: 285px;
-    height: 61px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
 .home {
     width: 191px;
     height: 69px;
 
-    font-family: 'Lexend';
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 50px;
@@ -112,6 +118,7 @@ li{
     width: 85px;
     height: 1080px;
 
+    margin: auto;
     background: #1B1B1B;
 }
 
@@ -119,59 +126,24 @@ li{
 .side-child{
     display: inline-block;
     vertical-align: middle;
-    font-size: small;
+
+    text-align: center;
+    margin: auto;
+    width: 63px;
+
+    padding: 10px;
 }
 
-/* Traffic 
+.side-child a div p{
+    font-family: sans-serif;
+    font-style: Arial;
+    font-size: 10px;
+}
 
+button {
+    background-color: transparent;
+}
 
-position: absolute;
-width: 69.06px;
-height: 64.35px;
-
-
-
-/* Accommodation 
-
-
-position: absolute;
-width: 76px;
-height: 54px;
-
-
-
-/* Food 
-
-
-position: absolute;
-width: 40px;
-height: 51px;
-
-
-
-/* Culture & Festivals 
-
-
-position: absolute;
-width: 56px;
-height: 67px;
-
-
-
-/* Places & Landmarks 
-
-
-position: absolute;
-width: 56px;
-height: 73px;
-
-
-
-/* Settings 
-
-
-position: absolute;
-width: 69.06px;
-height: 68.4px;
-
-*/
+ul{
+    padding: 0.50% 0;
+}

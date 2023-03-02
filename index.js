@@ -27,7 +27,7 @@ var app = express();
 // Set view engine as EJS
 app.set('view engine', 'ejs');
 
-// App uses CSS (under construction)
+// App uses files under public folder (under construction)
 app.use(express.static(__dirname + '/public'));
 
 // Get request from route '/' and callback function request(req) and response(res)

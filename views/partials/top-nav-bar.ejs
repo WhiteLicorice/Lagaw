@@ -1,7 +1,7 @@
-<ul class="top-nav-bar">
+<ul id="top-nav-bar">
     <!--button for side navigation bar-->
     <li class="top-child">
-        <button>
+        <button onclick="showHide()">
             <img class="menu-btn" src="/img/side-nav-bar-button.png">
         </button>
     </li>
@@ -20,22 +20,18 @@
             
     
     <li class="top-child">
-        <button class="mode">
-            <img src="/img/mode.png">
+        <button id="light" onclick="lightDarkMode()">
+            <img src="/img/light.png">
+        </button>
+        <button id="dark" onclick="lightDarkMode()">
+            <img src="/img/dark.png">
         </button>
     </li>
     
 
-    <li class="top-child">
+    <li class="top-child greeting">
         <p class="font-white">Hi, User!</p>
-    </li>
-    
-    <li class="top-child">
-        <p class="font-white">Welcome to</p>
-    </li>
-    
-    <li class="top-child">
-        <p class="font-peach">Iloilo City!</p>
+        <p class="font-white">Welcome to <span class="font-peach">Iloilo City!</span></p>
     </li>
 
     <li class="top-child">

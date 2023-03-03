@@ -40,6 +40,7 @@ app.get('/home', function(req,res)
     res.render('pages/home');
 });
 
+
 app.get('/places-and-landmarks', function(req,res)
 {
     // HTTP render response

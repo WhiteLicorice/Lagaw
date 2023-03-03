@@ -24,17 +24,19 @@ body{
     position: sticky;
 
     width: auto;
-    height: 100px;
+    height: 50px;
     margin: 0px;
 
     background: #1B1B1B;
     box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.25);
     border-radius: 0px;
+    
 }
 
 .top-child{
     display: inline-block;
     vertical-align: middle;
+
 }
 
 .font-white{
@@ -62,65 +64,82 @@ body{
 
 
 .menu-btn {
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 #light {
-    width: 64px;
-    height: 64px;
+    width: 45px;
+    height: 45px;
+
     visibility: visible;
     display: inline;
 }
 
 #dark {
-    width: 64px;
-    height: 64px;
+    width: 45px;
+    height: 45px;
     visibility: hidden;
     display: none;
 }
 
 .user-picture {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
     object-fit: cover;
-    margin-left: 10px;
+    margin: 0px 10px -4px 10px;
 }
 
-.home {
-    width: 191px;
-    height: 69px;
+#home {
+    width: 112px;
+    height: 40px;
 
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 50px;
-    line-height: 62px;
+    font-size: 30px;
+    line-height: 40px;
     display: flex;
-    align-items: center;
 
     color: #FDC28B;
 }
 
-.search-bar{
+#search-bar{
+    padding-left: 210px;
+    padding-right: 210px;
+}
+
+#search-bar-input{
     width: 600px;
-    height: 49px;
+    height: 30px;
     border-radius: 25px 0px 0px 25px;
 }
 
-.search-bar-button{
+#search-bar-button{
     border-radius: 0px 25px 25px 0px;
+    align-items: center;
+    background-color: grey;
+}
+
+button#search-bar-button{
+    border-radius: 0px 25px 25px 0px;
+    align-items: center;
+    background-color: grey;
+}
+
+input[type=search]{
+    padding: 0 15px;
+    font-size: 13px;
 }
 
 .top-child.greeting{
     columns:4em;
 }
 
-input[type=search]{
-    padding: 0 20px;
-    font-size: 20px;
-}
+
 
 
 
@@ -128,7 +147,7 @@ input[type=search]{
 
 #side-nav-bar{
     position: absolute;
-    width: 85px;
+    width: 75px;
     height: 1080px;
     visibility: visible;
     margin: auto;
@@ -144,7 +163,7 @@ input[type=search]{
     margin: auto;
     width: 63px;
 
-    padding: 10px;
+    padding: 30px 5px 30px 5px;
 }
 
 .side-child a div p{
@@ -155,11 +174,13 @@ input[type=search]{
 
 button {
     background-color: transparent;
-    margin-left: 20px;
-    margin-right: 20px;
     border: none;
 }
 
 ul{
-    padding: 0.50% 0;
+    padding: 0px;
+}
+
+a:is(:link, :active, :visited).active{
+    color:#FDC28B;
 }

@@ -4,12 +4,10 @@ function showHide()
 {
     if(side.style.visibility == "visible")
     {
-        side.style.visibility == "hidden";
+        side.style.visibility = "hidden";
     }
     else
     {
-        side.style.visibility == "visible";
+        side.style.visibility = "visible";
     }
 }
-
-showHide()

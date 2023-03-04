@@ -151,7 +151,7 @@ input[type=search]{
 
 #side-nav-bar{
     position: absolute;
-
+    padding-top: 20px;
     width: 70px;
     height: 1080px;
     visibility: visible;
@@ -175,6 +175,7 @@ input[type=search]{
     font-family: sans-serif;
     font-style: Arial;
     font-size: 10px;
+    color:#FDC28B;
 }
 
 button {

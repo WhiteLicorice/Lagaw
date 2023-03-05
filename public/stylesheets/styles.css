@@ -101,18 +101,11 @@ input[type=search]{
     height: 100%;
 }
 
-#light {
+#color-theme {
     width: 45px;
     height: 45px;
     visibility: visible;
     display: inline;
-}
-
-#dark {
-    width: 45px;
-    height: 45px;
-    visibility: hidden;
-    display: none;
 }
 
 #greeting{

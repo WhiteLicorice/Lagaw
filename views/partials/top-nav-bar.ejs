@@ -1,14 +1,16 @@
 <ul id="top-nav-bar">
-    <!--button for side navigation bar-->
-    <li class="top-child" id="menu">
-        <button onclick="showHide()">
-            <img id="menu-btn" src="/img/side-nav-bar-button.png">
-        </button>
+    <li class="top-child">
+        <!--button for side navigation bar-->
+        <div id="menu">
+            <button onclick="showHide()">
+                <img id="menu-btn" src="/img/side-nav-bar-button.png">
+            </button>
+        </div>
+        <!--home link-->
+        <div id="home">
+            <a id="home-btn" href="/home">LAGAW</a>
+        </div>
     </li>
-        
-    <!--top navigation bar elements-->
-    <li class="top-child" id="home"><a id="home-btn" href="/home">LAGAW</a></li>
-        
     
     <!--search bar-->
     <li class="top-child" id="search-bar">
@@ -18,23 +20,25 @@
         </form>
     </li>
             
-    
-    <li class="top-child" id="mode">
-        <button id="light" onclick="lightDarkMode()">
-            <img src="/img/light.png">
-        </button>
-        <button id="dark" onclick="lightDarkMode()">
-            <img src="/img/dark.png">
-        </button>
-    </li>
-    
-
-    <li class="top-child" id="greeting">
-        <p class="font-white">Hi, User!</p>
-        <p class="font-white">Welcome to <span class="font-peach">Iloilo City!</span></p>
-    </li>
-
-    <li class="top-child" id="user">
-        <a href="/user"><img id="user-picture" src="/img/placeholder.jpg" alt="User picture"></a>
+    <!--right-side group-->
+    <li class="top-child" >
+        <!--light/dark mode-->
+        <div id="mode">
+            <button id="light" onclick="lightDarkMode()">
+                <img src="/img/light.png">
+            </button>
+            <button id="dark" onclick="lightDarkMode()">
+                <img src="/img/dark.png">
+            </button>
+        </div>
+        <!--greeting-->
+        <div id="greeting">
+            <p class="font-white">Hi, User!</p>
+            <p class="font-white">Welcome to <span class="font-peach">Iloilo City!</span></p>
+        </div>
+        <!--user-->
+        <div id="user">
+            <a href="/user"><img id="user-picture" src="/img/placeholder.jpg" alt="User picture"></a>
+        </div>
     </li>
 </ul>

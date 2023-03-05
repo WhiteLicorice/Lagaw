@@ -1,25 +1,25 @@
 <ul id="top-nav-bar">
     <!--button for side navigation bar-->
-    <li class="top-child">
+    <li class="top-child" id="menu">
         <button onclick="showHide()">
-            <img class="menu-btn" src="/img/side-nav-bar-button.png">
+            <img id="menu-btn" src="/img/side-nav-bar-button.png">
         </button>
     </li>
         
     <!--top navigation bar elements-->
-    <li class="top-child"><a id="home" href="/home">LAGAW</a></li>
+    <li class="top-child" id="home"><a id="home-btn" href="/home">LAGAW</a></li>
         
     
     <!--search bar-->
-    <li class="top-child">
-        <form id="search-bar">
+    <li class="top-child" id="search-bar">
+        <form id="search-bar-form">
             <input id="search-bar-input" type="search" id="query" placeholder="Search..">
             <button id="search-bar-button"><img src="/img/search.png"></button>
         </form>
     </li>
             
     
-    <li class="top-child">
+    <li class="top-child" id="mode">
         <button id="light" onclick="lightDarkMode()">
             <img src="/img/light.png">
         </button>
@@ -29,12 +29,12 @@
     </li>
     
 
-    <li class="top-child greeting">
+    <li class="top-child" id="greeting">
         <p class="font-white">Hi, User!</p>
         <p class="font-white">Welcome to <span class="font-peach">Iloilo City!</span></p>
     </li>
 
-    <li class="top-child">
-        <a href="/user"><img class="user-picture" src="/img/placeholder.jpg" alt="User picture"></a>
+    <li class="top-child" id="user">
+        <a href="/user"><img id="user-picture" src="/img/placeholder.jpg" alt="User picture"></a>
     </li>
 </ul>

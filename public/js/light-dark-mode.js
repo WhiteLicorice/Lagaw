@@ -17,9 +17,10 @@ function lightDarkMode()
         icon.src = "/img/dark.png"
         topNav.style.background = "#FFFFFF";
         sideNav.style.background = "#FFFFFF";
-        fontWhite.forEach(element => {
-            element.style.color = "#000000";
-        });
+        
+        Array.prototype.forEach.call(fontWhite, function(element){
+            element.color = "#000000";
+        })
     }
     else
     {
@@ -27,9 +28,9 @@ function lightDarkMode()
         icon.src = "/img/light.png";
         topNav.style.background = "#1B1B1B";
         sideNav.style.background = "#1B1B1B";
-        fontWhite.forEach(element => {
-            element.style.color = "#EAF4FE";
-        });
+        Array.prototype.forEach.call(fontWhite, function(element){
+            element.color = "#EAF4FE";
+        })
     }
 }
 

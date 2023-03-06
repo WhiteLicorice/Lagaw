@@ -5,8 +5,6 @@ theme = document.getElementById("color-theme");
 icon = document.getElementById("theme-icon");
 
 darkMode = true; // Webpage is dark mode by default
-
-
 function lightDarkMode()
     //TODO: Change element colors when swithcing modes
 {

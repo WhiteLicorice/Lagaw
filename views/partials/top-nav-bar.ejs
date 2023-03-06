@@ -1,4 +1,5 @@
 <ul id="top-nav-bar">
+    <!--left-side group-->
     <li class="top-child">
         <!--button for side navigation bar-->
         <div id="menu">
@@ -12,26 +13,29 @@
         </div>
     </li>
     
-    <!--search bar-->
-    <li class="top-child" id="search-bar">
-        <form id="search-bar-form">
-            <input id="search-bar-input" type="search" id="query" placeholder="Search..">
-            <button id="search-bar-button"><img src="/img/search.png"></button>
-        </form>
-    </li>
-            
-    <!--right-side group-->
-    <li class="top-child" >
+    <!--center-side group-->
+    <li class="top-child">
+        <!--search bar-->
+        <div id="search-bar">
+            <form id="search-bar-form">
+                <input id="search-bar-input" type="search" id="query" placeholder="Search..">
+                <button id="search-bar-button"><img src="/img/search.png"></button>
+            </form>
+        </div>
         <!--light/dark mode-->
         <div id="mode">
             <button id="color-theme" onclick="lightDarkMode()">
                 <img src="/img/light.png" id="theme-icon">
             </button>
         </div>
+    </li>
+            
+    <!--right-side group-->
+    <li class="top-child" >
         <!--greeting-->
         <div id="greeting">
-            <p class="font-white">Hi, User!</p>
-            <p class="font-white">Welcome to <span class="font-peach">Iloilo City!</span></p>
+            <p class="font-white" id="top">Hi, User!</p>
+            <p class="font-white" id="bottom">Welcome to <span class="font-peach">Iloilo City!</span></p>
         </div>
         <!--user-->
         <div id="user">

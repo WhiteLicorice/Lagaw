@@ -2,6 +2,7 @@
 topNav = document.getElementById("top-nav-bar"); //?? Error when variable is named top
 sideNav = document.getElementById("side-nav-bar");
 fontWhite = document.querySelectorAll('.font-white')
+sideChildren = document.querySelectorAll('.side-child')
 theme = document.getElementById("color-theme");
 icon = document.getElementById("theme-icon");
 
@@ -21,7 +22,14 @@ function lightDarkMode()
         fontWhite.forEach(node => {
             node.style.color = 'black'
           })
+        sideChildren.forEach(node => {
+            node.style.webkitFilter = 'invert(1)'
+        })
 
+        document.getElementById('menu-btn').style.filter = 'invert(1)';
+
+        
+        document.getElementById('search-bar-input').style.background = '#FDC28B';
 
         
     }
@@ -35,6 +43,13 @@ function lightDarkMode()
         fontWhite.forEach(node => {
             node.style.color = 'white'
           })
+
+        sideChildren.forEach(node => {
+            node.style.webkitFilter = 'invert(0)'
+        })
+
+        document.getElementById('search-bar-input').style.background = '#FFFFFF';
+        document.getElementById('menu-btn').style.filter = 'invert(0)';
     }
 }
 

@@ -329,3 +329,36 @@ a:is(:link, :active, :visited).active{
     margin: 10px 0px 0px 0px;
     max-width: 90%;
 }
+
+#food1{
+    background-image: url("/img/food1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+}
+
+#food11{
+    display: flex;
+    background:rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+}
+
+#food111{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    width: 100%;
+}
+
+#food111 > #title{
+    font-weight: 600;
+    text-align: center;
+    font-size: 50px;
+    margin: 0px;
+    max-width: 100%;
+}

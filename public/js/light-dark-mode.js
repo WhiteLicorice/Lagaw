@@ -6,6 +6,9 @@ fontPeach = document.querySelectorAll('.font-peach')
 sideChildren = document.querySelectorAll('.side-child')
 theme = document.getElementById("color-theme");
 icon = document.getElementById("theme-icon");
+transparentBackground = document.querySelectorAll('transparent-background');
+transparentBackgroundLeft = document.querySelectorAll('transparent-background-left');
+transparentBackgroundTitle = document.querySelectorAll("transparent-background-title");
 
 darkMode = true; // Webpage is dark mode by default
 
@@ -21,22 +24,36 @@ function lightDarkMode()
         sideNav.style.background = "#FFFFFF";
         document.getElementById('menu-btn').style.filter = 'invert(1)';
         document.getElementById('search-bar-input').style.background = '#b57e07';
-        document.getElementById('transparent-background1').style.background = 'rgba(237,231,225,0.7)';
-        document.getElementById('transparent-background2').style.background = 'rgba(237,231,225,0.7)';
-        document.getElementById('transparent-background-title').style.background = 'rgba(237,231,225,0.7)';
 
-        fontWhite.forEach(node => 
+
+        transparentBackground.forEach(bg => 
         {
-            node.style.filter = 'invert(1)'
+            bg.style.backgroundColor = "rgba(237,231,225,0.7)";
         })
 
-        fontPeach.forEach(node =>
+        transparentBackgroundLeft.forEach(bgl => 
         {
-            node.style.filter = 'invert(1)'
+            bgl.style.backgroundColor = "rgba(237,231,225,0.7)";
         })
 
-        sideChildren.forEach(node => {
-            node.style.webkitFilter = 'invert(1)'
+        transparentBackgroundTitle.forEach(bgt => 
+        {
+            bgt.style.backgroundColor = "rgba(237,231,225,0.7)";
+        })
+
+        fontWhite.forEach(whitefont => 
+        {
+            whitefont.style.filter = 'invert(1)'
+        })
+
+        fontPeach.forEach(whitefont =>
+        {
+            whitefont.style.filter = 'invert(1)'
+        })
+
+        sideChildren.forEach(child => 
+        {
+            child.style.webkitFilter = 'invert(1)'
         })
     }
     else
@@ -47,9 +64,21 @@ function lightDarkMode()
         sideNav.style.background = "#1B1B1B";
         document.getElementById('menu-btn').style.filter = 'invert(0)';
         document.getElementById('search-bar-input').style.background = '#FFFFFF';
-        document.getElementById('transparent-background1').style.background = 'rgba(0,0,0,0.7)';
-        document.getElementById('transparent-background2').style.background = 'rgba(0,0,0,0.7)';
-        document.getElementById('transparent-background-title').style.background = 'rgba(0,0,0,0.7)';
+
+        transparentBackground.forEach(bg => 
+        {
+            bg.style.backgroundColor = "rgba(0,0,0,0.7)";
+        })
+
+        transparentBackgroundLeft.forEach(bgl => 
+        {
+            bgl.style.backgroundColor = "rgba(0,0,0,0.7)";
+        })
+
+        transparentBackgroundTitle.forEach(bgt => 
+        {
+            bgt.style.backgroundColor = "rgba(0,0,0,0.7)";
+        })
 
         fontWhite.forEach(node => 
         {
@@ -61,8 +90,8 @@ function lightDarkMode()
             node.style.filter = 'invert(0)'
         })
 
-        sideChildren.forEach(
-            node => {
+        sideChildren.forEach(node =>
+        {
             node.style.filter = 'invert(0)'
         })
     }

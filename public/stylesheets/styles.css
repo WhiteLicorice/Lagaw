@@ -251,7 +251,7 @@ ul{
     height: 800px;
 }
 
-#transparent-background1{
+.transparent-background{
     display: flex;
     align-items: center;
     background:rgba(0,0,0,0.7);
@@ -291,7 +291,7 @@ ul{
     height: 800px;
 }
 
-#transparent-background2{
+.transparent-background-left{
     display: flex;
     align-items: center;
     background:rgba(0,0,0,0.7);
@@ -323,6 +323,8 @@ ul{
     max-width: 90%;
 }
 
+/* FOOD PAGE */
+
 #food1{
     background-image: url("/img/food1.png");
     background-repeat: no-repeat;
@@ -332,7 +334,7 @@ ul{
     height: 800px;
 }
 
-#transparent-background-title{
+.transparent-background-title{
     display: flex;
     background:rgba(0,0,0,0.5);
     height: 100%;

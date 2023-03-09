@@ -90,9 +90,7 @@ body{
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
-
-
-    color: #FDC28B;
+    color: #b57e07;
 }
 
 #search-bar{
@@ -187,7 +185,7 @@ input[type=search]{
 .font-peach{
     font-family: Arial, sans-serif;
     font-style: normal;
-    color: #FDC28B;
+    color: #b57e07;
 }
 
 #greeting > .font-peach{
@@ -241,11 +239,6 @@ ul{
     padding: 0px;
 }
 
-a:is(:link, :active, :visited).active{
-    color:#FDC28B;
-}
-
-
 
 /* HOME PAGE */
 
@@ -258,15 +251,15 @@ a:is(:link, :active, :visited).active{
     height: 800px;
 }
 
-#home11{
+#transparent-background1{
     display: flex;
     align-items: center;
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0.7);
     height: 100%;
     width: 100%;
 }
 
-#home111{
+#home11{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,14 +268,14 @@ a:is(:link, :active, :visited).active{
     width: 50%;
 }
 
-#home111 > #title{
+#home11 > #title{
     font-weight: 600;
     text-align: center;
     font-size: 80px;
     margin: 0px;
 }
 
-#home111 > #content{
+#home11 > #content{
     text-indent: 10%;
     font-size: 18px;
     margin: 10px 0px 0px 0px;
@@ -298,15 +291,15 @@ a:is(:link, :active, :visited).active{
     height: 800px;
 }
 
-#home22{
+#transparent-background2{
     display: flex;
     align-items: center;
-    background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0,0.7);
     height: 100%;
     width: 50%;
 }
 
-#home222{
+#home22{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -315,7 +308,7 @@ a:is(:link, :active, :visited).active{
     width: 100%;
 }
 
-#home222 > #title{
+#home22 > #title{
     font-weight: 600;
     text-align: left;
     font-size: 80px;
@@ -323,7 +316,7 @@ a:is(:link, :active, :visited).active{
     max-width: 90%;
 }
 
-#home222 > #content{
+#home22 > #content{
     text-indent: 10%;
     font-size: 18px;
     margin: 10px 0px 0px 0px;
@@ -339,14 +332,14 @@ a:is(:link, :active, :visited).active{
     height: 800px;
 }
 
-#food11{
+#transparent-background-title{
     display: flex;
     background:rgba(0,0,0,0.5);
     height: 100%;
     width: 100%;
 }
 
-#food111{
+#food11{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -355,7 +348,59 @@ a:is(:link, :active, :visited).active{
     width: 100%;
 }
 
-#food111 > #title{
+#food11 > #title{
+    font-weight: 600;
+    text-align: center;
+    font-size: 50px;
+    margin: 0px;
+    max-width: 100%;
+}
+
+#places-and-landmarks1{
+    background-image: url("/img/downtown.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+}
+
+#places-and-landmarks11{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    width: 100%;
+}
+
+#places-and-landmarks11 > #title{
+    font-weight: 600;
+    text-align: center;
+    font-size: 50px;
+    margin: 0px;
+    max-width: 100%;
+}
+
+#culture-and-festivals1{
+    background-image: url("/img/paraw-regatta.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+}
+
+#culture-and-festivals11{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    width: 100%;
+}
+
+#culture-and-festivals11 > #title{
     font-weight: 600;
     text-align: center;
     font-size: 50px;

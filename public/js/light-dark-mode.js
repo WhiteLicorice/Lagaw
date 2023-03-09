@@ -20,8 +20,10 @@ function lightDarkMode()
         topNav.style.background = "#FFFFFF";
         sideNav.style.background = "#FFFFFF";
         document.getElementById('menu-btn').style.filter = 'invert(1)';
-        document.getElementById('search-bar-input').style.background = '#FDC28B';
-
+        document.getElementById('search-bar-input').style.background = '#b57e07';
+        document.getElementById('transparent-background1').style.background = 'rgba(237,231,225,0.7)';
+        document.getElementById('transparent-background2').style.background = 'rgba(237,231,225,0.7)';
+        document.getElementById('transparent-background-title').style.background = 'rgba(237,231,225,0.7)';
 
         fontWhite.forEach(node => 
         {
@@ -45,7 +47,10 @@ function lightDarkMode()
         sideNav.style.background = "#1B1B1B";
         document.getElementById('menu-btn').style.filter = 'invert(0)';
         document.getElementById('search-bar-input').style.background = '#FFFFFF';
-        
+        document.getElementById('transparent-background1').style.background = 'rgba(0,0,0,0.7)';
+        document.getElementById('transparent-background2').style.background = 'rgba(0,0,0,0.7)';
+        document.getElementById('transparent-background-title').style.background = 'rgba(0,0,0,0.7)';
+
         fontWhite.forEach(node => 
         {
             node.style.filter = 'invert(0)'

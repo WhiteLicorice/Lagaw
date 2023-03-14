@@ -33,7 +33,7 @@ app.use(express.static(__dirname + '/public'));
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
 // res represents the HTTP response
-app.get('/home', function(req,res)
+app.get('/', function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');

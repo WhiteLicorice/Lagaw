@@ -1,7 +1,5 @@
 /*
-    Index.js for LAGAW Web App
-
-    Created by: Ron Gerlan F. Naragdao
+    This is a web application developed by Rene Andre Jocsing, Ron Gerlan Naragdao, Laviele Trias, and Chancy Ponce de Leon in partial fulfillment of the requirements of the course Software Engineering II A.y. 2022 – 2023.
     Date Created: February 25, 2023
 */
 

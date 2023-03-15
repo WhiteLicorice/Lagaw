@@ -156,4 +156,4 @@ function calculateDistance(map, origin, destination) {
     infoWindow.open(map, marker);   //  Open info window containing distance and destination
 }
 
-//initMap();    //  Manually initialize map
+initMap();    //  Manually initialize map

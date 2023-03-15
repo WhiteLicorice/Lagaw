@@ -10,5 +10,24 @@
         <%- include('../partials/side-nav-bar'); %>
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
+
+        <title>Traffic Map</title>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=<%=API_KEY%>&libraries=geometry&callback=initMap"></script>
+        <style>
+          #map {
+            height: 100%;
+            background-color: #f2f2f2;
+            border: none;
+          }
+          
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        </style>
+      </head>
+      <body>
+        <div id="map"></div>
     </body>
 </html>

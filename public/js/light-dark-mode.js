@@ -1,5 +1,5 @@
 // Get navigation bar class members from html.
-topNav = document.getElementById("top-nav-bar"); //?? Error when variable is named top
+topNav = document.getElementById("top-nav-bar");
 sideNav = document.getElementById("side-nav-bar");
 fontWhite = document.querySelectorAll('.font-white')
 fontPeach = document.querySelectorAll('.font-peach')

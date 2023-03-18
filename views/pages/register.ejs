@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- This html document uses EJS -->
+<html>
+    <head>
+        <!-- heads.ejs -->
+        <%- include('../partials/head'); %>
+    </head>
+    <body>
+        <!-- side-nav-bar.ejs -->
+        <%- include('../partials/side-nav-bar'); %>
+        <!-- top-nav-bar.ejs -->
+        <%- include('../partials/top-nav-bar'); %>
+        <h3>Register</h3>
+	<form id="register_form" action="/register" method="post">
+		<div><input type="text" autocomplete="off" name="username" id="username" placeholder="Username" required /></div>
+		<div><input type="password" autocomplete="off" name="password" id="password" placeholder="Password" required/></div>
+		<input type="submit" name="register" value="register">
+	</form>
+
+    </body>
+</html>

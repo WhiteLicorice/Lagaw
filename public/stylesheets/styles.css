@@ -343,7 +343,7 @@ ul{
 
 #food11{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: justify;
@@ -369,7 +369,7 @@ ul{
 
 #places-and-landmarks11{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: justify;
@@ -395,7 +395,7 @@ ul{
 
 #culture-and-festivals11{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: justify;
@@ -408,4 +408,21 @@ ul{
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
+}
+
+.filter-row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    text-align: justify;
+    width: 300px;
+}
+
+.filter-row > button{
+    color: white;
+    background-color: #1B1B1B;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- This html document uses EJS -->
+<html>
+
+<head>
+    <!-- heads.ejs -->
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <div class="uin-background">
+        <div class="uin-transparent-black-center">
+            <div class="uin-center-left">
+                <p>Welcome!</p>
+                <p>Create a new account</p>
+            </div>
+            <div class="uin-center-right">
+                <form action="/registration" method="post">
+                    <%- include('../partials/user-form'); %>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

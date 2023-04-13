@@ -1,17 +1,18 @@
 /* MAINTENANCE ELEMENTS */
 
-/*{
+/* *{
     border: 1px solid black;
-}*/
+} */
 
 
 /* UNIVERSAL ELEMENTS */
 
-a, li{
+a,
+li {
     text-decoration: none;
 }
 
-body{
+body {
     margin: 0px;
     /*
     Inverts the color
@@ -39,28 +40,31 @@ body{
 }
 
 @media (max-width: 880px) {
-    #top-nav-bar{
+    #top-nav-bar {
         justify-content: center;
     }
-    .top-child{
+
+    .top-child {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    #side-nav-bar{
+
+    #side-nav-bar {
         /*height: idk pa huhu need mag santo sa dalom sng top-nav-bar;*/
     }
-    .side-child a div p{
+
+    .side-child a div p {
         visibility: hidden;
     }
-  }
+}
 
-.top-child{
+.top-child {
     list-style-type: none;
     display: flex;
     align-items: center;
 }
 
-#menu{
+#menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,13 +74,13 @@ body{
 #menu-btn {
     width: 20px;
     height: 20px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-#home{
+#home {
     display: flex;
     align-items: center;
 }
@@ -93,11 +97,11 @@ body{
     color: #b57e07;
 }
 
-#search-bar{
+#search-bar {
     display: flex;
 }
 
-#search-bar-form{
+#search-bar-form {
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
@@ -106,14 +110,14 @@ body{
     width: 300px;
 }
 
-#search-bar-input{
+#search-bar-input {
     width: 100%;
     height: 30px;
     border-radius: 12px 0px 0px 12px;
     border: 0;
 }
 
-#search-bar-button{
+#search-bar-button {
     display: flex;
     border-radius: 0px 12px 12px 0px;
     height: 30px;
@@ -123,17 +127,18 @@ body{
     background-color: grey;
 }
 
-#search-bar-button > img{
-    height:15px;
-    width:15px;
+#search-bar-button>img {
+    height: 15px;
+    width: 15px;
 }
 
-input[type=search]{
+input[type=search] {
     padding: 0 15px;
     font-size: 13px;
+    margin-bottom: 0px;
 }
 
-#mode{
+#mode {
     display: flex;
     align-items: center;
 }
@@ -144,15 +149,15 @@ input[type=search]{
     visibility: visible;
 }
 
-#greeting{
+#greeting {
     margin-left: 10px;
     margin-right: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-#greeting > #top{
+#greeting>#top {
     font-weight: 800;
     font-size: 18px;
     color: white
@@ -169,26 +174,26 @@ input[type=search]{
 
 }
 
-.font-white{
+.font-white {
     font-family: Arial, sans-serif;
     font-style: normal;
     color: #FFFFFF;
 }
 
-#greeting > .font-white{
+#greeting>.font-white {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     margin: 0px;
 }
 
-.font-peach{
+.font-peach {
     font-family: Arial, sans-serif;
     font-style: normal;
     color: #b57e07;
 }
 
-#greeting > .font-peach{
+#greeting>.font-peach {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
@@ -200,7 +205,7 @@ input[type=search]{
 
 /* SIDE NAVIGATION BAR */
 
-#side-nav-bar{
+#side-nav-bar {
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -214,18 +219,18 @@ input[type=search]{
 }
 
 
-.side-child{
+.side-child {
     display: flex;
     flex-direction: column;
     text-align: center;
     list-style-type: none;
 }
 
-.side-child a div p{
+.side-child a div p {
     font-family: sans-serif;
     font-style: Arial;
     font-size: 10px;
-    color:white;
+    color: white;
 }
 
 button {
@@ -235,14 +240,14 @@ button {
     padding: none;
 }
 
-ul{
+ul {
     padding: 0px;
 }
 
 
 /* HOME PAGE */
 
-#home1{
+#home1 {
     background-image: url("/img/paraw-regatta.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -251,15 +256,15 @@ ul{
     height: 800px;
 }
 
-.transparent-background{
+.transparent-background {
     display: flex;
     align-items: center;
-    background:rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     height: 100%;
     width: 100%;
 }
 
-#home11{
+#home11 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -268,21 +273,21 @@ ul{
     width: 50%;
 }
 
-#home11 > #title{
+#home11>#title {
     font-weight: 600;
     text-align: center;
     font-size: 80px;
     margin: 0px;
 }
 
-#home11 > #content{
+#home11>#content {
     text-indent: 10%;
     font-size: 18px;
     margin: 10px 0px 0px 0px;
     max-width: 570px;
 }
 
-#home2{
+#home2 {
     background-image: url("/img/festive-walk.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -291,21 +296,21 @@ ul{
     height: 800px;
 }
 
-.transparent-background-left{
+.transparent-background-left {
     display: flex;
     align-items: center;
-    background:rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     height: 100%;
     width: 50%;
 }
 
-.two-vertical-panels{
+.two-vertical-panels {
     display: flex;
     align-items: center;
     /*justify-content: ;*/
 }
 
-#home22{
+#home22 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -314,7 +319,7 @@ ul{
     width: 100%;
 }
 
-#home22 > #title{
+#home22>#title {
     font-weight: 600;
     text-align: left;
     font-size: 80px;
@@ -322,7 +327,7 @@ ul{
     max-width: 90%;
 }
 
-#home22 > #content{
+#home22>#content {
     text-indent: 10%;
     font-size: 18px;
     margin: 10px 0px 0px 0px;
@@ -331,7 +336,7 @@ ul{
 
 /* FOOD PAGE */
 
-#food1{
+#food1 {
     background-image: url("/img/food1.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -340,14 +345,14 @@ ul{
     height: 800px;
 }
 
-.transparent-background-title{
+.transparent-background-title {
     display: flex;
-    background:rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
 }
 
-#food11{
+#food11 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,7 +361,7 @@ ul{
     width: 100%;
 }
 
-#food11 > #title{
+#food11>#title {
     font-weight: 600;
     text-align: center;
     font-size: 50px;
@@ -364,7 +369,7 @@ ul{
     max-width: 100%;
 }
 
-#places-and-landmarks1{
+#places-and-landmarks1 {
     background-image: url("/img/downtown.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -373,7 +378,7 @@ ul{
     height: 800px;
 }
 
-#places-and-landmarks11{
+#places-and-landmarks11 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -382,7 +387,7 @@ ul{
     width: 100%;
 }
 
-#places-and-landmarks11 > #title{
+#places-and-landmarks11>#title {
     font-weight: 600;
     text-align: center;
     font-size: 50px;
@@ -390,7 +395,7 @@ ul{
     max-width: 100%;
 }
 
-#culture-and-festivals1{
+#culture-and-festivals1 {
     background-image: url("/img/paraw-regatta.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -399,7 +404,7 @@ ul{
     height: 800px;
 }
 
-#culture-and-festivals11{
+#culture-and-festivals11 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -408,7 +413,7 @@ ul{
     width: 100%;
 }
 
-#culture-and-festivals11 > #title{
+#culture-and-festivals11>#title {
     font-weight: 600;
     text-align: center;
     font-size: 50px;
@@ -416,7 +421,7 @@ ul{
     max-width: 100%;
 }
 
-.filter-row{
+.filter-row {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -425,7 +430,7 @@ ul{
     width: 300px;
 }
 
-.filter-row > button{
+.filter-row>button {
     color: white;
     background-color: #1B1B1B;
     border-radius: 20px;
@@ -453,7 +458,7 @@ ul{
     object-fit: cover;
 }
 
-.carousel > button{
+.carousel>button {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -466,16 +471,61 @@ ul{
     font-size: 18px;
 }
 
-.carousel > button:active{
+.carousel>button:active {
     transform: scale(1.1);
 }
 
-#btn-prev{
+#btn-prev {
     top: 45%;
     left: 2%;
 }
 
-#btn-next{
+#btn-next {
     top: 45%;
     right: 2%;
+}
+
+/*----------------------------------------------------
+                LOGIN AND REGISTRATION
+----------------------------------------------------*/
+
+.uin-background {
+    background-image: url("/img/tabucan.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 715px;
+}
+
+.uin-transparent-black {
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    text-align: justify;
+    height: 100%;
+    width: 100%;
+}
+
+.uin-center-right>#title,
+.uin-center-left>#title {
+    font-weight: 800;
+    text-align: left;
+    font-size: 50px;
+    margin: 0px;
+    max-width: 100%;
+}
+
+input {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+    color: white;
+}
+
+input:focus {
+    border: 3px solid #b57e07;
 }

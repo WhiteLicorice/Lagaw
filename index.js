@@ -43,6 +43,20 @@ app.get('/', function(req,res)
     res.render('pages/home');
 });
 
+app.get('/login', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/login');
+});
+
+app.get('/register', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/register');
+});
+
 
 app.get('/places-and-landmarks', function(req,res)
 {

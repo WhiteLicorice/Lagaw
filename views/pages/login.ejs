@@ -8,16 +8,22 @@
 </head>
 
 <body>
+
+    <!-- side-nav-bar.ejs -->
+    <%- include('../partials/side-nav-bar'); %>
+    <!-- top-nav-bar.ejs -->
+    <%- include('../partials/top-nav-bar'); %>
+
     <div class="uin-background">
-        <div class="uin-transparent-black-center">
+        <div class="uin-transparent-black">
             <div class="uin-center-left">
                 <form action="/login" method>
                     <%- include('../partials/user-form'); %>
                 </form>
             </div>
             <div class="uin-center-right">
-                <p>Hey there!</p>
-                <p>Log into an existing account</p>
+                <p class="font-peach" id="title">Hey there!</p>
+                <p class="font-white" id="content">Log into an existing account</p>
             </div>
         </div>
     </div>

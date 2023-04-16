@@ -15,16 +15,20 @@
     <%- include('../partials/top-nav-bar'); %>
     
     <div class="uin-background">
-        <div class="uin-transparent-black">
-            <div class="uin-center-left">
-                <p class="font-peach" id="title">Welcome!</p>
-                <p class="font-white" id="content">Create a new account</p>
+        <div id="uin-one-third-column">
+            <div></div>
+            <div class="uin-transparent-black">
+                <div class="uin-center-left">
+                    <p class="font-peach" id="title">Welcome!</p>
+                    <p class="font-white" id="content">Create a new account</p>
+                </div>
+                <div class="uin-center-right">
+                    <form action="/register" method="post">
+                        <%- include('../partials/user-form'); %>
+                    </form>
+                </div>
             </div>
-            <div class="uin-center-right">
-                <form action="/register" method="post">
-                    <%- include('../partials/user-form'); %>
-                </form>
-            </div>
+            <div></div>
         </div>
     </div>
 </body>

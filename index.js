@@ -11,18 +11,20 @@ require('dotenv').config();
 /* Main Code */
 
 const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://cmpdleon:iolmp4azZac7irwn@cluster0.8aellvw.mongodb.net/?retryWrites=true&w=majority";
 
-// Importing of ExpressJS
-var express = require('express');
+const bcrypt = require('bcrypt');
+const passport = require('passport');
+const flash = require('express-flash');
+const express = require('express');
+const session = require('express-session');
 
 // Creating ExpressJS app
 var app = express();
 
-// Require bodyParser middleware
-var bodyParser = require('body-parser');
 
 // Set variable for urlencoded body
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.use(express.urlencoded({ extended: false}))
 
 // Set view engine as EJS
 app.set('view engine', 'ejs');
@@ -30,8 +32,46 @@ app.set('view engine', 'ejs');
 // App uses files under public folder (under construction)
 app.use(express.static(__dirname + '/public'));
 
-// For json body
-app.use(bodyParser.json())
+app.use(flash());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+
+const initializePassport = require('./passport-config');
+
+initializePassport(
+    passport,
+    async function getUserbyName(username) {
+        const client = new MongoClient(uri);
+        const result = await client.db("Trial").collection("check1").findOne({ username: username });
+
+        if (result) {
+            console.log(`Found a listing in the collection with the name '${username}':`);
+            console.log(result);
+        } else {
+            console.log(`No listings found with the name '${username}'`);
+        }
+        await client.close();
+        return result;},
+    
+    async function getUserbyId(userId) {
+        const client = new MongoClient(uri);
+        const result = await client.db("Trial").collection("check1").findOne({ userId: userId });
+
+        if (result) {
+            console.log(`Found a listing in the collection with the name '${userId}':`);
+            console.log(result);
+        } else {
+            console.log(`No listings found with the name '${userId}'`);
+        }
+        await client.close();
+        return result;},
+        
+    );
 
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
@@ -55,6 +95,13 @@ app.get('/register', function(req,res)
     // HTTP render response
     //res.render('pages/home');
     res.render('pages/register');
+});
+
+app.get('/login', function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/login');
 });
 
 
@@ -103,33 +150,48 @@ app.get('/settings', function(req,res)
 app.get('/user', function(req,res)
 {
     // HTTP render response
-    //res.render('pages/home');
+    // res.render('pages/home');
     res.render('pages/user');
 });
 
-app.get('/register', function(req,res)
+app.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}));
+
+app.post('/register', async function(req,res)
 {
-    // HTTP render response
-    //res.render('pages/home');
-    res.render('pages/register');
-});
+    try {
+        // variables for username and password
+        input_user = req.body.username;
+        input_pass = req.body.password;
+        input_repass = req.body.repassword;
 
-app.post('/register', urlencodedParser, function(req,res)
-{
-    // variables for username and password
-    input_user = req.body.username;
-    input_pass = req.body.password;
+        console.log(input_user);
+        console.log(input_pass);
+        console.log(input_repass);
 
-    console.log(input_user);
-    console.log(input_pass);
-    res.render('pages/register');
-
-    addUser({username: req.body.username, password: req.body.password}).catch(console.error);
+        if (input_pass == input_repass) {
+            const hashed_pass = await bcrypt.hash(input_pass, 10);
+            const hashedId = await bcrypt.hash(input_user, 10);
+            addUser({
+                userId: hashedId,
+                username: req.body.username, 
+                password: hashed_pass,
+            }).catch(console.error);
+            res.redirect('/login');
+        }
+        else{
+            console.log("Passwords don't match.");                  // Change to alert the user instead
+        }
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 async function addUser(newUser){
     // const uri for remote database
-    const uri = "mongodb+srv://cmpdleon:iolmp4azZac7irwn@cluster0.8aellvw.mongodb.net/?retryWrites=true&w=majority";
     const client = new MongoClient(uri);
 
     try {

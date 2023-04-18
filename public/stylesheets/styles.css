@@ -520,7 +520,8 @@ ul {
 
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=repassword] {
     border: none;
     background: transparent;
     border-bottom: 1px solid white;

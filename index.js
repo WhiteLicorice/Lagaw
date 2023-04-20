@@ -167,6 +167,15 @@ app.get('/user', fetchUser, function(req,res)
     res.render('pages/user', res.name);
 });
 
+// TODO: Add logout button in the frontend
+//       that calls '/logout'
+app.get('/logout', function (req, res)
+{
+    req.session.destroy();
+    console.log("Logout.");
+    res.redirect('/');
+})
+
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',

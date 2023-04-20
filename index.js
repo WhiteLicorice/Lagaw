@@ -19,6 +19,8 @@ const flash = require('express-flash');
 const express = require('express');
 const session = require('express-session');
 
+var session_user;
+
 // Creating ExpressJS app
 var app = express();
 
@@ -73,14 +75,22 @@ initializePassport(
         
     );
 
+function fetchUser (req, res, next) {
+    if (req.user){
+        res.name = { username: req.user.username };
+    } else {
+        res.name = { username: 'Guest' };
+    }
+    next();
+}
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
 // res represents the HTTP response
-app.get('/', function(req,res)
+app.get('/', fetchUser ,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/home');
+    res.render('pages/home', res.name);
 });
 
 app.get('/login', function(req,res)
@@ -97,61 +107,53 @@ app.get('/register', function(req,res)
     res.render('pages/register');
 });
 
-app.get('/login', function(req,res)
+app.get('/places-and-landmarks', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/login');
+    res.render('pages/places-and-landmarks', res.name);
 });
 
-
-app.get('/places-and-landmarks', function(req,res)
+app.get('/culture-and-festivals', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/places-and-landmarks');
+    res.render('pages/culture-and-festivals', res.name);
 });
 
-app.get('/culture-and-festivals', function(req,res)
+app.get('/food', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/culture-and-festivals');
+    res.render('pages/food', res.name);
 });
 
-app.get('/food', function(req,res)
+app.get('/accommodation', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/food');
+    res.render('pages/accommodation', res.name);
 });
 
-app.get('/accommodation', function(req,res)
+app.get('/traffic', fetchUser,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/accommodation');
+    res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username});
 });
 
-app.get('/traffic', function(req,res)
+app.get('/settings', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/traffic', {API_KEY: process.env.API_KEY});
+    res.render('pages/settings', res.name);
 });
 
-app.get('/settings', function(req,res)
-{
-    // HTTP render response
-    //res.render('pages/home');
-    res.render('pages/settings');
-});
-
-app.get('/user', function(req,res)
+app.get('/user', fetchUser, function(req,res)
 {
     // HTTP render response
     // res.render('pages/home');
-    res.render('pages/user');
+    res.render('pages/user', res.name);
 });
 
 app.post('/login', passport.authenticate('local', {

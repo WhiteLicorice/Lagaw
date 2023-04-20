@@ -83,6 +83,17 @@ function fetchUser (req, res, next) {
     }
     next();
 }
+
+function checkLogin (req, res, next){
+    console.log("Login Checked")
+    if (req.user) {
+        res.redirect('/');
+    }
+    else{
+        next();
+    }
+}
+
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
 // res represents the HTTP response
@@ -93,14 +104,14 @@ app.get('/', fetchUser ,function(req,res)
     res.render('pages/home', res.name);
 });
 
-app.get('/login', function(req,res)
+app.get('/login', checkLogin, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
     res.render('pages/login');
 });
 
-app.get('/register', function(req,res)
+app.get('/register', checkLogin, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');

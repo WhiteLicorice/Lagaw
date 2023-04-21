@@ -1,23 +1,5 @@
-// TODO: Uncomment blocks to implement proper Google Directions API functionality. Issue: no billing information for Directions API, access denied.
-//  AKA, poor kid thingz.
-
 function initMap() {
-    //  Call API -> instantiate objects used for directions services and rendering directions
-    //var directionsService = new google.maps.DirectionsService();  
-    //var directionsRenderer = new google.maps.DirectionsRenderer();
-    //  Check if HTML5 Geolocation API is available
-
-    // Add a click event listener to the map
-    // function addClickListener() {
-    //     map.addListener('click', function(event) {
-    //     // Update the destination to the clicked location
-    //     var destination = event.latLng;
-    //     // Re-calculate the driving directions
-    //     reRoute(directionsService, directionsRenderer, marker.getPosition(), destination);
-    //     });
-    // }
-
-    if (navigator.geolocation) {
+    if (navigator.geolocation) {    //  Check if Geolocation API is available
         //  Declare map and marker
         var map;    
         var marker;
@@ -40,7 +22,6 @@ function initMap() {
                     }
                 });
                 map.setMapTypeId('terrain');    //  Terrain map default
-                //addClickListener(); // Call the function to add the click event listener 
                 map.addListener('click', function(event) {
                     var destination = {
                         lat: event.latLng.lat(),
@@ -61,7 +42,6 @@ function initMap() {
                 marker.setPosition(userLocation);   //  Dynamic case: update the location of the marker as the user's location changes
             }
             var destination = new google.maps.LatLng(37.7749, -122.4194);
-            //reRoute(directionsService, directionsRenderer, userLocation, destination);
         });
     } else {    //  If HTML5 Geolocation API is unavailable, initialize map with default settings
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -73,27 +53,10 @@ function initMap() {
             }
         });
         map.setMapTypeId('terrain');
-        //addClickListener(); // Call the function to add the click event listener
     }
   }
 
-//   function reRoute(directionsService, directionsRenderer, origin, destination) {
-//     directionsService.route(
-//       {
-//         origin: origin,
-//         destination: destination,
-//         travelMode: google.maps.TravelMode.DRIVING
-//       },
-//       function(response, status) {
-//         if (status === google.maps.DirectionsStatus.OK) {
-//           directionsRenderer.setDirections(response);
-//         } else {
-//           window.alert('Directions request failed due to ' + status);
-//         }
-//       });
-//   }
-
-var prevMarker; //  Declare variables for storing markers and routes for deletion when calculateDistance() is called
+var prevMarker; //  Declare DOM variables for storing markers and routes for deletion when calculateDistance() is called
 var prevRoute;
 
 function calculateDistance(map, origin, destination) {

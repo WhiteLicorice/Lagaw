@@ -167,8 +167,7 @@ app.get('/user', fetchUser, function(req,res)
     res.render('pages/user', res.name);
 });
 
-// TODO: Add logout button in the frontend
-//       that calls '/logout'
+// TODO: Add logout button in the frontend that calls '/logout'
 app.get('/logout', function (req, res)
 {
     req.session.destroy();
@@ -182,6 +181,7 @@ app.post('/login', passport.authenticate('local', {
     failureFlash: true
 }));
 
+//  TODO: Add error-handling for usernames that already exist in the database.
 app.post('/register', async function(req,res)
 {
     try {
@@ -206,6 +206,7 @@ app.post('/register', async function(req,res)
         }
         else{
             console.log("Passwords don't match.");                  // Change to alert the user instead
+            //  TODO: Pass EJS error template to frontend.
         }
     } catch (error) {
         console.log(error);

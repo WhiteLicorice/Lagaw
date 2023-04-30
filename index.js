@@ -150,7 +150,8 @@ app.get('/traffic', fetchUser,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username});
+    res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: null});
+    //  TODO: Implement POST route that grabs initial coordinates from an accommodation page then passes coords to /traffic GET route
 });
 
 app.get('/settings', fetchUser, function(req,res)

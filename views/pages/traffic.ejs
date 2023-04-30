@@ -33,4 +33,9 @@
         
         <div id="map"></div>
     </body>
+    <!-- @ignore syntax error -->
+    <script type='text/javascript'>
+      var initCoords = <%- JSON.stringify(coords || null) %>
+      console.log(initCoords);
+   </script>
 </html>

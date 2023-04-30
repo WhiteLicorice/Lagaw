@@ -1,15 +1,25 @@
 function initMap() {
     if (navigator.geolocation) {    //  Check if Geolocation API is available
         //  Declare map and marker
+        var userLocation;
         var map;    
         var marker;
         //  User navigator.geolocation.watchPosition() to make marker dynamic -> adjust its position relative to the location of the user
         navigator.geolocation.watchPosition(function(position) {
-            //  Grab the current location of the user
-            var userLocation = {    
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
+            //  Read initial coordinates, if null then read user location
+            if (!initCoords) {
+                userLocation = {    
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                //console.log("No initial coordinates!");
+                //console.log(userLocation);
+            } else {
+                userLocation = initCoords;
+                //console.log("Initial coordinates found!");
+                //console.log(userLocation);
+            }
+            
             //  Static case: if map does not exist, create the map
             if (!map) {
                 //  Instantiate 'map' as an instance of google.maps, call API constructor

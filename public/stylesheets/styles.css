@@ -250,7 +250,7 @@ ul {
 #home1 {
     background-image: url("/img/paraw-regatta.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-position: center;
     background-size: cover;
     height: 800px;
@@ -290,7 +290,7 @@ ul {
 #home2 {
     background-image: url("/img/festive-walk.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-position: center;
     background-size: cover;
     height: 800px;

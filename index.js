@@ -282,7 +282,7 @@ async function sortCollection(collection, key) {
             var sortedCollection = await _sortCollectionString(collection, key)
             return sortedCollection
         } else {
-            console.log("Unknown property!")
+            console.log("Error: Unknown property on 'key'!")
             return null
         }
     } else {

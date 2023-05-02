@@ -24,7 +24,6 @@ var session_user;
 // Creating ExpressJS app
 var app = express();
 
-
 // Set variable for urlencoded body
 app.use(express.urlencoded({ extended: false}))
 
@@ -273,23 +272,51 @@ async function _getCollection(collectionName) {
     }  
 }
 
+//  Exposed sorting method for sorting a collection of objects based on a given key (property)
 async function sortCollection(collection, key) {
-    var sortedCollection = await _sortCollection(collection, key)
-    return sortedCollection;
+    if(collection) {
+        if (typeof collection[0].key === "number") {
+            var sortedCollection = await _sortCollectionNum(collection, key)
+            return sortedCollection
+        } else if (typeof collection[0].key === "string") {
+            var sortedCollection = await _sortCollectionString(collection, key)
+            return sortedCollection
+        } else {
+            console.log("Unknown property!")
+            return null
+        }
+    } else {
+        return null
+    }
 }
 
-async function _sortCollection(collection, key, order) {
-    if (order.toLowerCase == "ascending") {
+//  Abstracted sorting method used for sorting on a String type key
+async function _sortCollectionString(collection, key, order) {
+    if (order.toLowerCase === "ascending") {
         await collection.sort((a,b) => (a.key > b.key) ? 1 : ((b.key > a.key) ? -1 : 0))
         return collection
     }
-    else if (order.toLowerCase == "descending") {
+    else if (order.toLowerCase === "descending") {
         await collection.sort((a,b) => (a.key < b.key) ? 1 : ((b.key < a.key) ? -1 : 0))
         return collection
     }
     else {
         console.log("Error: undefined 'order' parameter!")
         return null
+    }
+}
+
+//  Abstracted sorting method used for sorting on a Numerical type key
+async function _sortCollectionNum(collection, key, order) {
+    if (order.toLowerCase() === "ascending") {
+        await collection.sort((a,b) => a.key - b.key);
+        return collection;
+    } else if (order.toLowerCase() === "descending") {
+        await collection.sort((a,b) => b.key - a.key);
+        return collection;
+    } else {
+        console.log("Error: undefined 'order' parameter!");
+        return null;
     }
 }
 

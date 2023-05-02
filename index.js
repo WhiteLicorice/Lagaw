@@ -4,7 +4,7 @@
 */
 
 /* Environment Variables */
-    //  Abstracted away in .env -> install via "npm install dotenv" then create a ".env" file in your root directory -> add port and API_KEY variables 
+    //  Abstracted away in .env -> install via "npm install dotenv" then create a ".env" file in your root directory -> add port,  API_KEY, and secret variables 
 require('dotenv').config();
 // Port value
 
@@ -144,6 +144,8 @@ app.get('/accommodation', fetchUser, function(req,res)
     // HTTP render response
     //res.render('pages/home');
     res.render('pages/accommodation', res.name);
+
+
 });
 
 app.get('/traffic', fetchUser,function(req,res)
@@ -236,6 +238,59 @@ async function _addUser(client, newUser){
     // Insert values to collection
     const result = await client.db("Trial").collection("check1").insertOne(newUser);
     console.log(`New user created with the following id: ${result.insertedId}`);
+}
+
+//  STUB: Generic method for grabbing accomodations, foods, etc -> use string parameter collectionName as key
+async function getCollection(collectionName) {
+    const newClient = new MongoClient(uri)
+    try {
+        await newClient.connect();
+        var collection = await _getCollection(collectionName)
+        return collection
+    } catch (error) {
+        console.error(error)
+    } finally {
+        await client.close()
+    }
+}
+
+async function _getCollection(collectionName) {
+    const newClient = new MongoClient(uri)
+    try {
+        const result = await newClient.db("Trial").collection(collectionName).find().toArray();
+        if (!result) {
+            console.log("No such collection exists!")
+            return null
+        }
+        else {
+            console.log("Collection retrieved!")
+            return result
+        }
+    } catch (error) {
+        console.error(error)
+    } finally {
+        await newClient.close()
+    }  
+}
+
+async function sortCollection(collection, key) {
+    var sortedCollection = await _sortCollection(collection, key)
+    return sortedCollection;
+}
+
+async function _sortCollection(collection, key, order) {
+    if (order.toLowerCase == "ascending") {
+        await collection.sort((a,b) => (a.key > b.key) ? 1 : ((b.key > a.key) ? -1 : 0))
+        return collection
+    }
+    else if (order.toLowerCase == "descending") {
+        await collection.sort((a,b) => (a.key < b.key) ? 1 : ((b.key < a.key) ? -1 : 0))
+        return collection
+    }
+    else {
+        console.log("Error: undefined 'order' parameter!")
+        return null
+    }
 }
 
 // Binds and listens for connection on specified host and port.

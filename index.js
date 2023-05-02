@@ -256,19 +256,21 @@ async function getCollection(collectionName) {
 
 async function _getCollection(collectionName) {
     const newClient = new MongoClient(uri)
-
-    const result = newClient.db("Trial").collection(collectionName).find();     //  Await???
-
-    await newClient.close()
-
-    if (!result) {
-        console.log("No such collection exists!")
-        return null
-    }
-    else {
-        console.log("Collection retrieved!")
-        return result
-    }
+    try {
+        const result = await newClient.db("Trial").collection(collectionName).find().toArray();
+        if (!result) {
+            console.log("No such collection exists!")
+            return null
+        }
+        else {
+            console.log("Collection retrieved!")
+            return result
+        }
+    } catch (error) {
+        console.error(error)
+    } finally {
+        await newClient.close()
+    }  
 }
 
 async function sortCollection(collection, key) {

@@ -11,7 +11,7 @@ require('dotenv').config();
 /* Main Code */
 
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://cmpdleon:iolmp4azZac7irwn@cluster0.8aellvw.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://cmsc129:pftEY4nXAQ6ejDN7@cluster0.a2oufuf.mongodb.net/?retryWrites=true&w=majority";
 
 const bcrypt = require('bcrypt');
 const passport = require('passport');

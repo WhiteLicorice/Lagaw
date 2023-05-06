@@ -84,11 +84,13 @@ function fetchUser (req, res, next) {
 }
 
 function checkLogin (req, res, next){
-    console.log("Login Checked")
+    console.log("Login Checked: ")
     if (req.user) {
+        console.log("User logged in!")
         res.redirect('/');
     }
     else{
+        console.log("User not logged in!")
         next();
     }
 }
@@ -191,10 +193,23 @@ app.post('/register', async function(req,res)
         input_user = req.body.username;
         input_pass = req.body.password;
         input_repass = req.body.repassword;
-
+       
+        
         console.log(input_user);
         console.log(input_pass);
         console.log(input_repass);
+
+        var availableUsername = await validateUserName(input_user)
+
+        //console.log(availableUsername)
+
+        //  TODO: CRITICAL! Send error message to frontend to display to user.
+        if (!availableUsername){
+            //res.status(400).send("Username unavailable.")\
+            console.log("Username unavailable.")
+            res.redirect("/register")
+            return
+        }
 
         if (input_pass == input_repass) {
             const hashed_pass = await bcrypt.hash(input_pass, 10);
@@ -205,13 +220,15 @@ app.post('/register', async function(req,res)
                 password: hashed_pass,
             }).catch(console.error);
             res.redirect('/login');
+            return
         }
         else{
-            console.log("Passwords don't match.");                  // Change to alert the user instead
-            //  TODO: Pass EJS error template to frontend.
+            console.log("Passwords don't match.");                  
+            res.status(400).send("Please re-type passwords.")
+            return
         }
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 });
 
@@ -319,6 +336,25 @@ async function _sortCollectionNum(collection, key, order) {
         return null;
     }
 }
+
+//  TODO: Validate if username is also composed of alphanumeric characters and is of 5-100 characters long.
+async function validateUserName(username) {
+    const newClient = new MongoClient(uri)
+    try {
+        const result = await newClient.db("Trial").collection("check1").findOne({username: username});
+        if (!result) {
+            return true
+        }
+        else {
+            return false
+        }
+    } catch (error) {
+        console.error(error)
+    } finally {
+        await newClient.close()
+    }  
+}
+
 
 // Binds and listens for connection on specified host and port.
 // Full syntax: app.listen(port, [host], [backlog], [callback]])

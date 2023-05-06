@@ -25,6 +25,11 @@
                     <form action="/register" method="post">
                         <%- include('../partials/registration-form'); %>
                     </form>
+                    <p class="font-white">
+                        <% if (messages.error){ %>
+                            <%= messages.error%>
+                        <% } %>
+                    </p>
                 </div>
             </div>
             <div></div>

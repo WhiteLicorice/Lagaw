@@ -199,34 +199,52 @@ app.post('/register', async function(req,res)
         console.log(input_pass);
         console.log(input_repass);
 
-        var availableUsername = await validateUserName(input_user)
-
-        //console.log(availableUsername)
-
-        //  TODO: CRITICAL! Send error message to frontend to display to user.
-        if (!availableUsername){
-            //res.status(400).send("Username unavailable.")\
-            console.log("Username unavailable.")
+        //  Check if the username already exists in the database
+        var isUsernameAvailable = await checkAvailableUsername(input_user)
+        if (!isUsernameAvailable){
+            console.log("Username is unavailable.")
+            req.flash("error", "The username is unavailable.")
             res.redirect("/register")
             return
         }
 
-        if (input_pass == input_repass) {
-            const hashed_pass = await bcrypt.hash(input_pass, 10);
-            const hashedId = await bcrypt.hash(input_user, 10);
-            addUser({
-                userId: hashedId,
-                username: req.body.username, 
-                password: hashed_pass,
-            }).catch(console.error);
-            res.redirect('/login');
+        //  Check if username matches specification criteria
+        var isValidUsername = await validateUsername(input_user)
+        if (!isValidUsername) {
+            console.log("Username is invalid.")
+            req.flash("error", "The username must be 5 to 100 characters long and must not contain any special characters.")
+            res.redirect("/register")
             return
         }
-        else{
-            console.log("Passwords don't match.");                  
-            res.status(400).send("Please re-type passwords.")
+
+        //  Check if the password matches specification criteria
+        var isvalidPassword = await validatePassword(input_pass)
+        if (!isvalidPassword) {
+            console.log("Password does not meet criteria.")
+            req.flash("error", "Password must be 8 to 100 characters long and must contain at least 1 special character.")
+            res.redirect("/register")
             return
         }
+
+        //  Check if two password inputs match
+        if(!(input_pass === input_repass)) {
+            console.log("Passwords don't match.")
+            req.flash("error", "Passwords don't match.")
+            res.redirect("/register")
+            return
+        }
+        
+        //  Since all checks pass, proceed with adding user to database
+        const hashed_pass = await bcrypt.hash(input_pass, 10);
+        const hashedId = await bcrypt.hash(input_user, 10);
+        addUser({
+            userId: hashedId,
+            username: req.body.username, 
+            password: hashed_pass,
+        }).catch(console.error);
+        res.redirect('/login');
+        return
+
     } catch (error) {
         console.log(error)
     }
@@ -337,16 +355,16 @@ async function _sortCollectionNum(collection, key, order) {
     }
 }
 
-//  TODO: Validate if username is also composed of alphanumeric characters and is of 5-100 characters long.
-async function validateUserName(username) {
+//  Async function that validates if username is available
+async function checkAvailableUsername(username) {
     const newClient = new MongoClient(uri)
     try {
         const result = await newClient.db("Trial").collection("check1").findOne({username: username});
-        if (!result) {
-            return true
+        if (result) {
+            return false
         }
         else {
-            return false
+            return true
         }
     } catch (error) {
         console.error(error)
@@ -355,6 +373,18 @@ async function validateUserName(username) {
     }  
 }
 
+//  Async function that validates if username meets requirements specification
+async function validateUsername(username) {
+    const usernameRegex = /^[a-zA-Z0-9]{5,100}$/
+    return usernameRegex.test(username)
+}
+
+//  Async function for checking if password meets specification criteria
+async function validatePassword(password) {
+    // Regex for alphanumeric characters between 8 and 100 characters long with at least 1 special character
+    const passwordRegex = /^(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,100}$/;
+    return passwordRegex.test(password);
+}
 
 // Binds and listens for connection on specified host and port.
 // Full syntax: app.listen(port, [host], [backlog], [callback]])

@@ -546,14 +546,16 @@ input:focus {
 
 #uin-one-third-row
 {
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
     text-align: justify;
-    height: 15%;
-    width: 50%;
-    background-color: transparent;
+    height: auto;
+    width: 450px;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 #uin-one-third-row>div
@@ -564,6 +566,13 @@ input:focus {
 #uin-one-third-row>div>button>img{
     width: 59px; 
     height: 50px;
+}
+
+#uin-one-third-row>div>#title {
+    font-weight: 600;
+    text-align: left;
+    font-size: 30px;
+    margin: 0px;
 }
 
 .center-buttons {
@@ -583,4 +592,10 @@ input:focus {
     font-size: 15px;
     background-color: #b57e07;
     border-radius: 12px;
+}
+
+#wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

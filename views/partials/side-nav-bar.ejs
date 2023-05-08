@@ -47,11 +47,25 @@
     </li>
 
     <li class="side-child">
-        <a href="/settings">
-            <div>
-                <img src="/img/settings.png">
-                <p>SETTINGS</p>
-            </div>
-        </a>
+        <!-- IF USER IS LOGGED IN (EXCEPT GUEST MODE)-->
+        <!-- 1 in if condition is a dummy baka -->
+        <% if (1) { %>
+            <a href="/logout">
+                <div>
+                    <img src="/img/logout.png">
+                    <p>LOGOUT</p>
+                </div>
+            </a>
+        <!-- IF USER IS LOGGED OUT (INCLUDING GUEST MODE HERE ALWAYS)-->
+        <% } else { %>
+            <a href="/login">
+                <div>
+                    <img src="/img/login.png">
+                    <p>LOGIN</p>
+                </div>
+            </a>
+        <% } %>
+
+        
     </li>
 </nav>

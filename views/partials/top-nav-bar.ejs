@@ -12,7 +12,7 @@
             <a id="home-btn" href="/">LAGAW</a>
         </div>
     </li>
-    
+
     <!--center-side group-->
     <li class="top-child">
         <!--search bar-->
@@ -29,17 +29,27 @@
             </button>
         </div>
     </li>
-            
+
     <!--right-side group-->
-    <li class="top-child" >
+    <li class="top-child">
         <!--greeting-->
         <div id="greeting">
-            <p class="font-white" id="top">Hi, <%= username %></p>
+            <p class="font-white" id="top">Hi, <%= username %>
+            </p>
             <p class="font-white" id="bottom">Welcome to <span class="font-peach">Iloilo City!</span></p>
         </div>
         <!--user-->
-        <div id="user">
-            <a href="/user"><img id="user-picture" src="/img/placeholder.jpg" alt="User picture"></a>
-        </div>
+        <% if (username != 'Guest') { %>
+            <!--IF USER ACCOUNT-->
+            <div id="user">
+                <!--src="/img/user-image.jpg"-->
+                <a href="/user"><img id="user-picture" alt="User picture"></a>
+            </div>
+        <% } else { %>
+            <!--IF GUEST ACCOUNT-->
+            <div id="user">
+                <a href="/user"><img id="user-picture" src="/img/placeholder.jpg" alt="User picture"></a>
+            </div>
+        <% } %>
     </li>
 </ul>

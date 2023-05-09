@@ -375,6 +375,7 @@ async function checkAvailableUsername(username) {
 
 //  Async function that validates if username meets requirements specification
 async function validateUsername(username) {
+    //  Regex for alphanumeric characters between 5 to 100
     const usernameRegex = /^[a-zA-Z0-9]{5,100}$/
     return usernameRegex.test(username)
 }
@@ -382,7 +383,7 @@ async function validateUsername(username) {
 //  Async function for checking if password meets specification criteria
 async function validatePassword(password) {
     // Regex for alphanumeric characters between 8 and 100 characters long with at least 1 special character
-    const passwordRegex = /^(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,100}$/;
+    const passwordRegex = /^(?=.*?[!@#$%^&*()\-_=+{};:,<.>§~`|\\/[\]])[a-zA-Z0-9!@#$%^&*()\-_=+{};:,<.>§~`|\\/[\]]{8,100}$/
     return passwordRegex.test(password);
 }
 

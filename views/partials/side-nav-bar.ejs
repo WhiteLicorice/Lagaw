@@ -49,7 +49,7 @@
     <li class="side-child">
         <!-- IF USER IS LOGGED IN (EXCEPT GUEST MODE)-->
         <!-- 1 in if condition is a dummy baka -->
-        <% if (1) { %>
+        <% if (!(username === 'Guest')) { %>
             <a href="/logout">
                 <div>
                     <img src="/img/logout.png">

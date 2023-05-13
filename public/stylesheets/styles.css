@@ -174,6 +174,12 @@ input[type=search] {
 
 }
 
+.font-black {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    color: black;
+}
+
 .font-white {
     font-family: Arial, sans-serif;
     font-style: normal;
@@ -296,6 +302,71 @@ ul {
     height: 800px;
 }
 
+#home3 {
+    background-image: url("/img/downtown.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: absolute;
+    background-size: cover;
+    height: 800px;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* or space-between, space-around, etc. */
+    flex-direction: row;
+    align-items: center;
+    
+  }
+.homecard{
+    width:320px; 
+    height: 500px;
+    border-radius: 20px;
+    border: 8px solid #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.homecardimg{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.homecardimgbody{
+    width: 100%;
+    height: 100%;
+    top:0;
+    right: -300px;
+    position: absolute;
+    background-color: #1f3d4738;
+    backdrop-filter: blur(1rem);
+    border-radius:15px;
+    color: #fff;
+    padding: 30px;
+    display:flex;
+    flex-direction: column;
+    transition: 1s;
+}
+
+.homecard:hover .homecardimgbody{
+    right: 0;
+}
+.homecardtitle{
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.homecardinfo{
+    font-size: 16px;
+    line-height: 25px;
+    margin: 40px 0;
+    font-weight: 400;
+}
+
 .transparent-background-left {
     display: flex;
     align-items: center;
@@ -322,7 +393,7 @@ ul {
 #home22>#title {
     font-weight: 600;
     text-align: left;
-    font-size: 80px;
+    font-size: 50px;
     margin: 0px;
     max-width: 90%;
 }
@@ -400,8 +471,8 @@ ul {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
-    height: 800px;
+    background-size: 100% 100%;
+    height: 100%;
 }
 
 #culture-and-festivals11 {
@@ -534,32 +605,57 @@ input:focus {
     border: 3px solid #b57e07;
 }
 
+/* Added button card styling */
+
+.buttoncard{
+        /* Styles for the button inside the card */
+        background-color: #b57e07;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+
+}
 #uin-one-third-column {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     text-align: justify;
-    height: 100%;
+    height: 80%;
     width: 100%;
 }
 
 #uin-one-third-row
 {
-    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5)
+    background-color: rgba(225, 225, 225, 0.5);
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
     text-align: justify;
-    height: auto;
-    width: 450px;
+    height: 27rem;
+    width: 18rem;
     border-radius: 10px;
     margin: 10px;
+    
+
+
 }
 
 #uin-one-third-row>div
 {
+    margin-top:-50px;
     padding: 10px;
 }
 

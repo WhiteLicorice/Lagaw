@@ -4,7 +4,14 @@
 <input type="password" id="password" name="password" required><br>
 <!--pattern attribute for at least one special character in password-->
 <div class="center-buttons">
+    
+    <span class="font-white" id="small">
+        <% if (messages.error){ %>
+            <%= messages.error%>
+        <% } %>
+    </span>
+
     <input type="submit" id="form-button" value="Login" />
-    <input type="submit" id="form-button" value="Forgot password?" />
-    <a href="/register">Register</a>
+    <!--<input type="submit" id="form-button" value="Forgot password?" />-->
+    <a href="/register" id="form-button">Register</a>
 </div>

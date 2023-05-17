@@ -133,10 +133,11 @@ app.get('/culture-and-festivals', fetchUser, function(req,res)
     res.render('pages/culture-and-festivals', res.name);
 });
 
-app.get('/food', fetchUser, function(req,res)
+app.get('/food', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
+    await getCollection("FoodExample");
     res.render('pages/food', res.name);
 });
 
@@ -284,7 +285,7 @@ async function getCollection(collectionName) {
     } catch (error) {
         console.error(error)
     } finally {
-        await client.close()
+        await newClient.close()
     }
 }
 

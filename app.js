@@ -126,11 +126,11 @@ app.get('/places-and-landmarks', fetchUser, function(req,res)
     res.render('pages/places-and-landmarks', res.data);
 });
 
-app.get('/culture-and-festivals', fetchUser, function(req,res)
+app.get('/festivals', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/culture-and-festivals', res.data);
+    res.render('pages/festivals', res.data);
 });
 
 app.get('/food', fetchUser, async function(req,res)

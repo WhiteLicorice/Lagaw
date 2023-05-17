@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <!-- This html document uses EJS -->
+<!-- Jquery script owl carousel -->
+
 <html>
 
 <head>
     <!-- heads.ejs -->
     <%- include('../partials/head'); %>
+
 </head>
 
 <body>
+
     <!-- side-nav-bar.ejs -->
     <%- include('../partials/side-nav-bar'); %>
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
-            <div id="food-header">
-                <div id="transparent-background-food">
-                    <div id="food-header-group">
-                        <p class="font-white" id="second-title">THE BEST FOOD IN ILOILO </p>
+            <div id="culturebg">
+                <div class="transparent-background">
+                    <div id="home11">
+                        <p class="font-white" id="second-title">CULTURES AND FESTIVALS </p>
                         <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf
                             parchment wingardium.
                             Wand betrayal parseltongue soul detention elf lion back his.
@@ -27,35 +31,29 @@
                     </div>
                 </div>
             </div>
-            <div id="food-body">
-                <div id="food-body-group">
+            <div id="culture-and-festivals1">
+                <div id="homebackground">
                     <div id="body-header">
-                        <p class="font-black" id="third-title">OUR TOP <span class="font-peach">BITES</span></p>
+                        <p class="font-black" id="third-title">THE BEST EVENTS IN <span class="font-peach">ILOILO</span>
+                        </p>
                         <div class="filter-row">
                             <p class="font-black">Sort By:</p>
                             <button>Name</button>
                             <button>Date</button>
                         </div>
                     </div>
-                    <!-- For each food from database -->
+                    <!-- Just a dummy to show -->
                     <div id="wrap">
-                        <% var foods = foods %>
-                        <% for (index in foods){%>
-                            <div id="card-group">
-                                <div class="card-image">
-                                    <img src=<%= foods[index]['Images Attached']%> />
-                                </div>
-                                <div class="card-body">
-                                  <h2 class="font-black"><%= foods[index]['Title']%></h5>  
-                                  <p class="font-black"><%= foods[index]['Description'] %></p>
-                                  <a href="#" class="buttoncard">Go somewhere</a>
-                                </div>
-                            </div>
-                        <% } %>
+                        <%- include('../partials/dummyfood'); %>
+                            <%- include('../partials/dummyfood'); %>
+                                <%- include('../partials/dummyfood'); %>
+                                    <%- include('../partials/dummyfood'); %>
+                                        <%- include('../partials/dummyfood'); %>
+                                            <%- include('../partials/dummyfood'); %>
                     </div>
                 </div>
             </div>
-
+            </div>
 </body>
 
 </html>

@@ -39,12 +39,20 @@
                     </div>
                     <!-- For each food from database -->
                     <div id="wrap">
-                        <%- include('../partials/dummyfood'); %>
-                            <%- include('../partials/dummyfood'); %>
-                                <%- include('../partials/dummyfood'); %>
-                                    <%- include('../partials/dummyfood'); %>
-                                        <%- include('../partials/dummyfood'); %>
-                                            <%- include('../partials/dummyfood'); %>
+                        <% var foods = foods %>
+                        <% for (index in foods){%>
+                            <div id="uin-one-third-row">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="/img/placeholder.jpg" width="70" height="80"
+                                    style="object-fit:cover;border-radius:10px;padding-top:1px;">
+                                <div class="card-body">
+                                  <h5 class="font-black"><%= foods[index]['Title']%></h5>  
+                                  <p class="font-black"><%= foods[index]['Description'] %></p>
+                                  <a href="#" class="buttoncard">Go somewhere</a>
+                                </div>
+                              </div>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

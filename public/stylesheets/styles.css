@@ -95,7 +95,7 @@ body {
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
-    color: #b57e07;
+    color: #F17C1E;
 }
 
 #search-bar {
@@ -209,7 +209,7 @@ input[type=search] {
 .font-peach {
     font-family: Arial, sans-serif;
     font-style: normal;
-    color: #b57e07;
+    color: #F17C1E;
 }
 
 #greeting>.font-peach {
@@ -298,7 +298,7 @@ a:active {
 /* HOME PAGE */
 
 #home1 {
-    /* background-image: url("/img/paraw-regatta.png"); */
+    /* background-image: url("/img/whitebg.jpg"); */
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -332,6 +332,13 @@ a:active {
     width: 100%;
 }
 
+.homebackground {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 #home11 {
     display: flex;
     justify-content: center;
@@ -348,6 +355,20 @@ a:active {
     margin: 0px;
 }
 
+#secondtitle {
+    font-weight: 600;
+    font-size: 80px;
+    bottom: 0;
+    left: 0;
+}
+#thirdtitle{
+    font-weight: 600;
+    text-align: left;
+    font-size: 80px;
+    padding-left: 60px;
+    margin: 0px;
+}
+
 #home11>#content {
     text-indent: 10%;
     font-size: 18px;
@@ -356,7 +377,7 @@ a:active {
 }
 
 #home2 {
-    background-image: url("/img/festive-walk.png");
+    background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -365,7 +386,24 @@ a:active {
 }
 
 #home3 {
-    background-image: url("/img/downtown.png");
+    background-image: url("/img/whitebg.jpg");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: absolute;
+    background-size: cover;
+    height: 800px;
+}
+
+#culturebg {
+    background-image: url("/img/paraw-regatta.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: absolute;
+    background-size: cover;
+    height: 800px;
+}
+#foodbg {
+    background-image: url("/img/food1.png");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: absolute;
@@ -479,7 +517,7 @@ a:active {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 800px;
+    height: auto;
 }
 
 .transparent-background-title {
@@ -492,18 +530,21 @@ a:active {
 #food11 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
     text-align: justify;
     width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #food11>#title {
     font-weight: 600;
-    text-align: center;
+    text-align: left;
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
+    margin-left:30px;
 }
 
 #places-and-landmarks1 {
@@ -533,7 +574,7 @@ a:active {
 }
 
 #culture-and-festivals1 {
-    background-image: url("/img/paraw-regatta.png");
+    background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -556,6 +597,7 @@ a:active {
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
+    
 }
 
 .filter-row {
@@ -570,6 +612,24 @@ a:active {
 .filter-row>button {
     color: white;
     background-color: #1B1B1B;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+}
+
+.filter-row-culture{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    text-align: justify;
+    width: 300px;
+    padding-left: 70px;
+}
+
+.filter-row-culture>button {
+    color: black;
+    background-color: #F17C1E;
     border-radius: 20px;
     cursor: pointer;
     padding: 5px 10px 5px 10px;
@@ -670,14 +730,14 @@ input[type=repassword] {
 }
 
 input:focus {
-    border: 3px solid #b57e07;
+    border: 3px solid #F17C1E;
 }
 
 /* Added button card styling */
 
 .buttoncard {
     /* Styles for the button inside the card */
-    background-color: #b57e07;
+    background-color: #F17C1E;
     color: #fff;
     border: none;
     padding: 10px 20px;

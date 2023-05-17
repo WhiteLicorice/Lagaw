@@ -153,9 +153,23 @@ app.get('/traffic', fetchUser,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: null});
+    var coords = null
+    if(!coords) {
+        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: null});
+    } else {
+        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: coords});
+    }
+    
     //  TODO: Implement POST route that grabs initial coordinates from an accommodation page then passes coords to /traffic GET route
 });
+
+app.post('/find-place', function (req, res){
+    const coordinates = req.body.coordinates
+    coordinates = {lat: 10.688922566424075, lng: 122.51586014224357}
+    req.flash("coords", coordinates)
+    res.redirect('/traffic')
+    return
+})
 
 app.get('/settings', fetchUser, function(req,res)
 {
@@ -171,7 +185,6 @@ app.get('/user', fetchUser, function(req,res)
     res.render('pages/user', res.name);
 });
 
-// TODO: Add logout button in the frontend that calls '/logout'
 app.get('/logout', function (req, res)
 {
     req.session.destroy();

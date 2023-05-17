@@ -1,7 +1,7 @@
 /* MAINTENANCE ELEMENTS */
 
-/* *{
-    border: 1px solid white;
+/* * {
+    border: 1px solid black;
 } */
 
 
@@ -195,7 +195,7 @@ input[type=search] {
     font-size: 12px;
     margin: 5px;
     text-align: center;
-    word-wrap: normal; 
+    word-wrap: normal;
     width: 10px;
 }
 
@@ -332,6 +332,15 @@ a:active {
     width: 100%;
 }
 
+#transparent-background-food {
+    display: flex;
+    align-items: end;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+
+}
+
 .homebackground {
     display: flex;
     align-items: center;
@@ -358,14 +367,13 @@ a:active {
 #secondtitle {
     font-weight: 600;
     font-size: 80px;
-    bottom: 0;
-    left: 0;
+    margin: 0;
 }
-#thirdtitle{
+
+#thirdtitle {
     font-weight: 600;
     text-align: left;
     font-size: 80px;
-    padding-left: 60px;
     margin: 0px;
 }
 
@@ -402,13 +410,31 @@ a:active {
     background-size: cover;
     height: 800px;
 }
+
 #foodbg {
     background-image: url("/img/food1.png");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
-    background-position: absolute;
+    background-position: center;
     background-size: cover;
-    height: 800px;
+    height: 750px;
+}
+
+#foodbg1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    left:0;
+    padding: 50px;
+}
+
+#foodbg1 #content
+{
+    width: 1000px;
+    padding-left: 10px;
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 .card-container {
@@ -512,7 +538,7 @@ a:active {
 /* FOOD PAGE */
 
 #food1 {
-    background-image: url("/img/food1.png");
+    background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -532,10 +558,10 @@ a:active {
     justify-content: center;
     align-items: left;
     flex-direction: column;
-    text-align: justify;
+    text-align: left;
     width: 100%;
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
 }
 
 #food11>#title {
@@ -544,7 +570,12 @@ a:active {
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
-    margin-left:30px;
+    margin-left: 30px;
+}
+
+#food111
+{
+    padding: 50px 50px 0 50px;
 }
 
 #places-and-landmarks1 {
@@ -597,7 +628,7 @@ a:active {
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
-    
+
 }
 
 .filter-row {
@@ -606,7 +637,7 @@ a:active {
     align-items: center;
     flex-direction: row;
     text-align: justify;
-    width: 300px;
+    width: 200px;
 }
 
 .filter-row>button {
@@ -617,7 +648,7 @@ a:active {
     padding: 5px 10px 5px 10px;
 }
 
-.filter-row-culture{
+.filter-row-culture {
     display: flex;
     justify-content: space-around;
     align-items: center;

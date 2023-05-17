@@ -1,6 +1,6 @@
 /* MAINTENANCE ELEMENTS */
 
-/* *{
+/* * {
     border: 1px solid black;
 } */
 
@@ -14,6 +14,7 @@ li {
 
 body {
     margin: 0px;
+    min-height: 500px;
     /*
     Inverts the color
     filter: invert(1);
@@ -39,14 +40,14 @@ body {
     z-index: 1;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 779px) {
     #top-nav-bar {
         justify-content: center;
     }
 
     .top-child {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 1px;
+        padding-bottom: 1px;
     }
 
     #side-nav-bar {
@@ -94,7 +95,7 @@ body {
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
-    color: #b57e07;
+    color: #F17C1E;
 }
 
 #search-bar {
@@ -174,10 +175,28 @@ input[type=search] {
 
 }
 
+.font-black {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    color: black;
+}
+
 .font-white {
     font-family: Arial, sans-serif;
     font-style: normal;
     color: #FFFFFF;
+}
+
+#small {
+    display: flex;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 5px;
+    text-align: center;
+    word-wrap: normal;
+    width: 10px;
 }
 
 #greeting>.font-white {
@@ -190,7 +209,7 @@ input[type=search] {
 .font-peach {
     font-family: Arial, sans-serif;
     font-style: normal;
-    color: #b57e07;
+    color: #F17C1E;
 }
 
 #greeting>.font-peach {
@@ -203,21 +222,24 @@ input[type=search] {
 
 
 
-/* SIDE NAVIGATION BAR */
+/******************
+
+SIDE NAVIGATION BAR 
+
+******************/
 
 #side-nav-bar {
-    z-index: 1;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    top: 25px;
     position: fixed;
     width: 85px;
     height: 100%;
-    visibility: hidden;
     background: #1B1B1B;
+    transition: transform 0.2s ease;
+    transform: translateX(-100px);
 }
-
 
 .side-child {
     display: flex;
@@ -233,6 +255,30 @@ input[type=search] {
     color: white;
 }
 
+.side-child button div img {
+    size: 5px;
+    color: white;
+}
+
+#sidebar-cover {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: visibility 0.1s ease-in-out;
+    visibility: hidden;
+}
+
+#side-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
 button {
     background-color: transparent;
     border: none;
@@ -244,11 +290,15 @@ ul {
     padding: 0px;
 }
 
+a:active {
+    color: red;
+    font-weight: bold;
+}
 
 /* HOME PAGE */
 
 #home1 {
-    background-image: url("/img/paraw-regatta.png");
+    /* background-image: url("/img/whitebg.jpg"); */
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -256,10 +306,44 @@ ul {
     height: 800px;
 }
 
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Ensures the video is behind other content */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the entire container */
+}
+
+
 .transparent-background {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+#transparent-background-food {
+    display: flex;
+    align-items: end;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+
+}
+
+.homebackground {
+    display: flex;
+    align-items: center;
     height: 100%;
     width: 100%;
 }
@@ -270,12 +354,25 @@ ul {
     align-items: center;
     flex-direction: column;
     text-align: justify;
-    width: 50%;
+    width: 100%;
 }
 
 #home11>#title {
     font-weight: 600;
     text-align: center;
+    font-size: 80px;
+    margin: 0px;
+}
+
+#secondtitle {
+    font-weight: 600;
+    font-size: 80px;
+    margin: 0;
+}
+
+#thirdtitle {
+    font-weight: 600;
+    text-align: left;
     font-size: 80px;
     margin: 0px;
 }
@@ -288,12 +385,116 @@ ul {
 }
 
 #home2 {
-    background-image: url("/img/festive-walk.png");
+    background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
     background-size: cover;
     height: 800px;
+}
+
+#home3 {
+    background-image: url("/img/whitebg.jpg");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: absolute;
+    background-size: cover;
+    height: 800px;
+}
+
+#culturebg {
+    background-image: url("/img/paraw-regatta.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: absolute;
+    background-size: cover;
+    height: 800px;
+}
+
+#foodbg {
+    background-image: url("/img/food1.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-size: cover;
+    height: 750px;
+}
+
+#foodbg1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    left:0;
+    padding: 50px;
+}
+
+#foodbg1 #content
+{
+    width: 1000px;
+    padding-left: 10px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* or space-between, space-around, etc. */
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.homecard {
+    width: 320px;
+    height: 500px;
+    border-radius: 20px;
+    border: 8px solid #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.homecardimg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.homecardimgbody {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -300px;
+    position: absolute;
+    background-color: #1f3d4738;
+    backdrop-filter: blur(1rem);
+    border-radius: 15px;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+}
+
+.homecard:hover .homecardimgbody {
+    right: 0;
+}
+
+.homecardtitle {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.homecardinfo {
+    font-size: 16px;
+    line-height: 25px;
+    margin: 40px 0;
+    font-weight: 400;
 }
 
 .transparent-background-left {
@@ -322,7 +523,7 @@ ul {
 #home22>#title {
     font-weight: 600;
     text-align: left;
-    font-size: 80px;
+    font-size: 50px;
     margin: 0px;
     max-width: 90%;
 }
@@ -337,12 +538,12 @@ ul {
 /* FOOD PAGE */
 
 #food1 {
-    background-image: url("/img/food1.png");
+    background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 800px;
+    height: auto;
 }
 
 .transparent-background-title {
@@ -355,18 +556,26 @@ ul {
 #food11 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     flex-direction: column;
-    text-align: justify;
+    text-align: left;
     width: 100%;
+    /* margin-left: 20px;
+    margin-right: 20px; */
 }
 
 #food11>#title {
     font-weight: 600;
-    text-align: center;
+    text-align: left;
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
+    margin-left: 30px;
+}
+
+#food111
+{
+    padding: 50px 50px 0 50px;
 }
 
 #places-and-landmarks1 {
@@ -396,12 +605,12 @@ ul {
 }
 
 #culture-and-festivals1 {
-    background-image: url("/img/paraw-regatta.png");
+    background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
-    height: 800px;
+    background-size: 100% 100%;
+    height: 100%;
 }
 
 #culture-and-festivals11 {
@@ -419,6 +628,7 @@ ul {
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
+
 }
 
 .filter-row {
@@ -427,12 +637,30 @@ ul {
     align-items: center;
     flex-direction: row;
     text-align: justify;
-    width: 300px;
+    width: 200px;
 }
 
 .filter-row>button {
     color: white;
     background-color: #1B1B1B;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+}
+
+.filter-row-culture {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    text-align: justify;
+    width: 300px;
+    padding-left: 70px;
+}
+
+.filter-row-culture>button {
+    color: black;
+    background-color: #F17C1E;
     border-radius: 20px;
     cursor: pointer;
     padding: 5px 10px 5px 10px;
@@ -446,10 +674,11 @@ ul {
 
 .carousel {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     height: 350px;
     position: relative;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .card img {
@@ -489,13 +718,13 @@ ul {
                 LOGIN AND REGISTRATION
 ----------------------------------------------------*/
 
-.uin-background {
+html body .uin-background {
     background-image: url("/img/tabucan.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 715px;
+    height: 800px;
 }
 
 .uin-transparent-black {
@@ -515,7 +744,7 @@ ul {
     text-align: left;
     font-size: 50px;
     margin: 0px;
-    max-width: 100%;
+    width: auto;
 }
 
 input[type=text],
@@ -528,10 +757,31 @@ input[type=repassword] {
     margin-bottom: 10px;
     color: white;
     font-family: sans-serif;
+    width: 100%;
 }
 
 input:focus {
-    border: 3px solid #b57e07;
+    border: 3px solid #F17C1E;
+}
+
+/* Added button card styling */
+
+.buttoncard {
+    /* Styles for the button inside the card */
+    background-color: #F17C1E;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+
 }
 
 #uin-one-third-column {
@@ -540,31 +790,35 @@ input:focus {
     align-items: center;
     flex-direction: column;
     text-align: justify;
-    height: 100%;
+    height: 80%;
     width: 100%;
 }
 
-#uin-one-third-row
-{
-    background-color: rgba(0, 0, 0, 0.7);
+#uin-one-third-row {
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5);
+    background-color: rgba(225, 225, 225, 0.5);
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
     text-align: justify;
-    height: auto;
-    width: 450px;
+    height: 27rem;
+    width: 18rem;
     border-radius: 10px;
     margin: 10px;
+
+
+
 }
 
-#uin-one-third-row>div
-{
+#uin-one-third-row>div {
+    margin-top: -50px;
     padding: 10px;
 }
 
-#uin-one-third-row>div>button>img{
-    width: 59px; 
+#uin-one-third-row>div>button>img {
+    width: 59px;
     height: 50px;
 }
 
@@ -592,9 +846,11 @@ input:focus {
     font-size: 15px;
     background-color: #b57e07;
     border-radius: 12px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
-#wrap{
+#wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

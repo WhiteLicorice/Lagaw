@@ -1,7 +1,15 @@
 <nav id="side-nav-bar">
     <!--button for side navigation bar-->
     <li class="side-child">
-        <a href="/places-and-landmarks">
+        <button onclick="showHide()">
+            <div id="side-menu">
+                <img id="menu-btn" src="/img/side-nav-bar-button.png">
+            </div>
+        </button>
+    </li>
+
+    <li class="side-child">
+        <a href="/places-and-landmarks" id="link1">
             <div>
                 <img src="/img/places-and-landmarks.png">
                 <p>PLACES & LANDMARKS</p>
@@ -10,7 +18,7 @@
     </li>
 
     <li class="side-child">
-        <a href="/culture-and-festivals">
+        <a href="/culture-and-festivals" id="link2">
             <div>
                 <img src="/img/culture-and-festivals.png">
                 <p>CULTURE & FESTIVALS</p>
@@ -19,7 +27,7 @@
     </li>
 
     <li class="side-child">
-        <a href="/food">
+        <a href="/food" id="link3">
             <div>
                 <img src="/img/food.png">
                 <p>FOOD</p>
@@ -28,7 +36,7 @@
     </li>
 
     <li class="side-child">
-        <a href="/accommodation">
+        <a href="/accommodation" id="link4">
             <div>
                 <img src="/img/accommodation.png">
                 <!--Accomm. is short for Accommodation-->
@@ -38,7 +46,7 @@
     </li>
 
     <li class="side-child">
-        <a href="/traffic">
+        <a href="/traffic" id="link5">
             <div>
                 <img src="/img/traffic.png">
                 <p>TRAFFIC</p>
@@ -69,3 +77,7 @@
         
     </li>
 </nav>
+
+<div id="sidebar-cover">
+    <!--DARK TRANSPARENT COVER FOR SIDEBAR ACTIVATION-->   
+</div>

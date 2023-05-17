@@ -843,6 +843,23 @@ input:focus {
 
 }
 
+.disabled_buttoncard{
+    pointer-events: none;
+    background-color: #8d8d8d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+}
+
 #row {
     display: flex;
     justify-content: space-around;

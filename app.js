@@ -119,10 +119,12 @@ app.get('/register', checkLogin, function(req,res)
     res.render('pages/register');
 });
 
-app.get('/places-and-landmarks', fetchUser, function(req,res)
+app.get('/places-and-landmarks', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
+    places = await getCollection('Places&Landmarks');
+    res.data['places'] = places;
     res.render('pages/places-and-landmarks', res.data);
 });
 
@@ -138,7 +140,7 @@ app.get('/food', fetchUser, async function(req,res)
     // HTTP render response
     //res.render('pages/home');
     foods = await getCollection("Foods");
-    res.data['foods'] = foods;
+    res.data['food'] = foods;
     res.render('pages/food', res.data);
 });
 

@@ -187,16 +187,17 @@ input[type=search] {
     color: #FFFFFF;
 }
 
-#small {
+#error {
     display: flex;
     font-family: Arial, sans-serif;
     font-style: normal;
-    color: #FFFFFF;
-    font-size: 12px;
-    margin: 5px;
-    text-align: center;
+    color: black;
+    font-size: 20px;
+    padding: 5px 0;
+    text-align: left;
     word-wrap: normal;
-    width: 10px;
+    width: 310px;
+
 }
 
 #greeting>.font-white {
@@ -425,12 +426,11 @@ a:active {
     flex-direction: column;
     width: 100%;
     bottom: 0;
-    left:0;
+    left: 0;
     padding: 50px;
 }
 
-#foodbg1 #content
-{
+#foodbg1 #content {
     width: 1000px;
     padding-left: 10px;
     line-height: 1.5;
@@ -444,7 +444,6 @@ a:active {
     /* or space-between, space-around, etc. */
     flex-direction: row;
     align-items: center;
-
 }
 
 .homecard {
@@ -573,8 +572,7 @@ a:active {
     margin-left: 30px;
 }
 
-#food111
-{
+#food111 {
     padding: 50px 50px 0 50px;
 }
 
@@ -724,25 +722,57 @@ html body .uin-background {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 800px;
+    height: 100%;
+
 }
 
-.uin-transparent-black {
+.row {
     display: flex;
     background: rgba(0, 0, 0, 0.9);
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    text-align: justify;
-    height: 40%;
+    height: 100%;
     width: 100%;
 }
 
+.uin-background>#row>.uin-center-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 30%;
+    background-color: white;
+}
+
+.uin-background>#row>.uin-center-left {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 800px;
+    width: 70%;
+    flex-direction: column;
+}
+
+.uin-background>#row>.uin-center-left>.group {
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    width: auto;
+}
+
+
 .uin-center-right>#title,
-.uin-center-left>#title {
+.uin-center-left>.group>#title {
     font-weight: 800;
     text-align: left;
-    font-size: 50px;
+    font-size: 80px;
+    margin: 0px;
+    width: auto;
+}
+
+.uin-center-right>#content,
+.uin-center-left>.group>#content {
+
+    font-size: 20px;
     margin: 0px;
     width: auto;
 }
@@ -752,12 +782,20 @@ input[type=email],
 input[type=password],
 input[type=repassword] {
     border: none;
-    background: transparent;
-    border-bottom: 1px solid white;
-    margin-bottom: 10px;
-    color: white;
+    background: #F2F2F2;
+    border: 2px solid #F2F2F2;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+    color: black;
     font-family: sans-serif;
-    width: 100%;
+    align: center;
+    width: 93%;
+    font-size: 25px;
+    padding: 10px;
+}
+
+label[id=content] {
+    font-size: 25px;
 }
 
 input:focus {
@@ -784,11 +822,11 @@ input:focus {
 
 }
 
-#uin-one-third-column {
+#row {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     text-align: justify;
     height: 80%;
     width: 100%;
@@ -807,9 +845,6 @@ input:focus {
     width: 18rem;
     border-radius: 10px;
     margin: 10px;
-
-
-
 }
 
 #uin-one-third-row>div {
@@ -829,29 +864,119 @@ input:focus {
     margin: 0px;
 }
 
-.center-buttons {
+.center {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    justify-content: space-between;
-    height: 70px;
+    justify-content: center;
+    height: 100px;
 }
 
-.center-buttons>#form-button {
-    width: 100%;
-    height: 30px;
+.center>#form-button {
+    color: black;
+    display: flex;
+    width: auto;
+    height: 50px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
-    background-color: #b57e07;
-    border-radius: 12px;
-    text-align: center;
+    font-size: 25px;
+    border-color: none;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+    width: 100%;
+    margin: 10px 0;
+    background-color: #F17C1E;
+}
+
+.center>#form-link {
+    color: black;
+    display: flex;
+    width: auto;
+    height: 50px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.center>#form-button:hover{
+    cursor: pointer;
 }
 
 #wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/*
+
+    USER PAGE
+
+*/
+
+#user1
+{
+    background: blue;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+    padding: 0;
+}
+#userheader
+{
+    background: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+
+#user_places
+{
+    background: green;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+
+#user_food
+{
+    background: yellow;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+
+#user_culture
+{
+    background: violet;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+
+#user_accommodation
+{
+    background: palegreen;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+
+#user1 div p{
+    font-size: 50px;
 }

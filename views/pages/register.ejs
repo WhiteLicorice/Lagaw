@@ -11,22 +11,20 @@
 
     <!-- side-nav-bar.ejs -->
     <!-- top-nav-bar.ejs -->
-    
+
     <div class="uin-background">
-        <div id="uin-one-third-column">
-            <div></div>
-            <div class="uin-transparent-black">
-                <div class="uin-center-left">
+        <div id="row">
+            <div class="uin-center-left">
+                <div class="group">
                     <p class="font-peach" id="title">Welcome!</p>
                     <p class="font-white" id="content">Create a new account</p>
                 </div>
-                <div class="uin-center-right">
-                    <form action="/register" method="post">
-                        <%- include('../partials/registration-form'); %>
-                    </form>
-                </div>
             </div>
-            <div></div>
+            <div class="uin-center-right">
+                <form action="/register" method="post">
+                    <%- include('../partials/registration-form'); %>
+                </form>
+            </div>
         </div>
     </div>
 </body>

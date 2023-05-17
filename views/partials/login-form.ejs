@@ -1,17 +1,16 @@
-<label for="username" class="font-peach" id="content">Username:</label><br>
+<label for="username" class="font-black" id="content">Username:</label><br>
 <input type="text" id="username" name="username" required><br>
-<label for="password" class="font-peach" id="content">Password:</label><br>
+<label for="password" class="font-black" id="content">Password:</label><br>
 <input type="password" id="password" name="password" required><br>
 <!--pattern attribute for at least one special character in password-->
-<div class="center-buttons">
-    
-    <span class="font-white" id="small">
-        <% if (messages.error){ %>
-            <%= messages.error%>
-        <% } %>
-    </span>
-
+<span class="font-white" id="error">
+    <% if (messages.error){ %>
+        <%= messages.error%>
+            <% } %>
+</span>
+<div class="center">
     <input type="submit" id="form-button" value="Login" />
     <!--<input type="submit" id="form-button" value="Forgot password?" />-->
-    <a href="/register" id="form-button">Register</a>
+    <a href="/register" id="form-link">Register</a>
+
 </div>

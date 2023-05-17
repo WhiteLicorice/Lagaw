@@ -13,20 +13,18 @@
     <!-- top-nav-bar.ejs -->
     
     <div class="uin-background">
-        <div id="uin-one-third-column">
-            <div></div>
-            <div class="uin-transparent-black">
-                <div class="uin-center-left">
+        <div id="row">
+            <div class="uin-center-left">
+                <div class="group">
                     <p class="font-peach" id="title">Welcome!</p>
-                    <p class="font-white" id="content">Login</p>
-                </div>
-                <div class="uin-center-right">
-                    <form action="/login" method="post">
-                        <%- include('../partials/login-form'); %>
-                    </form>
+                    <p class="font-white" id="content">Login to your account</p>
                 </div>
             </div>
-            <div></div>
+            <div class="uin-center-right">
+                <form action="/login" method="post">
+                    <%- include('../partials/login-form'); %>
+                </form>
+            </div>
         </div>
     </div>
 </body>

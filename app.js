@@ -153,9 +153,23 @@ app.get('/traffic', fetchUser,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: null});
+    //var coords = null
+    if(!coords) {
+        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: null});
+    } else {
+        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: coords});
+    }
+    
     //  TODO: Implement POST route that grabs initial coordinates from an accommodation page then passes coords to /traffic GET route
 });
+
+app.post('/find-place', function (req, res){
+    const coordinates = req.body.coordinates
+    //coordinates = {lat: 10.688922566424075, lng: 122.51586014224357}
+    req.flash("coords", coordinates)
+    res.redirect('/traffic')
+    return
+})
 
 app.get('/settings', fetchUser, function(req,res)
 {
@@ -171,7 +185,6 @@ app.get('/user', fetchUser, function(req,res)
     res.render('pages/user', res.name);
 });
 
-// TODO: Add logout button in the frontend that calls '/logout'
 app.get('/logout', function (req, res)
 {
     req.session.destroy();
@@ -385,6 +398,16 @@ async function validatePassword(password) {
     // Regex for alphanumeric characters between 8 and 100 characters long with at least 1 special character
     const passwordRegex = /^(?=.*?[!@#$%^&*()\-_=+{};:,<.>§~`|\\/[\]])[a-zA-Z0-9!@#$%^&*()\-_=+{};:,<.>§~`|\\/[\]]{8,100}$/
     return passwordRegex.test(password);
+}
+
+//  Helper function for parsing a coordinate string of the format: "<latitude>, <longitude>"
+function parseCoordinate(coordinateString) {
+    const coordinate = coordinateString.toString.split(", ")
+    if (!(coordinate.length === 2)) {
+        return null
+    }
+    const processedCoordinates = {lat: coordinate[0], lng: coordinate[1]}
+    return processedCoordinates
 }
 
 // Binds and listens for connection on specified host and port.

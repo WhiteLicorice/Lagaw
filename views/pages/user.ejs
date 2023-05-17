@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <!-- This html document uses EJS -->
 <html>
-    <head>
-        <!-- heads.ejs -->
-        <%- include('../partials/head'); %>
-    </head>
-    <body>
-        <!-- side-nav-bar.ejs -->
-        <%- include('../partials/side-nav-bar'); %>
-        <!-- top-nav-bar.ejs -->
-        <%- include('../partials/top-nav-bar'); %>
-    </body>
+
+<head>
+    <!-- heads.ejs -->
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <!-- side-nav-bar.ejs -->
+    <%- include('../partials/side-nav-bar'); %>
+    <!-- top-nav-bar.ejs -->
+    <%- include('../partials/top-nav-bar'); %>
+    
+    <div id="user1">
+        <div id="userheader">
+            <p class="font-white" id="top">Hi, <%= username %>!</p>
+        </div>
+        <div id="user_places">
+            <p class="font-white">Here are the places you've visited</p>
+        </div>
+        <div id="user_food">
+            <p class="font-white">Here are the foods you've viewed</p>
+        </div>
+        <div id="user_culture">
+            <p class="font-white">Here are the festivals you've shown</p>
+        </div>
+        <div id="user_accommodation">
+            <p class="font-white">Here are the accommodations you've looked</p>
+        </div>
+    </div>
+
+</body>
+
 </html>

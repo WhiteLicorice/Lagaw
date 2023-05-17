@@ -1,19 +1,19 @@
-<label for="username" class="font-peach" id="content">Username:</label><br>
+<label for="username" class="font-black" id="content">Username:</label><br>
 <input type="text" id="username" name="username" required><br>
 <!-- REMOVED EMAIL FIELD-->
-<label for="password" class="font-peach" id="content">Password:</label><br>
+<label for="password" class="font-black" id="content">Password:</label><br>
 <input type="password" id="password" name="password" required><br>
-<label for="repassword" class="font-peach" id="content">Confirm Password:</label><br>
+<label for="repassword" class="font-black" id="content">Confirm Password:</label><br>
 <input type="password" id="repassword" name="repassword" required><br>
+<span class="font-white" id="error">
+    <% if (messages.error){ %>
+        <%= messages.error%>
+            <% } %>
+</span>
 
 <!--pattern attribute for at least one special character in password-->
-<div class="center-buttons">
-    <span class="font-white" id="small">
-        <% if (messages.error){ %>
-            <%= messages.error%>
-        <% } %>
-    </span>
+<div class="center">
     <input type="submit" id="form-button" value="Sign up" />
     <!-- <input type="submit" id="form-button" value="Forgot password?" /> -->
-    <a href="/login" id="form-button">Login</a>
+    <a href="/login" id="form-link">Login</a>
 </div>

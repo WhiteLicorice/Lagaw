@@ -12,10 +12,10 @@
     <%- include('../partials/side-nav-bar'); %>
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
-            <div id="foodbg">
+            <div id="food-header">
                 <div id="transparent-background-food">
-                    <div id="foodbg1">
-                        <p class="font-white" id="secondtitle">THE BEST FOOD IN ILOILO </p>
+                    <div id="food-header-group">
+                        <p class="font-white" id="second-title">THE BEST FOOD IN ILOILO </p>
                         <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf
                             parchment wingardium.
                             Wand betrayal parseltongue soul detention elf lion back his.
@@ -27,10 +27,10 @@
                     </div>
                 </div>
             </div>
-            <div id="food1">
-                <div id="food11">
-                    <div id="food111">
-                        <p class="font-black" id="thirdtitle">OUR TOP <span class="font-peach">BITES</span></p>
+            <div id="food-body">
+                <div id="food-body-group">
+                    <div id="body-header">
+                        <p class="font-black" id="third-title">OUR TOP <span class="font-peach">BITES</span></p>
                         <div class="filter-row">
                             <p class="font-black">Sort By:</p>
                             <button>Name</button>
@@ -39,12 +39,26 @@
                     </div>
                     <!-- For each food from database -->
                     <div id="wrap">
-                        <%- include('../partials/dummyfood'); %>
-                            <%- include('../partials/dummyfood'); %>
-                                <%- include('../partials/dummyfood'); %>
-                                    <%- include('../partials/dummyfood'); %>
-                                        <%- include('../partials/dummyfood'); %>
-                                            <%- include('../partials/dummyfood'); %>
+                        <% var food = food %>
+                        <% for (index in food){%>
+                            <div id="card-group">
+                                <div class="card-image">
+                                    <img src=<%= food[index]['Images Attached']%> />
+                                </div>
+                                <div class="card-body">
+                                  <h2 class="font-black"><%= food[index]['Title']%></h5>  
+                                  <p class="font-black"><%= food[index]['Description'] %></p>
+                                  <% var link = food[index]['Link']%>
+                                  <% var card_state = 'buttoncard'%>
+                                  <% if(!link){%>
+                                    <% link = '#'%>
+                                    <% card_state = 'disabled_buttoncard'%>
+                                  <% } %>
+                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Food</a>
+                                
+                                </div>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- This html document uses EJS -->
+<html>
+
+<head>
+    <!-- heads.ejs -->
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <!-- side-nav-bar.ejs -->
+    <%- include('../partials/side-nav-bar'); %>
+    <!-- top-nav-bar.ejs -->
+    <%- include('../partials/top-nav-bar'); %>
+    
+    <div id="accomm1">
+        <div id="accomm_img">
+            <img>
+        </div>
+        <div id="accomm_details">
+            <p id="accomm_title"><%= title %></p>
+            <p id="accomm_address"><%= address %></p>
+            <p id="accomm_description"><%= description %></p>
+            <div id="accomm_buttons">
+                <button id="accomm_availability">Check Availability</button>
+                <button id="accomm_directions">Get Directions</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -126,7 +126,7 @@ app.get('/places-and-landmarks', fetchUser, function(req,res)
     res.render('pages/places-and-landmarks', res.name);
 });
 
-app.get('/culture-and-festivals', fetchUser, function(req,res)
+app.get('/festivals', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
@@ -153,7 +153,7 @@ app.get('/traffic', fetchUser,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    //var coords = null
+    var coords;
     if(!coords) {
         res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: null});
     } else {

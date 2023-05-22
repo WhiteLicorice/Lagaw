@@ -41,14 +41,14 @@ body {
 }
 
 @media (max-width: 779px) {
-    #top-nav-bar {
+    /* #top-nav-bar {
         justify-content: center;
-    }
+    }*/
 
-    .top-child {
+    /* .top-child {
         padding-top: 1px;
         padding-bottom: 1px;
-    }
+    } */
 
     #side-nav-bar {
         /*height: idk pa huhu need mag santo sa dalom sng top-nav-bar;*/
@@ -158,10 +158,14 @@ input[type=search] {
     align-items: flex-end;
 }
 
-#greeting>#top {
+#greeting>a>#top {
     font-weight: 800;
     font-size: 18px;
     color: white
+}
+
+#greeting>a>p{
+    margin: 0;
 }
 
 #user-picture {

@@ -2,110 +2,131 @@
 <!-- This html document uses EJS -->
 
 <html>
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <!-- jQuery -->
-     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <!-- Popper.js -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
 
-     <!-- Bootstrap JavaScript -->
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 
 
-    <head>
-        <!-- heads.ejs -->
-        <%- include('../partials/head'); %>
-    </head>
-    <body>
-            
-        
-        <!-- side-nav-bar.ejs -->
-        <%- include('../partials/side-nav-bar'); %>
+<head>
+    <!-- heads.ejs -->
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+
+
+    <!-- side-nav-bar.ejs -->
+    <%- include('../partials/side-nav-bar'); %>
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
-        
-        <div id="home1">
-            <div class="transparent-background">
-                <div id="home11">
-                    <div class="video-container">
-                        <video autoplay loop muted>
-                          <source src="/img/bgvid_1.mp4" type="video/mp4">
-                        </video>
-                      </div>
-                      
-                    <p class="font-white" id="title">ABOUT ILOILO </p>
-                    <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf parchment wingardium. 
-                        Wand betrayal parseltongue soul detention elf lion back his. 
-                        Dead bertie hat kedavra aragog gnomes wand palominos erumpent robes. 
-                        Hair stroke time-turner newt fantastic bred erised pigwidgeon mine rva. 
-                        Bat forbidden cabbage parchment sunshine. 
-                        Bag moon ground moon quidditch sight grim.
-                    </p>
-                </div>
-            </div>
-        </div>
 
-        <div id="home2">
-            <div class="homebackground">
-                <div class = "two-vertical-panels">
-                    <div id = "home22">
-                        <p class="font-black" id="title">The City's Most Famous <span class="font-peach">HIGHLIGHTS</span></p>
-                        <p class="font-black" id="content"><span class="font-peach">Potter ipsum</span> wand elf parchment wingardium. 
-                            Wand betrayal parseltongue soul detention elf lion back his. 
-                            Dead bertie hat kedavra aragog gnomes wand palominos erumpent robes. 
-                            Hair stroke time-turner newt fantastic bred erised pigwidgeon mine rva. 
-                            Bat forbidden cabbage parchment sunshine. 
+            <div id="home1">
+                <div class="transparent-background">
+                    <div id="home11">
+                        <div class="video-container">
+                            <video autoplay loop muted>
+                                <source src="/img/bgvid_1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <p class="font-white" id="title">ABOUT ILOILO </p>
+                        <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf
+                            parchment wingardium.
+                            Wand betrayal parseltongue soul detention elf lion back his.
+                            Dead bertie hat kedavra aragog gnomes wand palominos erumpent robes.
+                            Hair stroke time-turner newt fantastic bred erised pigwidgeon mine rva.
+                            Bat forbidden cabbage parchment sunshine.
                             Bag moon ground moon quidditch sight grim.
                         </p>
                     </div>
-                    <div id = "home22">
-                        <%- include('../partials/carousel'); %>
-                    </div>
                 </div>
             </div>
-        </div>
-        <div id="home3">
-            <div class="homebackground">
-                <div id="culture-and-festivals11">
-                    <p class="font-black" id="title">EXPLORE ILOILO</p>
-            <div class = "card-container">
-                <div class = "homecard">
-                    <img src="/img/placeholder.jpg" class="homecardimg" alt="">
-                    <div class = "homecardimgbody">
-                        <h1 class = "homecardtitle">ILOILO CITY</h1>
-                        <p class = "homecardinfo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore ad necessitatibus eaque numquam rem molestias placeat ratione dolor sequi, debitis sit totam dolorum accusantium cupiditate modi, consequatur exercitationem sed culpa.</p>
-                        <button class="buttoncard">Learn More</button>
-                    </div>
-                </div>
-                <div class = "homecard">
-                    <img src="/img/placeholder.jpg" class="homecardimg" alt="">
-                    <div class = "homecardimgbody">
-                        <h1 class = "homecardtitle">ILOILO CITY</h1>
-                        <p class = "homecardinfo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore ad necessitatibus eaque numquam rem molestias placeat ratione dolor sequi, debitis sit totam dolorum accusantium cupiditate modi, consequatur exercitationem sed culpa.</p>
-                        <button class="buttoncard">Learn More</button>
-                    </div>
-                </div>
 
-                <div class = "homecard">
-                    <img src="/img/placeholder.jpg" class="homecardimg" alt="">
-                    <div class = "homecardimgbody">
-                        <h1 class = "homecardtitle">ILOILO CITY</h1>
-                        <p class = "homecardinfo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore ad necessitatibus eaque numquam rem molestias placeat ratione dolor sequi, debitis sit totam dolorum accusantium cupiditate modi, consequatur exercitationem sed culpa.</p>
-                        <button class="buttoncard">Learn More</button>
+            <div id="home2">
+                <div class="homebackground">
+                    <div class="two-vertical-panels">
+                        <div id="home22">
+                            <p class="font-black" id="title">The City's Most Famous <span
+                                    class="font-peach">HIGHLIGHTS</span></p>
+                            <p class="font-black" id="content"><span class="font-peach">Potter ipsum</span> wand elf
+                                parchment wingardium.
+                                Wand betrayal parseltongue soul detention elf lion back his.
+                                Dead bertie hat kedavra aragog gnomes wand palominos erumpent robes.
+                                Hair stroke time-turner newt fantastic bred erised pigwidgeon mine rva.
+                                Bat forbidden cabbage parchment sunshine.
+                                Bag moon ground moon quidditch sight grim.
+                            </p>
+                        </div>
+                        <div id="home22">
+                            <%- include('../partials/carousel'); %>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div id="home3">
+                <div class="homebackground">
+                    <div id="culture-and-festivals11">
+                        <p class="font-black" id="title">EXPLORE ILOILO</p>
+                        <div class="card-container">
+                            <div class="homecard">
+                                <img src="/img/placeholder.jpg" class="homecardimg" alt="">
+                                <div class="homecardimgbody">
+                                    <h1 class="homecardtitle">ILOILO CITY</h1>
+                                    <p class="homecardinfo">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        Labore ad necessitatibus eaque numquam rem molestias placeat ratione dolor
+                                        sequi, debitis sit totam dolorum accusantium cupiditate modi, consequatur
+                                        exercitationem sed culpa.</p>
+                                    <button class="buttoncard">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="homecard">
+                                <img src="/img/placeholder.jpg" class="homecardimg" alt="">
+                                <div class="homecardimgbody">
+                                    <h1 class="homecardtitle">ILOILO CITY</h1>
+                                    <p class="homecardinfo">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        Labore ad necessitatibus eaque numquam rem molestias placeat ratione dolor
+                                        sequi, debitis sit totam dolorum accusantium cupiditate modi, consequatur
+                                        exercitationem sed culpa.</p>
+                                    <button class="buttoncard">Learn More</button>
+                                </div>
+                            </div>
+
+                            <div class="homecard">
+                                <img src="/img/placeholder.jpg" class="homecardimg" alt="">
+                                <div class="homecardimgbody">
+                                    <h1 class="homecardtitle">ILOILO CITY</h1>
+                                    <p class="homecardinfo">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        Labore ad necessitatibus eaque numquam rem molestias placeat ratione dolor
+                                        sequi, debitis sit totam dolorum accusantium cupiditate modi, consequatur
+                                        exercitationem sed culpa.</p>
+                                    <button class="buttoncard">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
 
 
-        
-    </body>
+
+</body>
+
 </html>

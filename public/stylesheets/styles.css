@@ -2,8 +2,8 @@
 
 /* * {
     border: 1px solid black;
-} */
-
+}
+ */
 
 /* UNIVERSAL ELEMENTS */
 
@@ -56,6 +56,13 @@ body {
 
     .side-child a div p {
         visibility: hidden;
+    }
+
+    .font-white{
+        font-size: 10px;
+    }
+    .font-black{
+        font-size: 10px;
     }
 }
 
@@ -346,8 +353,6 @@ a:active {
 }
 
 .homebackground {
-    display: flex;
-    align-items: center;
     height: 100%;
     width: 100%;
 }
@@ -532,7 +537,8 @@ a:active {
 .two-vertical-panels {
     display: flex;
     align-items: center;
-    /*justify-content: ;*/
+    justify-content: center;
+    width: 100%;
 }
 
 #home22 {
@@ -571,7 +577,6 @@ a:active {
 }
 
 .transparent-background-title {
-    display: flex;
     background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
@@ -607,7 +612,7 @@ a:active {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 800px;
+    height: 100%;
 }
 
 #places-and-landmarks11 {
@@ -617,6 +622,7 @@ a:active {
     flex-direction: column;
     text-align: justify;
     width: 100%;
+    padding-top: 150px;
 }
 
 #places-and-landmarks11>#title {
@@ -638,10 +644,8 @@ a:active {
 
 #culture-and-festivals11 {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
-    text-align: justify;
     width: 100%;
 }
 
@@ -660,7 +664,7 @@ a:active {
     align-items: center;
     flex-direction: row;
     text-align: justify;
-    width: 200px;
+    width: 400px;
 }
 
 .filter-row>button {
@@ -763,7 +767,7 @@ html body .uin-background {
     justify-content: center;
     align-items: center;
     height: 800px;
-    width: 30%;
+    min-width: 500px;
     background-color: white;
 }
 
@@ -772,7 +776,7 @@ html body .uin-background {
     align-items: center;
     display: flex;
     height: 800px;
-    width: 70%;
+    width: 100%;
     flex-direction: column;
 }
 

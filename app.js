@@ -112,6 +112,13 @@ app.get('/search', fetchUser, function(req,res)
     res.render('pages/search', res.data);
 });
 
+app.get('/accommodate-page', fetchUser, function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/accommodate-page', res.data);
+});
+
 app.get('/login', checkLogin, function(req,res)
 {
     // HTTP render response

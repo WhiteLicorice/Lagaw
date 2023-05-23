@@ -11,7 +11,7 @@ require('dotenv').config();
 /* Main Code */
 
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://cmsc129:pftEY4nXAQ6ejDN7@cluster0.a2oufuf.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.URI;
 
 const bcrypt = require('bcrypt');
 const passport = require('passport');
@@ -76,9 +76,9 @@ initializePassport(
 
 function fetchUser (req, res, next) {
     if (req.user){
-        res.name = { username: req.user.username };
+        res.data = { username: req.user.username };
     } else {
-        res.name = { username: 'Guest' };
+        res.data = { username: 'Guest' };
     }
     next();
 }
@@ -98,11 +98,25 @@ function checkLogin (req, res, next){
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
 // res represents the HTTP response
-app.get('/', fetchUser ,function(req,res)
+app.get('/', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/home', res.name);
+    res.render('pages/home', res.data);
+});
+
+app.get('/search', fetchUser, function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/search', res.data);
+});
+
+app.get('/accommodate-page', fetchUser, function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/accommodate-page', res.data);
 });
 
 app.get('/login', checkLogin, function(req,res)
@@ -119,32 +133,36 @@ app.get('/register', checkLogin, function(req,res)
     res.render('pages/register');
 });
 
-app.get('/places-and-landmarks', fetchUser, function(req,res)
+app.get('/places-and-landmarks', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/places-and-landmarks', res.name);
+    places = await getCollection('Places&Landmarks');
+    res.data['places'] = places;
+    res.render('pages/places-and-landmarks', res.data);
 });
 
-app.get('/culture-and-festivals', fetchUser, function(req,res)
+app.get('/festivals', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/culture-and-festivals', res.name);
+    res.render('pages/festivals', res.data);
 });
 
-app.get('/food', fetchUser, function(req,res)
+app.get('/food', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/food', res.name);
+    foods = await getCollection("Foods");
+    res.data['food'] = foods;
+    res.render('pages/food', res.data);
 });
 
 app.get('/accommodation', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/accommodation', res.name);
+    res.render('pages/accommodation', res.data);
 
 
 });
@@ -153,11 +171,11 @@ app.get('/traffic', fetchUser,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    //var coords = null
+    var coords;
     if(!coords) {
-        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: null});
+        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.data.username, coords: null});
     } else {
-        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.name.username, coords: coords});
+        res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.data.username, coords: coords});
     }
     
     //  TODO: Implement POST route that grabs initial coordinates from an accommodation page then passes coords to /traffic GET route
@@ -175,14 +193,14 @@ app.get('/settings', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    res.render('pages/settings', res.name);
+    res.render('pages/settings', res.data);
 });
 
 app.get('/user', fetchUser, function(req,res)
 {
     // HTTP render response
     // res.render('pages/home');
-    res.render('pages/user', res.name);
+    res.render('pages/user', res.data);
 });
 
 app.get('/logout', function (req, res)
@@ -292,19 +310,18 @@ async function getCollection(collectionName) {
     const newClient = new MongoClient(uri)
     try {
         await newClient.connect();
-        var collection = await _getCollection(collectionName)
+        var collection = await _getCollection(collectionName, newClient)
         return collection
     } catch (error) {
         console.error(error)
     } finally {
-        await client.close()
+        await newClient.close()
     }
 }
 
-async function _getCollection(collectionName) {
-    const newClient = new MongoClient(uri)
+async function _getCollection(collectionName, client) {
     try {
-        const result = await newClient.db("Trial").collection(collectionName).find().toArray();
+        const result = await client.db("cmsc129_lagaw").collection(collectionName).find().toArray();
         if (!result) {
             console.log("No such collection exists!")
             return null
@@ -315,9 +332,7 @@ async function _getCollection(collectionName) {
         }
     } catch (error) {
         console.error(error)
-    } finally {
-        await newClient.close()
-    }  
+    }
 }
 
 //  Exposed sorting method for sorting a collection of objects based on a given key (property)

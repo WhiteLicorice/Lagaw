@@ -13,17 +13,19 @@
     <!-- top-nav-bar.ejs -->
     <%- include('../partials/top-nav-bar'); %>
     
-    <div id="accomm1">
-        <div id="accomm_img">
-            <img>
+    <div id="accomm-body">
+        <div id="accomm-img">
+            <img src="/img/placeholder.jpg">
         </div>
-        <div id="accomm_details">
-            <p id="accomm_title"><%= title %></p>
-            <p id="accomm_address"><%= address %></p>
-            <p id="accomm_description"><%= description %></p>
-            <div id="accomm_buttons">
-                <button id="accomm_availability">Check Availability</button>
-                <button id="accomm_directions">Get Directions</button>
+        <div id="accomm-details">
+            <div id="accomm-group">
+                <p id="accomm-title" class="font-white">Title</p>
+                <p id="accomm-address" class="font-white">Address</p>
+            </div>
+            <p id="accomm-description" class="font-white">Description</p>
+            <div id="accomm-buttons">
+                <button id="accomm-availability" class="font-white">Check Availability</button>
+                <button id="accomm-directions" class="font-white">Get Directions</button>
             </div>
         </div>
     </div>

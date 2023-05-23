@@ -1,6 +1,6 @@
 <ul id="top-nav-bar">
     <!--left-side group-->
-    <li class="top-child">
+    <li class="top-child" id="menu-child">
         <!--button for side navigation bar-->
         <div id="menu">
             <button onclick="showHide()">
@@ -11,10 +11,12 @@
         <div id="home">
             <a id="home-btn" href="/">LAGAW</a>
         </div>
+        <div id="menu-space">
+        </div>
     </li>
 
     <!--center-side group-->
-    <li class="top-child">
+    <li class="top-child" id="search-child">
         <!--search bar-->
         <div id="search-bar">
             <form id="search-bar-form">
@@ -25,7 +27,7 @@
     </li>
 
     <!--right-side group-->
-    <li class="top-child">
+    <li class="top-child" id="user-child">
         <!--light/dark mode-->
         <div id="mode">
             <button id="color-theme" onclick="lightDarkMode()">

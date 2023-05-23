@@ -98,11 +98,18 @@ function checkLogin (req, res, next){
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
 // res represents the HTTP response
-app.get('/', fetchUser ,function(req,res)
+app.get('/', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
     res.render('pages/home', res.data);
+});
+
+app.get('/search', fetchUser, function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/search', res.data);
 });
 
 app.get('/login', checkLogin, function(req,res)

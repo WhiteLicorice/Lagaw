@@ -16,13 +16,12 @@
     <!--center-side group-->
     <li class="top-child">
         <!--search bar-->
-        <!-- <div id="search-bar"> -->
-            <!-- <form id="search-bar-form"> -->
-                <!-- <input id="search-bar-input" type="search" id="query" placeholder="Search.."> -->
-                <!-- <button id="search-bar-button"><img src="/img/search.png"></button> -->
-            <!-- </form> -->
-        <!-- </div> -->
-        
+        <div id="search-bar">
+            <form id="search-bar-form">
+                <input id="search-bar-input" type="search" id="query" placeholder="Search..">
+                <button id="search-bar-button"><img src="/img/search.png"></button>
+            </form>
+        </div>
     </li>
 
     <!--right-side group-->
@@ -35,24 +34,16 @@
         </div>
         <!--greeting-->
         <div id="greeting">
+            <% if (username != 'Guest') { %>
             <a href="/user">
                 <p class="font-white" id="top">Hi, <%= username %>!</p>
                 <p class="font-white" id="bottom">Welcome to <span class="font-peach">Iloilo City!</span></p>
             </a>
+            <% } else { %>
+                <p class="font-white" id="top">Hi, Guest!</p>
+                <p class="font-white" id="bottom">Welcome to <span class="font-peach">Iloilo City!</span></p>
+            <% } %>
             
         </div>
-        <!--user-->
-        <!-- <% if (username != 'Guest') { %> -->
-            <!--IF USER ACCOUNT-->
-            <!-- <div id="user"> -->
-                <!--src="/img/user-image.jpg"-->
-                <!-- <a href="/user"><img id="user-picture" alt="User picture"></a> -->
-            <!-- </div> -->
-        <!-- <% } else { %> -->
-            <!--IF GUEST ACCOUNT-->
-            <!-- <div id="user"> -->
-                <!-- <a href="/user"><img id="user-picture" src="/img/placeholder.jpg" alt="User picture"></a> -->
-            <!-- </div> -->
-        <!-- <% } %> -->
     </li>
 </ul>

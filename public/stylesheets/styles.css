@@ -2,8 +2,8 @@
 
 /* * {
     border: 1px solid black;
-}
- */
+} */
+
 
 /* UNIVERSAL ELEMENTS */
 
@@ -19,6 +19,10 @@ body {
     Inverts the color
     filter: invert(1);
     */
+}
+
+p {
+    margin: 15px 0;
 }
 
 
@@ -58,10 +62,11 @@ body {
         visibility: hidden;
     }
 
-    .font-white{
+    .font-white {
         font-size: 10px;
     }
-    .font-black{
+
+    .font-black {
         font-size: 10px;
     }
 }
@@ -152,9 +157,11 @@ input[type=search] {
 }
 
 #color-theme {
+    display: flex;
     width: 45px;
     height: 45px;
     visibility: visible;
+    align-items: center;
 }
 
 #greeting {
@@ -171,7 +178,7 @@ input[type=search] {
     color: white
 }
 
-#greeting>a>p{
+#greeting>a>p {
     margin: 0;
 }
 
@@ -307,6 +314,11 @@ a:active {
     font-weight: bold;
 }
 
+a:active,
+a:hover {
+    cursor: pointer;
+}
+
 /* HOME PAGE */
 
 #home1 {
@@ -393,22 +405,16 @@ a:active {
     max-width: 570px;
 }
 
-#home2 {
-    background-image: url("/img/whitebg.jpg");
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    background-position: center;
-    background-size: cover;
-    height: 800px;
-}
-
+#home2,
 #home3 {
     background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    background-position: absolute;
+    /* background-attachment: fixed; */
+    background-position: center;
     background-size: cover;
-    height: 800px;
+    /* height: 800px; */
+    height: auto;
+    width: 100%;
 }
 
 #culturebg {
@@ -454,14 +460,12 @@ a:active {
     align-items: center;
 }
 
-.card-body
-{
+.card-body {
     padding: 20px;
     background-color: transparent;
 }
 
-.card-body>h2
-{
+.card-body>h2 {
     margin: 0;
 }
 
@@ -851,7 +855,7 @@ input:focus {
 
 }
 
-.disabled_buttoncard{
+.disabled_buttoncard {
     pointer-events: none;
     background-color: #8d8d8d;
     color: #fff;
@@ -893,9 +897,7 @@ input:focus {
     margin: 10px;
 }
 
-#card-group>div {
-    
-}
+#card-group>div {}
 
 .card-image {
     height: 300px;
@@ -968,56 +970,49 @@ input:focus {
 
 */
 
-#user1 {
-    background: blue;
+#userbody {
+    background: #1B1B1B;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 800px;
+    height: auto;
     padding: 0;
 }
 
 #userheader {
-    background: black;
+    background: #1B1B1B;
     height: 80px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0 30px 0 30px;
 }
 
-#user_places {
-    background: green;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 0 30px 0 30px;
-}
-
-#user_food {
-    background: yellow;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 0 30px 0 30px;
-}
-
-#user_culture {
-    background: violet;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 0 30px 0 30px;
-}
-
+#user_places,
+#user_food,
+#user_culture,
 #user_accommodation {
-    background: palegreen;
-    height: 80px;
+    background: #383838;
     display: flex;
-    align-items: center;
-    padding: 0 30px 0 30px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px 30px 30px;
+    border-top: #F17C1E;
+    border-bottom: #F17C1E;
+    border-left: transparent;
+    border-right: transparent;
+    border-width: 5px;
+    border-style: solid;
 }
 
-#user1 div p {
-    font-size: 50px;
+#userbody div p {
+    font-size: 30px;
+}
+
+#userheadergroup {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 450px;
 }

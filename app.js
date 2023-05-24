@@ -119,6 +119,13 @@ app.get('/accommodate-page', fetchUser, function(req,res)
     res.render('pages/accommodate-page', res.data);
 });
 
+app.get('/change-pass', checkLogin, function(req,res)
+{
+    // HTTP render response
+    //res.render('pages/home');
+    res.render('pages/change-pass');
+});
+
 app.get('/login', checkLogin, function(req,res)
 {
     // HTTP render response

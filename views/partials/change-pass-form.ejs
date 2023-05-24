@@ -1,0 +1,19 @@
+<label for="username" class="font-black" id="content">Username:</label><br>
+<input type="text" id="username" name="username" required><br>
+<!-- REMOVED EMAIL FIELD-->
+<label for="password" class="font-black" id="content">New Password:</label><br>
+<input type="password" id="password" name="password" required><br>
+<label for="repassword" class="font-black" id="content">Confirm New Password:</label><br>
+<input type="password" id="repassword" name="repassword" required><br>
+<span class="font-white" id="error">
+    <% if (messages.error){ %>
+        <%= messages.error%>
+            <% } %>
+</span>
+
+<!--pattern attribute for at least one special character in password-->
+<div class="center">
+    <input type="submit" id="form-button" value="Change Password" />
+    <!-- <input type="submit" id="form-button" value="Forgot password?" /> -->
+    <!-- <a href="/login" id="form-link">Login</a> -->
+</div>

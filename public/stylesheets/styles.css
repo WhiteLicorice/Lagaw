@@ -40,7 +40,6 @@ p {
     position: sticky;
     width: 100%;
     top: 0;
-
     z-index: 1;
 }
 
@@ -341,6 +340,30 @@ a:hover {
     width: 100%;
 }
 
+#transparent-background-p-a-l {
+    display: flex;
+    align-items: end;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+#transparent-background-festivals {
+    display: flex;
+    align-items: end;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+#transparent-background-accommodation {
+    display: flex;
+    align-items: end;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
 .homebackground {
     height: 100%;
     width: 100%;
@@ -392,40 +415,6 @@ a:hover {
     /* height: 800px; */
     height: auto;
     width: 100%;
-}
-
-#culturebg {
-    background-image: url("/img/paraw-regatta.png");
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    background-position: absolute;
-    background-size: cover;
-    height: 800px;
-}
-
-#food-header {
-    background-image: url("/img/food1.png");
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    background-position: center;
-    background-size: cover;
-    height: 750px;
-}
-
-#food-header-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    padding: 50px;
-}
-
-#food-header-group #content {
-    width: 1000px;
-    padding-left: 10px;
-    line-height: 1.5;
-    font-size: 20px;
 }
 
 .card-container {
@@ -557,6 +546,31 @@ a:hover {
     height: auto;
 }
 
+#food-header {
+    background-image: url("/img/food1.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-size: cover;
+    height: 750px;
+}
+
+#food-header-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 50px;
+}
+
+#food-header-group #content {
+    width: 1000px;
+    padding-left: 10px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
 .transparent-background-title {
     background: rgba(0, 0, 0, 0.5);
     height: 100%;
@@ -574,47 +588,105 @@ a:hover {
     margin-right: 20px; */
 }
 
-#food-body-group>#title {
+/* #food-body-group>#second-title {
     font-weight: 600;
     text-align: left;
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
     margin-left: 30px;
-}
+} */
 
 #body-header {
     padding: 50px 50px 0 50px;
 }
 
-#places-and-landmarks1 {
-    background-image: url("/img/downtown.png");
+/*PLACES AND LANDMARKS*/
+
+#p-a-l-header {
+    /* background-image: url("/img/downtown.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 100%;
+    height: 100%; */
+    background-image: url("/img/downtown.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-size: cover;
+    height: 750px;
 }
 
-#places-and-landmarks11 {
-    display: flex;
+#p-a-l-header-group {
+    /* display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: justify;
     width: 100%;
-    padding-top: 150px;
+    padding-top: 150px; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 50px;
 }
 
-#places-and-landmarks11>#title {
+#p-a-l-body {
+    background-image: url("/img/whitebg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+}
+
+/* #p-a-l-body-group>#second-title {
     font-weight: 600;
     text-align: center;
     font-size: 50px;
     margin: 0px;
     max-width: 100%;
 }
+ */
 
-#culture-and-festivals1 {
+
+ /*FESTIVALS*/
+
+ #festivals-header {
+    /* background-image: url("/img/paraw-regatta.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: absolute;
+    background-size: cover;
+    height: 800px; */
+    background-image: url("/img/paraw-regatta.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-size: cover;
+    height: 750px;
+}
+
+#festivals-header-group {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    width: 100%;
+    padding-top: 150px; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 50px;
+}
+
+#festivals-body {
     background-image: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -623,7 +695,18 @@ a:hover {
     height: 100%;
 }
 
-#culture-and-festivals11 {
+#festivals-body-group {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+}
+
+/* #culture-and-festivals11 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -637,15 +720,15 @@ a:hover {
     margin: 0px;
     max-width: 100%;
 
-}
+} */
 
 .filter-row {
     display: flex;
-    justify-content: space-around;
+/*     justify-content: space-around; */
     align-items: center;
     flex-direction: row;
     text-align: justify;
-    width: 400px;
+    width: auto;
 }
 
 .filter-row>button {
@@ -656,22 +739,8 @@ a:hover {
     padding: 5px 10px 5px 10px;
 }
 
-.filter-row-culture {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    text-align: justify;
-    width: 300px;
-    padding-left: 70px;
-}
-
-.filter-row-culture>button {
-    color: black;
-    background-color: #F17C1E;
-    border-radius: 20px;
-    cursor: pointer;
-    padding: 5px 10px 5px 10px;
+.filter-row>button, .filter-row>p{
+    margin-right: 15px;
 }
 
 #carousel-body {
@@ -726,14 +795,14 @@ a:hover {
                 LOGIN AND REGISTRATION
 ----------------------------------------------------*/
 
-html body .uin-background {
-    background-image: url("/img/tabucan.png");
+html body .form-background {
+    /* background-image: url("/img/tabucan.png"); */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url("/img/tabucan.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     height: 100%;
-
 }
 
 .row {
@@ -743,7 +812,7 @@ html body .uin-background {
     width: 100%;
 }
 
-.uin-background>#row>.uin-center-right {
+.form-background>#form-row>.form-center-right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -752,7 +821,7 @@ html body .uin-background {
     background-color: white;
 }
 
-.uin-background>#row>.uin-center-left {
+.form-background>#form-row>.form-center-left {
     justify-content: center;
     align-items: center;
     display: flex;
@@ -761,7 +830,7 @@ html body .uin-background {
     flex-direction: column;
 }
 
-.uin-background>#row>.uin-center-left>.group {
+.form-background>#form-row>.form-center-left>.group {
     justify-content: center;
     display: flex;
     height: 100%;
@@ -770,8 +839,8 @@ html body .uin-background {
 }
 
 
-.uin-center-right>#title,
-.uin-center-left>.group>#title {
+.form-center-right>#title,
+.form-center-left>.group>#title {
     font-weight: 800;
     text-align: left;
     font-size: 80px;
@@ -779,8 +848,8 @@ html body .uin-background {
     width: auto;
 }
 
-.uin-center-right>#content,
-.uin-center-left>.group>#content {
+.form-center-right>#content,
+.form-center-left>.group>#content {
 
     font-size: 20px;
     margin: 0px;
@@ -798,7 +867,7 @@ input[type=repassword] {
     margin: 0 0 20px 0;
     color: black;
     font-family: sans-serif;
-    align: center;
+/*     align: center; */
     width: 93%;
     font-size: 25px;
     padding: 10px;
@@ -849,7 +918,7 @@ input:focus {
     font-style: normal;
 }
 
-#row {
+#form-row {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1022,6 +1091,54 @@ SEARCH PAGE
     font-size: 30px;
 }
 
+
+/*ACCOMMODATION PAGE*/
+
+#accommodation-header {
+    background-image: url("/img/downtown.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-size: cover;
+    height: 750px;
+}
+
+#accommodation-header-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 50px;
+}
+
+#accommodation-header-group #content {
+    width: 1000px;
+    padding-left: 10px;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+#accommodation-body {
+    background-image: url("/img/whitebg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+}
+
+#accommodation-body-group {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+}
+
 /*ACCOMMODATE FETCH PAGE*/
 
 #accomm-body{
@@ -1104,10 +1221,6 @@ SEARCH PAGE
     #menu-space{
         visibility: visible;
         width: 80px;
-    }
-
-    #side-nav-bar {
-        /*height: idk pa huhu need mag santo sa dalom sng top-nav-bar;*/
     }
 
     .side-child a div p {

@@ -44,6 +44,33 @@ p {
     z-index: 1;
 }
 
+@media (max-width: 779px) {
+    /* #top-nav-bar {
+        justify-content: center;
+    }*/
+
+    /* .top-child {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    } */
+
+    #side-nav-bar {
+        /*height: idk pa huhu need mag santo sa dalom sng top-nav-bar;*/
+    }
+
+    .side-child a div p {
+        visibility: hidden;
+    }
+
+    .font-white {
+        font-size: 10px;
+    }
+
+    .font-black {
+        font-size: 10px;
+    }
+}
+
 .top-child {
     list-style-type: none;
     display: flex;
@@ -63,10 +90,6 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#menu-space{
-    visibility: hidden;
 }
 
 
@@ -97,7 +120,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 335px;
+    width: 300px;
 }
 
 #search-bar-input {
@@ -1021,143 +1044,4 @@ input:focus {
     justify-content: space-between;
     flex-direction: row;
     width: 450px;
-}
-
-/*
-
-SEARCH PAGE
-
-*/
-
-#search-body {
-    background: #383838;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 800px;
-    padding: 0;
-}
-
-#search-header,
-#search-outputs {
-    padding: 0 30px 0 30px;
-    background-color: #383838;
-}
-
-#search-header>p{
-    margin: 0;
-    padding: 20px 0;
-    font-size: 30px;
-}
-
-/*ACCOMMODATE FETCH PAGE*/
-
-#accomm-body{
-    display: flex;
-    background: #F2F2F2;
-    width: 100%;
-    height: 747px;
-}
-
-#accomm-img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-}
-
-#accomm-img>img{
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%
-}
-
-#accomm-details{
-    background: #1B1B1B;
-    height: 100%;
-    min-width: 350px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-#accomm-group{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-#accomm-title{
-    font-size: 50px;
-}
-
-#accomm-buttons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 300px;
-    height: 100px;
-}
-
-#accomm-buttons>button{
-    width: 100%;
-    height: 100%;
-    background-color: #383838;
-    margin: 2px 0;
-    border-radius: 6px;
-    padding: 6px;
-}
-
-
-
-
-/*MUST BE BELOW EVERYTHING ALL THE TIME*/
-@media (max-width: 779px) {
-    #top-nav-bar {
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #menu-child{
-        /* padding-top: 1px;
-        padding-bottom: 1px; */
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    #menu-space{
-        visibility: visible;
-        width: 80px;
-    }
-
-    #side-nav-bar {
-        /*height: idk pa huhu need mag santo sa dalom sng top-nav-bar;*/
-    }
-
-    .side-child a div p {
-        visibility: hidden;
-    }
-
-    .font-white {
-        font-size: 10px;
-    }
-
-    .font-black {
-        font-size: 10px;
-    }
-
-    .top-child>#search-bar>#search-bar-form {
-        align-items: center;
-        justify-content: center;
-        width: 210px;
-    }
-
-    #search-bar-input {
-        width: 90%;
-    }
 }

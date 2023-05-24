@@ -2,6 +2,7 @@
 <!-- This html document uses EJS -->
 
 <html>
+
 <head>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -11,24 +12,22 @@
 </head>
 
 <body>
+
+
     <!-- side-nav-bar.ejs -->
     <%- include('../partials/side-nav-bar'); %>
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
 
-            <div id="search-body">
-                <div id="search-header">
-                    <p class="font-white">Search results for "Stuff":</p>
+            <div id="search1">
+                <div id="search_header">
+                    <p>Search results for:</p>
                 </div>
                 <div id="search-outputs">
-                    <div id="wrap">
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                    </div>
+                    <p>Search results for:</p>
                 </div>
             </div>
+
 </body>
+
 </html>

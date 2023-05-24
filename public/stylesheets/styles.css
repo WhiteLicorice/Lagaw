@@ -511,6 +511,46 @@ a:hover {
     width: 100%;
 }
 
+.horizontalcard{
+    width: 2000px;
+    height: 235px;
+    background: #FFFFFF;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: #fff;
+    padding: 30px;
+    margin: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.horizontalcard:hover {
+    transform: scale(1.021);
+  }
+  
+  .horizontalcard:active {
+    transform: scale(0.95) rotateZ(1.1deg);
+  }
+
+.horizontalcardimg {
+    height: 290px;
+    width: inherit;
+
+}
+
+.horizontalcardimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
 #home22 {
     display: flex;
     justify-content: center;
@@ -635,7 +675,7 @@ a:hover {
 }
 
 #p-a-l-body {
-    background-image: url("/img/whitebg.jpg");
+    background-image: #FFFF;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -930,7 +970,7 @@ input:focus {
 
 #card-group {
     backdrop-filter: blur(1rem);
-    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.1);
     background-color: rgba(225, 225, 225, 0.5);
     display: flex;
     justify-content: start;
@@ -941,6 +981,41 @@ input:focus {
     width: 300px;
     border-radius: 10px;
     margin: 10px;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    position: relative;
+}
+#card-group:hover {
+    border-color: #F17C1E;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+   }
+#horizontal-card-group {
+
+    align-items: left;
+    flex-direction: row;
+    text-align: justify;
+    height: 300px;
+    width: 2000px;
+    border-radius: 10px;
+    margin: 10px;
+
+    width: 2000px;
+    height: 235px;
+    background: #FFFFFF;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    user-select: none;
+    font-weight: bolder;
+    color: #fff;
+    padding: 30px;
+    margin: 15px;
+    margin-bottom: 20px;
+    border-radius: 20px;
 }
 
 #card-group>div {}
@@ -1008,6 +1083,11 @@ input:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+#wraphorizontal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
 }
 
 /*

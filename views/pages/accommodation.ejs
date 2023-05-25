@@ -37,12 +37,26 @@
                     </div>
                     <!-- Just a dummy to show -->
                     <div id="wrap">
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
+                        <% var accommodation = accommodation %>
+                        <% for (index in accommodation){%>
+                            <div id="card-group">
+                                <div class="card-image">
+                                    <img src=<%= accommodation[index]['Images Attached']%> />
+                                </div>
+                                <div class="card-body">
+                                  <h2 class="font-black"><%= accommodation[index]['Title']%></h5>  
+                                  <p class="font-black"><%= accommodation[index]['Description'] %></p>
+                                  <% var link = accommodation[index]['Link']%>
+                                  <% var card_state = 'buttoncard'%>
+                                  <% if(!link){%>
+                                    <% link = '#'%>
+                                    <% card_state = 'disabled_buttoncard'%>
+                                  <% } %>
+                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Accomodation</a>
+                                
+                                </div>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

@@ -162,13 +162,17 @@ app.get('/food', fetchUser, async function(req,res)
     //res.render('pages/home');
     foods = await getCollection("Foods");
     res.data['food'] = foods;
+    console.log(foods);
     res.render('pages/food', res.data);
 });
 
-app.get('/accommodation', fetchUser, function(req,res)
+app.get('/accommodation', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
+    accommodation = await getCollection("Accommodations");
+    res.data['accommodation'] = accommodation;
+    console.log(accommodation);
     res.render('pages/accommodation', res.data);
 
 

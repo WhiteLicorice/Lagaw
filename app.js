@@ -188,12 +188,10 @@ app.get('/traffic', fetchUser,function(req,res)
     } else {
         res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.data.username, coords: coords});
     }
-    
-    //  TODO: Implement POST route that grabs initial coordinates from an accommodation page then passes coords to /traffic GET route
 });
 
 app.post('/find-place', function (req, res){
-    const coordinates = req.body.coordinates
+    const coordinates = parseCoordinates(req.body.coordinates);
     //coordinates = {lat: 10.688922566424075, lng: 122.51586014224357}
     req.flash("coords", coordinates)
     res.redirect('/traffic')
@@ -427,7 +425,7 @@ async function validatePassword(password) {
 }
 
 //  Helper function for parsing a coordinate string of the format: "<latitude>, <longitude>"
-function parseCoordinate(coordinateString) {
+function parseCoordinates(coordinateString) {
     const coordinate = coordinateString.toString.split(", ")
     if (!(coordinate.length === 2)) {
         return null

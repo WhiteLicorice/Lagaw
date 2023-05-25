@@ -27,7 +27,7 @@ function initMap() {
                     center: userLocation,   //  Initial coordinates at the current location of the user
                     zoom: 12,
                     mapTypeControlOptions: {    //  Define the style of the map
-                        mapTypeIds: ['roadmap', 'terrain'],
+                        mapTypeIds: ['roadmap', 'terrain', 'satellite', 'hybrid'],
                         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
                     }
                 });

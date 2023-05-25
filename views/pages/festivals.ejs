@@ -44,12 +44,26 @@
                     </div>
                     <!-- Just a dummy to show -->
                     <div id="wrap">
-                        <%- include('../partials/dummyfood'); %>
-                            <%- include('../partials/dummyfood'); %>
-                                <%- include('../partials/dummyfood'); %>
-                                    <%- include('../partials/dummyfood'); %>
-                                        <%- include('../partials/dummyfood'); %>
-                                            <%- include('../partials/dummyfood'); %>
+                        <% var festivals = festivals %>
+                        <% for (index in festivals){%>
+                            <div id="card-group">
+                                <div class="card-image">
+                                    <img src=<%= festivals[index]['Images Attached']%> />
+                                </div>
+                                <div class="card-body">
+                                  <h2 class="font-black"><%= festivals[index]['Title']%></h5>  
+                                  <p class="font-black"><%= festivals[index]['Description'] %></p>
+                                  <% var link = festivals[index]['Link']%>
+                                  <% var card_state = 'buttoncard'%>
+                                  <% if(!link){%>
+                                    <% link = '#'%>
+                                    <% card_state = 'disabled_buttoncard'%>
+                                  <% } %>
+                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Festivals</a>
+                                
+                                </div>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

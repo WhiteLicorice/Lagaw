@@ -95,6 +95,18 @@ function checkLogin (req, res, next){
     }
 }
 
+function checkNotLogin (req, res, next){
+    console.log("Login Checked: ")
+    if (!req.user) {
+        console.log("User not logged in!")
+        res.redirect('/');
+    }
+    else{
+        console.log("User logged in!")
+        next();
+    }
+}
+
 // Get request from route '/' and callback function request(req) and response(res)
 // req represents the HTTP request
 // res represents the HTTP response
@@ -119,7 +131,7 @@ app.get('/accommodate-page', fetchUser, function(req,res)
     res.render('pages/accommodate-page', res.data);
 });
 
-app.get('/change-pass', checkLogin, function(req,res)
+app.get('/change-pass', checkNotLogin, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
@@ -144,15 +156,17 @@ app.get('/places-and-landmarks', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    places = await getCollection('Places&Landmarks');
+    places = await getCollection('Places');
     res.data['places'] = places;
     res.render('pages/places-and-landmarks', res.data);
 });
 
-app.get('/festivals', fetchUser, function(req,res)
+app.get('/festivals', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
+    festivals = await getCollection('Festivals');
+    res.data['festivals'] = festivals;
     res.render('pages/festivals', res.data);
 });
 
@@ -224,6 +238,67 @@ app.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
 }));
+
+
+app.post('/change-pass', async function(req, res){
+    currentPass = req.body.currentPass;
+    newPass = req.body.password;
+    repass = req.body.repassword;
+
+    console.log(currentPass)
+    isCorrect = await bcrypt.compare(currentPass, req.user.password);
+
+    var isvalidPassword = await validatePassword(newPass)
+    if (!isvalidPassword) {
+        console.log("Password does not meet criteria.")
+        req.flash("error", "Password must be 8 to 100 characters long and must contain at least 1 special character.")
+        res.redirect("/change-pass")
+        return
+    }
+
+    if(newPass == repass){
+        if(isCorrect){
+            hashedPass = await bcrypt.hash(newPass, 10);
+            result = await updatePassword(hashedPass, req.user.username);
+            if(result){
+                req.flash("error", "Password changed successfully");
+                res.redirect("/change-pass");
+            }
+            else{
+                req.flash("error", "Something went wrong.");
+                res.redirect("/change-pass");
+            }
+        }
+        else{
+            req.flash("error", "Wrong password.");
+            res.redirect("/change-pass");
+        }
+    }
+    else{
+        req.flash("error", "New Passwords did not match.");
+        res.redirect("/change-pass");
+        return
+    }
+});
+
+async function updatePassword(password, username){
+    // const uri for remote database
+    const client = new MongoClient(uri);
+
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+
+        // Make the appropriate DB calls
+        result = await client.db("Trial").collection("check1").updateOne({ username: username }, {$set:{password:password}});
+        return result;
+
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
 
 //  TODO: Add error-handling for usernames that already exist in the database.
 app.post('/register', async function(req,res)

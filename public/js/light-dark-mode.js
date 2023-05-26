@@ -6,7 +6,7 @@ fontPeach = document.querySelectorAll('.font-peach')
 sideChildren = document.querySelectorAll('.side-child')
 theme = document.getElementById("color-theme");
 icon = document.getElementById("theme-icon");
-transparentBackground = document.querySelectorAll('transparent-background');
+transparentBackground = document.querySelectorAll('transparent-background-home');
 transparentBackgroundLeft = document.querySelectorAll('transparent-background-left');
 transparentBackgroundTitle = document.querySelectorAll("transparent-background-title");
 

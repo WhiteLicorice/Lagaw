@@ -38,9 +38,9 @@
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
 
-            <div id="home1">
-                <div class="transparent-background">
-                    <div id="home11">
+            <div id="home-header">
+                <div class="transparent-background-home">
+                    <div id="home-header-group">
                         <div class="video-container">
                             <video autoplay loop muted>
                                 <source src="/img/bgvid_1.mp4" type="video/mp4">
@@ -60,10 +60,10 @@
                 </div>
             </div>
 
-            <div id="home2">
+            <div id="home-highlights">
                 <div class="homebackground">
                     <div class="two-vertical-panels">
-                        <div id="home22">
+                        <div id="home-highlights-body">
                             <p class="font-black" id="title">The City's Most Famous <span
                                     class="font-peach">HIGHLIGHTS</span></p>
                             <p class="font-black" id="content"><span class="font-peach">Potter ipsum</span> wand elf
@@ -75,17 +75,19 @@
                                 Bag moon ground moon quidditch sight grim.
                             </p>
                         </div>
-                        <div id="home22">
+                        <div id="home-highlights-body">
                             <%- include('../partials/carousel'); %>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="home3">
+            <div id="home-explore">
                 <div class="homebackground">
-                    <div id="culture-and-festivals11">
+                    <div id="home-explore-body">
                         <p class="font-black" id="title">EXPLORE ILOILO</p>
                         <div class="card-container">
+
+
                             <div class="homecard">
                                 <img src="/img/placeholder.jpg" class="homecardimg" alt="">
                                 <div class="homecardimgbody">
@@ -120,6 +122,8 @@
                                     <button class="buttoncard">Learn More</button>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

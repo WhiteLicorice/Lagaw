@@ -42,18 +42,19 @@
                             <% var places = places %>
                             <% for (index in places){%>
                                 <div id="horizontal-card-group" class="horizontalcard">
-                                    <div class="horizontalcardimg" style="width: 18rem;">
-                                        <img src=<%= places[index]['Images Attached']%> style="width:70px;height:80;
+                                    <div class="horizontalcardimg" style="width: auto;">
+                                        <img src=<%= places[index]['Images Attached']%> style="width:500px;height:80;
                                         style="object-fit:cover;border-radius:10px;padding-top:1px;">
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="font-black"><%= places[index]['Place']%></h5>
-                                        <p class="font-black"><%= places[index]['Description']%></p>
+                                        <h5 class="font-black" style="font-size: 50px;"><%= places[index]['Place']%></h5>
+                                        <p class="font-black" style="font-size: 20px;"><%= places[index]['Description']%></p>
                                         <% var link = places[index]['Link']%>
-                                        <% var card_state = 'buttoncard'%>
                                         <% if(!link){%>
                                             <% link = '#'%>
-                                            <% card_state = 'disabled_buttoncard'%>
+                                            <% var card_state = 'disabled_buttoncard'%>
+                                        <% } else { %>
+                                            <% var card_state = 'buttoncard'%>
                                         <% } %>
                                         <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Place</a>
                                     </div>

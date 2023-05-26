@@ -196,7 +196,7 @@ app.get('/traffic', fetchUser,function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    var coords;
+    var coords = req.session.coordinates;
     if(!coords) {
         res.render('pages/traffic', {API_KEY: process.env.API_KEY, username: res.data.username, coords: null});
     } else {
@@ -205,12 +205,19 @@ app.get('/traffic', fetchUser,function(req,res)
 });
 
 app.post('/find-place', function (req, res){
-    const coordinates = parseCoordinates(req.body.coordinates);
-    //coordinates = {lat: 10.688922566424075, lng: 122.51586014224357}
-    req.flash("coords", coordinates)
+    const coordinates = parseCoordinates(req.body.coordinates)
+    req.session.coordinates = coordinates
     res.redirect('/traffic')
     return
 })
+
+//  Scaffold: Used to check if find-place feature works as intended
+/* app.get('/find-place', function (req, res){
+    const coordinates = {lat: 10.688922566424075, lng: 122.51586014224357}
+    req.session.coordinates = coordinates
+    res.redirect('/traffic')
+    return
+}) */
 
 app.get('/settings', fetchUser, function(req,res)
 {

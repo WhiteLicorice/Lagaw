@@ -480,7 +480,8 @@ a:hover {
 
 #home-highlights,
 #home-explore {
-    background-image: url("/img/whitebg.jpg");
+
+    background: linear-gradient(rgba(27,27,27, 0.8), rgba(27,27,27, 0.8)), url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center;
@@ -757,7 +758,7 @@ a:hover {
 }
 
 #p-a-l-body {
-    background-image: #FFFF;
+    background: #FFFFFF;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -828,7 +829,7 @@ a:hover {
     margin-right: 20px; */
 }
 
-/* #home-explore-body {
+#home-explore-body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -842,7 +843,7 @@ a:hover {
     margin: 0px;
     max-width: 100%;
 
-} */
+}
 
 #carousel-body {
     height: 100vh;

@@ -34,30 +34,35 @@
                         <button>Name</button>
                         <button>Type</button>
                         <button>Rating</button>
-                    </div>
-                    <!-- Just a dummy to show -->
-                    <div id="wrap">
+                    </div>                  
+                    
+                    <div id="wraphorizontal">
                         <% var accommodation = accommodation %>
                         <% for (index in accommodation){%>
-                            <div id="card-group">
-                                <div class="card-image">
-                                    <img src=<%= accommodation[index]['Images Attached']%> />
+                            <div id="horizontal-card-group" class="horizontalcard">
+                                <div class="horizontalcardimg" style="width: auto;">
+                                    <img src=<%= accommodation[index]['Images Attached']%> style="width:500px;height:80;
+                                    style="object-fit:cover;border-radius:10px;padding-top:1px;">
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black"><%= accommodation[index]['Title']%></h5>  
-                                  <p class="font-black"><%= accommodation[index]['Description'] %></p>
-                                  <% var link = accommodation[index]['Link']%>
-                                  <% var card_state = 'buttoncard'%>
-                                  <% if(!link){%>
-                                    <% link = '#'%>
-                                    <% card_state = 'disabled_buttoncard'%>
-                                  <% } %>
-                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Accomodation</a>
-                                
+                                    <h5 class="font-black" style="font-size: 50px;"><%= accommodation[index]['Title']%></h5>
+                                    <p class="font-black" style="font-size: 20px;"><%= accommodation[index]['Description']%></p>
+                                    <% var link = accommodation[index]['Link']%>
+                                    <!--Pls edit the card_state_location below to fetch map coordinates-->
+                                    <% var card_state_location = 'buttoncard_location'%>
+                                    <% if(!link){%>
+                                        <% link = '#'%>
+                                        <% var card_state = 'disabled_buttoncard'%>
+                                    <% } else { %>
+                                        <% var card_state = 'buttoncard'%>
+                                    <% } %>
+                                    <a href=<%= link%> target="_blank" class=<%= card_state_location%>>Check Location</a>
+                                    <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Accomodation</a>
                                 </div>
                             </div>
                         <% } %>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -26,6 +26,7 @@ function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: userLocation,   //  Initial coordinates at the current location of the user
                     zoom: 12,
+                    streetViewControl: true,
                     mapTypeControlOptions: {    //  Define the style of the map
                         mapTypeIds: ['roadmap', 'terrain', 'satellite', 'hybrid'],
                         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
@@ -51,14 +52,15 @@ function initMap() {
             } else {
                 marker.setPosition(userLocation);   //  Dynamic case: update the location of the marker as the user's location changes
             }
-            var destination = new google.maps.LatLng(37.7749, -122.4194);
+            //var destination = new google.maps.LatLng(37.7749, -122.4194);
         });
     } else {    //  If HTML5 Geolocation API is unavailable, initialize map with default settings
         var map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 10.720321, lng: 122.562019},  //  Default initial coordinates are Iloilo City's
             zoom: 8,
-            mapTypeControlOptions: {
-                mapTypeIds: ['roadmap', 'terrain'],
+            streetViewControl: true,
+            mapTypeControlOptions: {    //  Define the style of the map
+                mapTypeIds: ['roadmap', 'terrain', 'satellite', 'hybrid'],
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
             }
         });

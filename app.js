@@ -364,7 +364,7 @@ app.post('/register', async function(req,res)
             username: req.body.username, 
             password: hashed_pass,
         }).catch(console.error);
-        res.redirect('/login');
+        res.redirect('/login'); //Add msg that account is successfully created
         return
 
     } catch (error) {

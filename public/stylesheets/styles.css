@@ -481,7 +481,7 @@ a:hover {
 #home-highlights,
 #home-explore {
 
-    background: linear-gradient(rgba(27,27,27, 0.8), rgba(27,27,27, 0.8)), url("/img/whitebg.jpg");
+    background: url("/img/whitebg.jpg");
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center;
@@ -838,10 +838,18 @@ a:hover {
 
 #home-explore-body>#title {
     font-weight: 600;
-    text-align: center;
+    text-align: left;
     font-size: 50px;
-    margin: 0px;
+    margin: 40px;
     max-width: 100%;
+
+}
+
+#home-explore-body>#content {
+    text-indent: 3%;
+    font-size: 18px;
+    margin: 10px 0px 0px 0px;
+    max-width: 90%;
 
 }
 
@@ -1100,7 +1108,6 @@ input:focus {
     border-style: solid; */
 }
 
-#card-group>div {}
 
 .card-image {
     height: 300px;

@@ -60,7 +60,7 @@ p {
     color: black;
 }
 
-h5{
+h5 {
     margin: 0;
 }
 
@@ -98,11 +98,17 @@ h5{
     margin-right: 15px;
 }
 
-#title, #second-title, #third-title, #top, #bottom{
+#title,
+#second-title,
+#third-title,
+#top,
+#bottom {
     font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    width: 100%;
 }
 
-#content{
+#content {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -290,7 +296,7 @@ input[type=search] {
     z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     position: fixed;
     width: 85px;
     height: 100%;
@@ -304,6 +310,10 @@ input[type=search] {
     flex-direction: column;
     text-align: center;
     list-style-type: none;
+}
+
+.side-child>button>#side-menu {
+    padding-top: 7px;
 }
 
 .side-child a div p {
@@ -330,7 +340,7 @@ input[type=search] {
     visibility: hidden;
 }
 
-#sidebar-cover-button{
+#sidebar-cover-button {
     width: 100%;
     height: 100%;
 }
@@ -462,7 +472,6 @@ a:hover {
 }
 
 #home-header-group>#title {
-    font-weight: 600;
     text-align: center;
     font-size: 80px;
     margin: 0px;
@@ -646,7 +655,6 @@ a:hover {
 }
 
 #home-highlights-body>#title {
-    font-weight: 600;
     text-align: left;
     font-size: 50px;
     margin: 0px;
@@ -847,7 +855,6 @@ a:hover {
 }
 
 #home-explore-body>#title {
-    font-weight: 600;
     text-align: left;
     font-size: 50px;
     margin: 40px;
@@ -961,7 +968,6 @@ html body .form-background {
 
 .form-center-right>#title,
 .form-center-left>.group>#title {
-    font-weight: 800;
     text-align: left;
     font-size: 80px;
     margin: 0px;
@@ -1098,8 +1104,8 @@ input:focus {
     border-radius: 10px;
     margin: 10px;
 
-    width: 2000px;
-    height: 235px;
+    /* width: 2000px;
+    height: 235px; */
     background: #FFFFFF;
     text-align: left;
     cursor: pointer;
@@ -1116,6 +1122,14 @@ input:focus {
 
     /* border: black;
     border-style: solid; */
+}
+
+.horizontalcardimg>img {
+    width: 500px;
+    height: 80;
+    object-fit: cover;
+    border-radius: 10px;
+    padding-top: 1px;
 }
 
 
@@ -1294,7 +1308,7 @@ SEARCH PAGE
 }
 
 #accommodation-header-group #content {
-    width: 1000px;
+    width: 100%;
     padding-left: 10px;
     line-height: 1.5;
     font-size: 20px;
@@ -1406,6 +1420,8 @@ SEARCH PAGE
 
     .side-child a div p {
         visibility: hidden;
+        height: 0;
+        margin: 0;
     }
 
     .font-white {
@@ -1434,11 +1450,44 @@ SEARCH PAGE
         width: 100%;
     }
 
-    #horizontal-card-group{
+    #horizontal-card-group {
         flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
-    h5{
+    h5 {
         font-size: 10px;
+    }
+
+    #title,
+    #second-title,
+    #third-title,
+    #top,
+    #bottom,
+    .card-body>h5 {
+        font-size: 30px;
+    }
+
+    #content,
+    .card-body>p {
+        font-size: 9px;
+        width: auto;
+    }
+
+    #wraphorizontal {
+        justify-content: center;
+    }
+
+    .horizontalcardimg>img {
+        width: auto;
+        height: 80;
+        align-items: left;
+    }
+
+    .card-body {
+        width: auto;
     }
 }

@@ -36,11 +36,11 @@
                     <div id="body-header">
                         <p class="font-black" id="third-title">THE BEST EVENTS IN <span class="font-peach">ILOILO</span>
                         </p>
-                        <div class="filter-row">
+                        <!-- <div class="filter-row">
                             <p class="font-black">Sort By:</p>
                             <button>Name</button>
                             <button>Date</button>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- Just a dummy to show -->
                     <div id="wrap">
@@ -51,8 +51,8 @@
                                     <img src=<%= festivals[index]['Images Attached']%> />
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black"><%= festivals[index]['Title']%></h5>  
-                                  <p class="font-black"><%= festivals[index]['Description'] %></p>
+                                  <h2 class="font-black" id="content"><%= festivals[index]['Title']%></h5>  
+                                  <p class="font-black" id="content"><%= festivals[index]['Description'] %></p>
                                   <% var link = festivals[index]['Link']%>
                                   <% var card_state = 'buttoncard'%>
                                   <% if(!link){%>

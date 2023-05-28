@@ -4,7 +4,7 @@
 
 ******************************************/
 
-/* * {
+/* {
     border: 1px solid black;
 } */
 
@@ -55,23 +55,23 @@ p {
 }
 
 .font-black {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     font-style: normal;
     color: black;
 }
 
-h5{
+h5 {
     margin: 0;
 }
 
 .font-white {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     font-style: normal;
     color: #FFFFFF;
 }
 
 .font-peach {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     font-style: normal;
     color: #F17C1E;
 }
@@ -98,6 +98,20 @@ h5{
     margin-right: 15px;
 }
 
+#title,
+#second-title,
+#third-title,
+#top,
+#bottom {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    width: 100%;
+}
+
+#content {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+}
 
 
 
@@ -158,11 +172,9 @@ h5{
 }
 
 #home-btn {
-
     width: 112px;
     height: 100%;
-
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
@@ -285,7 +297,7 @@ input[type=search] {
     z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     position: fixed;
     width: 85px;
     height: 100%;
@@ -299,6 +311,10 @@ input[type=search] {
     flex-direction: column;
     text-align: center;
     list-style-type: none;
+}
+
+.side-child>button>#side-menu {
+    padding-top: 7px;
 }
 
 .side-child a div p {
@@ -323,6 +339,11 @@ input[type=search] {
     background-color: rgba(0, 0, 0, 0.8);
     transition: visibility 0.1s ease-in-out;
     visibility: hidden;
+}
+
+#sidebar-cover-button {
+    width: 100%;
+    height: 100%;
 }
 
 #side-menu {
@@ -452,7 +473,6 @@ a:hover {
 }
 
 #home-header-group>#title {
-    font-weight: 600;
     text-align: center;
     font-size: 80px;
     margin: 0px;
@@ -559,8 +579,8 @@ a:hover {
 
 .homecardtitle {
     text-transform: uppercase;
-    font-size: 50px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 900;
 }
 
 .homecardinfo {
@@ -632,11 +652,12 @@ a:hover {
     align-items: center;
     flex-direction: column;
     text-align: justify;
+    margin-top: 50px;
+    margin-left:40px;
     width: 100%;
 }
 
 #home-highlights-body>#title {
-    font-weight: 600;
     text-align: left;
     font-size: 50px;
     margin: 0px;
@@ -837,19 +858,21 @@ a:hover {
 }
 
 #home-explore-body>#title {
-    font-weight: 600;
     text-align: left;
     font-size: 50px;
-    margin: 40px;
-    max-width: 100%;
+    margin-top: 40px;
+    margin-left: 85px;
+    width:400px;
+
 
 }
 
 #home-explore-body>#content {
     text-indent: 3%;
     font-size: 18px;
-    margin: 10px 0px 0px 0px;
-    max-width: 90%;
+    margin-top: 40px;
+    margin-left: 40px;
+    max-width: 100%;
 
 }
 
@@ -951,7 +974,6 @@ html body .form-background {
 
 .form-center-right>#title,
 .form-center-left>.group>#title {
-    font-weight: 800;
     text-align: left;
     font-size: 80px;
     margin: 0px;
@@ -1088,8 +1110,8 @@ input:focus {
     border-radius: 10px;
     margin: 10px;
 
-    width: 2000px;
-    height: 235px;
+    /* width: 2000px;
+    height: 235px; */
     background: #FFFFFF;
     text-align: left;
     cursor: pointer;
@@ -1106,6 +1128,14 @@ input:focus {
 
     /* border: black;
     border-style: solid; */
+}
+
+.horizontalcardimg>img {
+    width: 500px;
+    height: 80;
+    object-fit: cover;
+    border-radius: 10px;
+    padding-top: 1px;
 }
 
 
@@ -1284,7 +1314,7 @@ SEARCH PAGE
 }
 
 #accommodation-header-group #content {
-    width: 1000px;
+    width: 100%;
     padding-left: 10px;
     line-height: 1.5;
     font-size: 20px;
@@ -1396,6 +1426,8 @@ SEARCH PAGE
 
     .side-child a div p {
         visibility: hidden;
+        height: 0;
+        margin: 0;
     }
 
     .font-white {
@@ -1424,11 +1456,44 @@ SEARCH PAGE
         width: 100%;
     }
 
-    #horizontal-card-group{
+    #horizontal-card-group {
         flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
-    h5{
+    h5 {
         font-size: 10px;
+    }
+
+    #title,
+    #second-title,
+    #third-title,
+    #top,
+    #bottom,
+    .card-body>h5 {
+        font-size: 30px;
+    }
+
+    #content,
+    .card-body>p {
+        font-size: 9px;
+        width: auto;
+    }
+
+    #wraphorizontal {
+        justify-content: center;
+    }
+
+    .horizontalcardimg>img {
+        width: auto;
+        height: 80;
+        align-items: left;
+    }
+
+    .card-body {
+        width: auto;
     }
 }

@@ -18,15 +18,90 @@
 
             <div id="search-body">
                 <div id="search-header">
-                    <p class="font-white">Search results for "Stuff":</p>
+                    <p class="font-white">Search results for <%= search%>:</p>
                 </div>
                 <div id="search-outputs">
                     <div id="wrap">
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
-                        <%- include('../partials/dummyfood'); %>
+                        <% var foods = foods %>
+                        <% for (index in foods){%>
+                            <div id="card-group">
+                                <div class="card-image">
+                                    <img src=<%= foods[index]['Images Attached']%> />
+                                </div>
+                                <div class="card-body">
+                                  <h2 class="font-black"><%= foods[index]['Title']%></h5>  
+                                  <p class="font-black"><%= foods[index]['Description'] %></p>
+                                  <% var link = foods[index]['Link']%>
+                                  <% var card_state = 'buttoncard'%>
+                                  <% if(!link){%>
+                                    <% link = '#'%>
+                                    <% card_state = 'disabled_buttoncard'%>
+                                  <% } %>
+                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Food</a>
+                                
+                                </div>
+                            </div>
+                        <% } %>
+                        <% var accommodations = accommodations %>
+                        <% for (index in accommodations){%>
+                            <div id="card-group">
+                                <div class="card-image">
+                                    <img src=<%= accommodations[index]['Images Attached']%> />
+                                </div>
+                                <div class="card-body">
+                                  <h2 class="font-black"><%= accommodations[index]['Title']%></h5>  
+                                  <p class="font-black"><%= accommodations[index]['Description'] %></p>
+                                  <% var link = accommodations[index]['Link']%>
+                                  <% var card_state = 'buttoncard'%>
+                                  <% if(!link){%>
+                                    <% link = '#'%>
+                                    <% card_state = 'disabled_buttoncard'%>
+                                  <% } %>
+                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Accommodation</a>
+                                
+                                </div>
+                            </div>
+                        <% } %>
+                        <% var places = places %>
+                        <% for (index in places){%>
+                            <div id="card-group">
+                                <div class="card-image">
+                                    <img src=<%= places[index]['Images Attached']%> />
+                                </div>
+                                <div class="card-body">
+                                  <h2 class="font-black"><%= places[index]['Title']%></h5>  
+                                  <p class="font-black"><%= places[index]['Description'] %></p>
+                                  <% var link = places[index]['Link']%>
+                                  <% var card_state = 'buttoncard'%>
+                                  <% if(!link){%>
+                                    <% link = '#'%>
+                                    <% card_state = 'disabled_buttoncard'%>
+                                  <% } %>
+                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Place</a>
+                                
+                                </div>
+                            </div>
+                        <% } %>
+                        <% var festivals = festivals %>
+                        <% for (index in festivals){%>
+                            <div id="card-group">
+                                <div class="card-image">
+                                    <img src=<%= festivals[index]['Images Attached']%> />
+                                </div>
+                                <div class="card-body">
+                                  <h2 class="font-black"><%= festivals[index]['Title']%></h5>  
+                                  <p class="font-black"><%= festivals[index]['Description'] %></p>
+                                  <% var link = festivals[index]['Link']%>
+                                  <% var card_state = 'buttoncard'%>
+                                  <% if(!link){%>
+                                    <% link = '#'%>
+                                    <% card_state = 'disabled_buttoncard'%>
+                                  <% } %>
+                                  <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Festival</a>
+                                
+                                </div>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

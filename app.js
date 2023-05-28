@@ -117,10 +117,35 @@ app.get('/', fetchUser, function(req,res)
     res.render('pages/home', res.data);
 });
 
-app.get('/search', fetchUser, function(req,res)
+app.get('/search', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
+    var query = req.query['query'];
+    res.data['search'] = query;
+
+    if(query){
+        // Wait for each db call
+
+        // foods = await getCollectionRecord('Foods', {Title: {$regex: query, $options: 'i'}});
+        // accommodations = await getCollectionRecord('Accommodations', {Title: {$regex: query, $options: 'i'}});
+        // places = await getCollectionRecord('Places', {Title: {$regex: query, $options: 'i'}});
+        // festivals = await getCollectionRecord('Festivals', {Title: {$regex: query, $options: 'i'}});
+
+        // Wait for each db call in parallel
+        var [foods, accommodations, places, festivals] = await Promise.all([
+            getCollectionRecord('Foods', {Title: {$regex: query, $options: 'i'}}),
+            getCollectionRecord('Accommodations', {Title: {$regex: query, $options: 'i'}}),
+            await getCollectionRecord('Places', {Title: {$regex: query, $options: 'i'}}),
+            getCollectionRecord('Festivals', {Title: {$regex: query, $options: 'i'}})
+        ]);
+
+        res.data['foods'] = foods;
+        res.data['accommodations'] = accommodations;
+        res.data['places'] = places;
+        res.data['festivals'] = festivals;
+    }
+    
     res.render('pages/search', res.data);
 });
 
@@ -156,7 +181,7 @@ app.get('/places-and-landmarks', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    places = await getCollection('Places');
+    places = await getCollectionRecord('Places', {});
     res.data['places'] = places;
     res.render('pages/places-and-landmarks', res.data);
 });
@@ -165,7 +190,7 @@ app.get('/festivals', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    festivals = await getCollection('Festivals');
+    festivals = await getCollectionRecord('Festivals', {});
     res.data['festivals'] = festivals;
     res.render('pages/festivals', res.data);
 });
@@ -174,8 +199,8 @@ app.get('/food', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    foods = await getCollection("Foods");
-    res.data['food'] = foods;
+    foods = await getCollectionRecord("Foods", {});
+    res.data['foods'] = foods;
     console.log(foods);
     res.render('pages/food', res.data);
 });
@@ -184,8 +209,8 @@ app.get('/accommodation', fetchUser, async function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
-    accommodation = await getCollection("Accommodations");
-    res.data['accommodation'] = accommodation;
+    accommodation = await getCollectionRecord("Accommodations", {});
+    res.data['accommodations'] = accommodation;
     console.log(accommodation);
     res.render('pages/accommodation', res.data);
 
@@ -397,11 +422,11 @@ async function _addUser(client, newUser){
 }
 
 //  STUB: Generic method for grabbing accomodations, foods, etc -> use string parameter collectionName as key
-async function getCollection(collectionName) {
+async function getCollectionRecord(collectionName, projection) {
     const newClient = new MongoClient(uri)
     try {
         await newClient.connect();
-        var collection = await _getCollection(collectionName, newClient)
+        var collection = await _getCollectionRecord(newClient, collectionName, projection)
         return collection
     } catch (error) {
         console.error(error)
@@ -410,9 +435,9 @@ async function getCollection(collectionName) {
     }
 }
 
-async function _getCollection(collectionName, client) {
+async function _getCollectionRecord(client, collectionName, projection) {
     try {
-        const result = await client.db("cmsc129_lagaw").collection(collectionName).find().toArray();
+        const result = await client.db("cmsc129_lagaw").collection(collectionName).find(projection).toArray();
         if (!result) {
             console.log("No such collection exists!")
             return null

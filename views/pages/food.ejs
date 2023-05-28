@@ -39,16 +39,16 @@
                     </div>
                     <!-- For each food from database -->
                     <div id="wrap">
-                        <% var food = food %>
-                        <% for (index in food){%>
+                        <% var foods = foods %>
+                        <% for (index in foods){%>
                             <div id="card-group">
                                 <div class="card-image">
-                                    <img src=<%= food[index]['Images Attached']%> />
+                                    <img src=<%= foods[index]['Images Attached']%> />
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black"><%= food[index]['Title']%></h5>  
-                                  <p class="font-black"><%= food[index]['Description'] %></p>
-                                  <% var link = food[index]['Link']%>
+                                  <h2 class="font-black"><%= foods[index]['Title']%></h5>  
+                                  <p class="font-black"><%= foods[index]['Description'] %></p>
+                                  <% var link = foods[index]['Link']%>
                                   <% var card_state = 'buttoncard'%>
                                   <% if(!link){%>
                                     <% link = '#'%>

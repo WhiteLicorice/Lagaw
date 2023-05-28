@@ -55,7 +55,7 @@ p {
 }
 
 .font-black {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     font-style: normal;
     color: black;
 }
@@ -65,13 +65,13 @@ h5{
 }
 
 .font-white {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     font-style: normal;
     color: #FFFFFF;
 }
 
 .font-peach {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     font-style: normal;
     color: #F17C1E;
 }
@@ -98,6 +98,13 @@ h5{
     margin-right: 15px;
 }
 
+#title, #second-title, #third-title, #top, #bottom{
+    font-family: 'Raleway', sans-serif;
+}
+
+#content{
+    font-family: 'Open Sans', sans-serif;
+}
 
 
 
@@ -158,11 +165,9 @@ h5{
 }
 
 #home-btn {
-
     width: 112px;
     height: 100%;
-
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
@@ -323,6 +328,11 @@ input[type=search] {
     background-color: rgba(0, 0, 0, 0.8);
     transition: visibility 0.1s ease-in-out;
     visibility: hidden;
+}
+
+#sidebar-cover-button{
+    width: 100%;
+    height: 100%;
 }
 
 #side-menu {
@@ -560,7 +570,7 @@ a:hover {
 .homecardtitle {
     text-transform: uppercase;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 900;
 }
 
 .homecardinfo {

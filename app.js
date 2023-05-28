@@ -133,12 +133,17 @@ app.get('/search', fetchUser, async function(req,res)
         // festivals = await getCollectionRecord('Festivals', {Title: {$regex: query, $options: 'i'}});
 
         // Wait for each db call in parallel
-        var [foods, accommodations, places, festivals] = await Promise.all([
-            getCollectionRecord('Foods', {Title: {$regex: query, $options: 'i'}}),
-            getCollectionRecord('Accommodations', {Title: {$regex: query, $options: 'i'}}),
-            await getCollectionRecord('Places', {Title: {$regex: query, $options: 'i'}}),
-            getCollectionRecord('Festivals', {Title: {$regex: query, $options: 'i'}})
-        ]);
+        try{
+            var [foods, accommodations, places, festivals] = await Promise.all([
+                getCollectionRecord('Foods', {Title: {$regex: query, $options: 'i'}}),
+                getCollectionRecord('Accommodations', {Title: {$regex: query, $options: 'i'}}),
+                await getCollectionRecord('Places', {Title: {$regex: query, $options: 'i'}}),
+                getCollectionRecord('Festivals', {Title: {$regex: query, $options: 'i'}})
+            ]);
+        }
+        catch(e){
+            console.log(e);
+        }
 
         res.data['foods'] = foods;
         res.data['accommodations'] = accommodations;

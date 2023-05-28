@@ -4,7 +4,7 @@
 
 ******************************************/
 
-/* * {
+/* {
     border: 1px solid black;
 } */
 
@@ -110,6 +110,7 @@ h5 {
 
 #content {
     font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
 }
 
 
@@ -651,6 +652,8 @@ a:hover {
     align-items: center;
     flex-direction: column;
     text-align: justify;
+    margin-top: 50px;
+    margin-left:40px;
     width: 100%;
 }
 
@@ -857,16 +860,19 @@ a:hover {
 #home-explore-body>#title {
     text-align: left;
     font-size: 50px;
-    margin: 40px;
-    max-width: 100%;
+    margin-top: 40px;
+    margin-left: 85px;
+    width:400px;
+
 
 }
 
 #home-explore-body>#content {
     text-indent: 3%;
     font-size: 18px;
-    margin: 10px 0px 0px 0px;
-    max-width: 90%;
+    margin-top: 40px;
+    margin-left: 40px;
+    max-width: 100%;
 
 }
 

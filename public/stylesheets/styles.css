@@ -1,27 +1,22 @@
-/****************************************** 
+/*----------------------------------------- 
 
             MAINTENANCE ELEMENTS 
 
-******************************************/
+-----------------------------------------*/
 
 /* * {
-    border: 1px solid white;
+    border: 1px solid black;
 } */
 
 
 
 
 
-
-
-
-
-
-/****************************************** 
+/*----------------------------------------- 
 
             UNIVERSAL ELEMENTS 
 
-******************************************/
+-----------------------------------------*/
 
 a,
 li {
@@ -61,6 +56,7 @@ p {
 }
 
 h5 {
+    font-size: 50px;
     margin: 0;
 }
 
@@ -113,17 +109,47 @@ h5 {
     font-weight: bolder;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    margin: none;
+    padding: none;
+}
+
+ul {
+    padding: 0px;
+}
+
+a:active {
+    color: red;
+    font-weight: bold;
+}
+
+a:active,
+a:hover {
+    cursor: pointer;
+}
+
+#transparent-background {
+    display: flex;
+    align-items: end;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
 
 
 
 
 
 
-/*****************************************
+
+
+/*-----------------------------------------
 
             TOP NAVIGATION BAR 
 
-*****************************************/
+-----------------------------------------*/
 
 #top-nav-bar {
     min-width: 460px;
@@ -287,11 +313,11 @@ input[type=search] {
 
 
 
-/******************************************
+/*-----------------------------------------
 
             SIDE NAVIGATION BAR 
 
-******************************************/
+-----------------------------------------*/
 
 #side-nav-bar {
     z-index: 3;
@@ -353,26 +379,6 @@ input[type=search] {
     width: auto;
 }
 
-button {
-    background-color: transparent;
-    border: none;
-    margin: none;
-    padding: none;
-}
-
-ul {
-    padding: 0px;
-}
-
-a:active {
-    color: red;
-    font-weight: bold;
-}
-
-a:active,
-a:hover {
-    cursor: pointer;
-}
 
 
 
@@ -383,12 +389,11 @@ a:hover {
 
 
 
-
-/****************************************** 
+/*----------------------------------------- 
 
                 HOME PAGE 
 
-******************************************/
+-----------------------------------------*/
 
 
 #home-header {
@@ -418,41 +423,9 @@ a:hover {
 }
 
 
-.transparent-background-home {
+.transparent-background-center {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-food {
-    display: flex;
-    align-items: end;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-p-a-l {
-    display: flex;
-    align-items: end;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-festivals {
-    display: flex;
-    align-items: end;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-accommodation {
-    display: flex;
-    align-items: end;
     background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
@@ -590,14 +563,6 @@ a:hover {
     font-weight: 400;
 }
 
-/* .transparent-background-left {
-    display: flex;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    width: 50%;
-} */
-
 .two-vertical-panels {
     display: flex;
     align-items: center;
@@ -632,18 +597,18 @@ a:hover {
     transform: scale(0.95) rotateZ(1.1deg);
 }
 
-.horizontalcardimg {
-    height: 290px;
-    width: inherit;
-
+.horizontalcardimg{
+    height: 100%;
 }
 
-.horizontalcardimg img {
-    width: 100%;
+
+.horizontalcardimg>img {
+    width: 400px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-
+    display: flex;
+    align-items: center;
 }
 
 #home-highlights-body {
@@ -675,11 +640,11 @@ a:hover {
 
 
 
-/******************************************
+/*-----------------------------------------
 
                 FOOD PAGE 
 
-******************************************/
+-----------------------------------------*/
 
 #food-body {
     background-image: url("/img/whitebg.jpg");
@@ -797,7 +762,11 @@ a:hover {
  */
 
 
-/*FESTIVALS*/
+/*-----------------------------------------
+                
+                FESTIVALS
+
+-----------------------------------------*/
 
 #festivals-header {
     /* background-image: url("/img/paraw-regatta.png");
@@ -925,7 +894,9 @@ a:hover {
 }
 
 /*----------------------------------------------------
+                
                 LOGIN AND REGISTRATION
+
 ----------------------------------------------------*/
 
 html body .form-background {
@@ -1101,43 +1072,28 @@ input:focus {
 }
 
 #horizontal-card-group {
-
+    
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
     display: flex;
+    border-radius: 20px;
+    user-select: none;
+    justify-content: left;
+    align-items: left;
     flex-direction: row;
-    /* text-align: justify; */
-    height: 300px;
-    width: 2000px;
+    text-align: left;
+    height: auto;
+    width: 100%;
     border-radius: 10px;
     margin: 10px;
-
-    /* width: 2000px;
-    height: 235px; */
-    background: #FFFFFF;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.5s;
-    align-items: left;
-    justify-content: left;
-    user-select: none;
-    font-weight: bolder;
-    color: #fff;
-    padding: 30px;
-    margin: 15px;
-    margin-bottom: 20px;
-    border-radius: 20px;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    position: relative;
 
     /* border: black;
     border-style: solid; */
 }
-
-.horizontalcardimg>img {
-    width: 500px;
-    height: 80;
-    object-fit: cover;
-    border-radius: 10px;
-    padding-top: 1px;
-}
-
 
 .card-image {
     height: 300px;
@@ -1210,11 +1166,15 @@ input:focus {
     justify-content: left;
 }
 
-/*
 
-    USER PAGE
 
-*/
+
+
+/*-----------------------------------------
+
+                USER PAGE
+
+-----------------------------------------*/
 
 #userbody {
     background: #1B1B1B;
@@ -1272,11 +1232,11 @@ input:focus {
     font-size: 30px;
 }
 
-/*
+/*-----------------------------------------
 
-SEARCH PAGE
+                SEARCH PAGE
 
-*/
+-----------------------------------------*/
 
 #search-body {
     background: #383838;
@@ -1301,7 +1261,11 @@ SEARCH PAGE
 }
 
 
-/*ACCOMMODATION PAGE*/
+/*-----------------------------------------
+
+            ACCOMMODATION PAGE
+
+-----------------------------------------*/
 
 #accommodation-header {
     background-image: url("/img/downtown.png");
@@ -1348,7 +1312,11 @@ SEARCH PAGE
     margin-right: 20px; */
 }
 
-/*ACCOMMODATE FETCH PAGE*/
+/*-----------------------------------------
+
+           ACCOMMODATE FETCH PAGE
+
+-----------------------------------------*/
 
 #accomm-body {
     display: flex;
@@ -1472,7 +1440,7 @@ SEARCH PAGE
         justify-content: center;
     }
 
-    h5 {
+    h5{
         font-size: 10px;
     }
 
@@ -1496,7 +1464,8 @@ SEARCH PAGE
     }
 
     .horizontalcardimg>img {
-        width: auto;
+        width: 100%;
+        height: 100%;
         height: 80;
         align-items: left;
     }

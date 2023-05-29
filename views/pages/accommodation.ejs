@@ -11,7 +11,7 @@
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
         <div id="accommodation-header">
-            <div id="transparent-background-accommodation">
+            <div id="transparent-background">
                 <div id="accommodation-header-group">
                     <p class="font-white" id="second-title">ACCOMMODATION</p>
                     <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf
@@ -39,12 +39,14 @@
                     <div id="wraphorizontal">
                         <% var accommodations = accommodations %>
                         <% for (index in accommodations){%>
+                            
+
                             <div id="horizontal-card-group" class="horizontalcard">
                                 <div class="horizontalcardimg" style="width: auto;">
                                     <img src=<%= accommodations[index]['Images Attached']%>>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="font-black" style="font-size: 50px;" id="content"><%= accommodations[index]['Title']%></h5>
+                                    <h5 class="font-black" style="font-size: 50px;" id="title"><%= accommodations[index]['Title']%></h5>
                                     <p class="font-black" style="font-size: 20px;" id="content"><%= accommodations[index]['Description']%></p>
                                     <% var link = accommodations[index]['Link']%>
                                     <!--Pls edit the card_state_location below to fetch map coordinates-->
@@ -57,6 +59,7 @@
                                     <% } %>
                                     <a href=<%= link%> target="_blank" class=<%= card_state_location%>>Check Location</a>
                                     <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Accomodation</a>
+                                
                                 </div>
                             </div>
                         <% } %>

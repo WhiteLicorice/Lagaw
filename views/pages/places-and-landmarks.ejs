@@ -13,7 +13,7 @@
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
             <div id="p-a-l-header">
-                <div id="transparent-background-p-a-l">
+                <div id="transparent-background">
                     <div id="p-a-l-header-group">
                         <p class="font-white" id="second-title">PLACES AND LANDMARKS</p>
                         <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf
@@ -43,12 +43,11 @@
                             <% for (index in places){%>
                                 <div id="horizontal-card-group" class="horizontalcard">
                                     <div class="horizontalcardimg" style="width: auto;">
-                                        <img src=<%= places[index]['Images Attached']%> style="width:500px;height:80;
-                                        style="object-fit:cover;border-radius:10px;padding-top:1px;">
+                                        <img src=<%= places[index]['Images Attached']%>>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="font-black" style="font-size: 50px;" id="content"><%= places[index]['Place']%></h5>
-                                        <p class="font-black" style="font-size: 20px;" id="content"><%= places[index]['Description']%></p>
+                                        <h5 class="font-black" id="title"><%= places[index]['Place']%></h5>
+                                        <p class="font-black" id="content"><%= places[index]['Description']%></p>
                                         <% var link = places[index]['Link']%>
                                         <% if(!link){%>
                                             <% link = '#'%>

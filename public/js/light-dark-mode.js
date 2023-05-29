@@ -10,8 +10,8 @@ icon = document.getElementById("theme-icon");
 menuBtn = document.getElementById("menu");
 homeHighlights = document.getElementById('home-highlights');
 homeExplore = document.getElementById('home-explore');
-transparentBackgroundHome = document.querySelectorAll('.transparent-background-home');
-transparentBackgroundPaL = document.querySelectorAll('.transparent-background-p-a-l');
+transparentBackgroundHome = document.querySelectorAll('.transparent-background');
+transparentBackgroundPaL = document.querySelectorAll('.transparent-background');
 transparentBackgroundTitle = document.querySelectorAll(".transparent-background-title");
 
 darkMode = true; // Webpage is dark mode by default

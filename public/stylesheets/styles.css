@@ -153,6 +153,7 @@ a:hover {
 
 #top-nav-bar {
     min-width: 460px;
+    height:70px;
     background: #1B1B1B;
     border-radius: 0px;
     box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.25);
@@ -337,6 +338,7 @@ input[type=search] {
     flex-direction: column;
     text-align: center;
     list-style-type: none;
+    margin-top: 20px;
 }
 
 .side-child>button>#side-menu {
@@ -458,9 +460,9 @@ input[type=search] {
 }
 
 #third-title {
-    font-weight: 600;
+    font-weight: 400;
     text-align: left;
-    font-size: 80px;
+    font-size: 60px;
     margin: 0px;
 }
 
@@ -634,6 +636,8 @@ input[type=search] {
     font-size: 18px;
     margin: 10px 0px 0px 0px;
     max-width: 90%;
+    font-weight: 400;
+    
 }
 
 
@@ -719,7 +723,7 @@ input[type=search] {
     background-position: center;
     background-size: cover;
     height: 100%; */
-    background-image: url("/img/downtown.png");
+    background-image: url("/img/iloilocitypalbg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -741,6 +745,10 @@ input[type=search] {
     bottom: 0;
     left: 0;
     padding: 50px;
+    width: 1200px;
+    padding-left: 40px;
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 #p-a-l-body {
@@ -775,7 +783,7 @@ input[type=search] {
     background-position: absolute;
     background-size: cover;
     height: 800px; */
-    background-image: url("/img/paraw-regatta.png");
+    background-image: url("/img/iloilocityfestivalbg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -797,6 +805,10 @@ input[type=search] {
     bottom: 0;
     left: 0;
     padding: 50px;
+    width: 1200px;
+    padding-left: 40px;
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 #festivals-body {
@@ -1268,7 +1280,7 @@ input:focus {
 -----------------------------------------*/
 
 #accommodation-header {
-    background-image: url("/img/downtown.png");
+    background-image: url("/img/iloilocityaccombg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -1286,7 +1298,7 @@ input:focus {
 }
 
 #accommodation-header-group #content {
-    width: 100%;
+    width: 1000px;
     padding-left: 10px;
     line-height: 1.5;
     font-size: 20px;

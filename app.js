@@ -249,12 +249,12 @@ app.post('/find-place', function (req, res){
     return
 }) */
 
-app.get('/settings', fetchUser, function(req,res)
+/* app.get('/settings', fetchUser, function(req,res)
 {
     // HTTP render response
     //res.render('pages/home');
     res.render('pages/settings', res.data);
-});
+}); */
 
 app.get('/user', fetchUser, function(req,res)
 {
@@ -278,12 +278,25 @@ app.post('/login', passport.authenticate('local', {
 
 
 app.post('/change-pass', async function(req, res){
-    currentPass = req.body.currentPass;
-    newPass = req.body.password;
-    repass = req.body.repassword;
+    var currentPass = req.body.currentPass;
+    var newPass = req.body.password;
+    var repass = req.body.repassword;
 
     console.log(currentPass)
-    isCorrect = await bcrypt.compare(currentPass, req.user.password);
+
+    var isCorrect = await bcrypt.compare(currentPass, req.user.password);
+    if (!isCorrect) {
+        console.log("Current password is incorrect.")
+        req.flash("error", "Incorrect password")
+        res.redirect("/change-pass")
+    }
+
+    if (!(newPass === repass)) {
+        console.log("Passwords do not match.")
+        req.flash("error", "New passwords do not match.")
+        res.redirect("/change-pass")
+        return
+    }
 
     var isvalidPassword = await validatePassword(newPass)
     if (!isvalidPassword) {
@@ -293,28 +306,21 @@ app.post('/change-pass', async function(req, res){
         return
     }
 
-    if(newPass == repass){
-        if(isCorrect){
-            hashedPass = await bcrypt.hash(newPass, 10);
-            result = await updatePassword(hashedPass, req.user.username);
-            if(result){
-                req.flash("error", "Password changed successfully");
-                res.redirect("/change-pass");
-            }
-            else{
-                req.flash("error", "Something went wrong.");
-                res.redirect("/change-pass");
-            }
-        }
-        else{
-            req.flash("error", "Wrong password.");
+    try {
+        hashedPass = await bcrypt.hash(newPass, 10);
+        result = await updatePassword(hashedPass, req.user.username);
+        if(result){
+            req.flash("error", "Password changed successfully");
             res.redirect("/change-pass");
+            return
+        } else {
+            throw Error ("Database error.")
         }
-    }
-    else{
-        req.flash("error", "New Passwords did not match.");
-        res.redirect("/change-pass");
-        return
+    } catch(e) {
+        console.log("Error: " + e)
+        req.flash("error", "Something went wrong.")
+        res.redirect("/change-pass")
+        return 
     }
 });
 
@@ -337,7 +343,6 @@ async function updatePassword(password, username){
     }
 }
 
-//  TODO: Add error-handling for usernames that already exist in the database.
 app.post('/register', async function(req,res)
 {
     try {

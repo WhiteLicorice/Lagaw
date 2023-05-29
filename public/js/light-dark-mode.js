@@ -16,7 +16,6 @@ transparentBackgroundTitle = document.querySelectorAll(".transparent-background-
 
 darkMode = true; // Webpage is dark mode by default
 function lightDarkMode()
-//TODO: Change element colors when swithcing modes
 {
     if (darkMode == true) {
         darkMode = false;

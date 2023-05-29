@@ -1,3 +1,5 @@
+const DEFAULT_COORDINATES = {lat: 10.720321, lng: 122.562019}
+
 function initMap() {
     if (navigator.geolocation) {    //  Check if Geolocation API is available
         //  Declare map and marker
@@ -56,7 +58,7 @@ function initMap() {
         });
     } else {    //  If HTML5 Geolocation API is unavailable, initialize map with default settings
         var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 10.720321, lng: 122.562019},  //  Default initial coordinates are Iloilo City's
+            center: DEFAULT_COORDINATES,  //  Default initial coordinates are Iloilo City's
             zoom: 8,
             streetViewControl: true,
             mapTypeControlOptions: {    //  Define the style of the map

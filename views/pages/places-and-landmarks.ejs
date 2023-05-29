@@ -41,22 +41,39 @@
                             <% var places = places %>
                             <% for (index in places){%>
                                 <div id="horizontal-card-group" class="horizontalcard">
-                                    <div class="horizontalcardimg" style="width: auto;">
-                                        <img src=<%= places[index]['Images Attached']%>>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="font-black" id="title"><%= places[index]['Title']%></h5>
-                                        <p class="font-black" id="content"><%= places[index]['Description']%></p>
-                                        <% var link = places[index]['Link']%>
-                                        <% if(!link){%>
-                                            <% link = '#'%>
-                                            <% var card_state = 'disabled_buttoncard'%>
-                                        <% } else { %>
-                                            <% var card_state = 'buttoncard'%>
-                                        <% } %>
-                                        <a href=<%= link%> target="_blank" class=<%= card_state%>>Check Place</a>
-                                    </div>
+                                    <% var varId = places[index]['_id'].toString()%>
+                                    <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
+                                        <div class="horizontalcardimg" style="width: auto;">
+                                            <img src=<%= places[index]['Images Attached']%>>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="font-black" style="font-size: 50px;" id="title"><%= places[index]['Title']%></h5>
+                                            <p class="font-black" style="font-size: 20px;" id="content"><%= places[index]['Description']%></p>
+                                            <% var link = places[index]['Link']%>
+                                            <!--Pls edit the card_state_location below to fetch map coordinates-->
+                                            <% var card_state_location = 'buttoncard_location'%>
+                                            <% if(!link){%>
+                                                <% link = '#'%>
+                                                <!-- NOTE: Change to disabled_buttoncard once links are complete -->
+                                                <% var card_state = 'buttoncard'%>
+                                            <% } else { %>
+                                                <% var card_state = 'buttoncard'%>
+                                            <% } %>
+                                            <a href=<%= link%> target="_blank" class=<%= card_state_location%>>Check Location</a>
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Places'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Place</a>
+                                        
+                                        </div>
+                                    </form>
                                 </div>
+                                <script type="text/javascript">
+                                    function saveRecent(id){
+                                        document.getElementById(id).submit();
+                                        return true;
+                                    }
+                                </script>
+                                <iframe name = "dummyFrame" style="display: none;"></iframe>
                             <% } %>
                         </div>
                     </div>

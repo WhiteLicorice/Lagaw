@@ -43,12 +43,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const initializePassport = require('./passport-config');
+const { ObjectId } = require('mongodb');
+const { ObjectID } = require('bson');
+const { get } = require('mongoose');
 
 initializePassport(
     passport,
     async function getUserbyName(username) {
         const client = new MongoClient(uri);
-        const result = await client.db("Trial").collection("check1").findOne({ username: username });
+        const result = await client.db("cmsc129_lagaw").collection("Users").findOne({ username: username });
 
         if (result) {
             console.log(`Found a listing in the collection with the name '${username}':`);
@@ -61,7 +64,7 @@ initializePassport(
     
     async function getUserbyId(userId) {
         const client = new MongoClient(uri);
-        const result = await client.db("Trial").collection("check1").findOne({ userId: userId });
+        const result = await client.db("cmsc129_lagaw").collection("Users").findOne({ userId: userId });
 
         if (result) {
             console.log(`Found a listing in the collection with the name '${userId}':`);
@@ -156,7 +159,6 @@ app.get('/search', fetchUser, async function(req,res)
             console.log(e);
         }
 
-        console.log(places);
         res.data['foods'] = foods;
         res.data['accommodations'] = accommodations;
         res.data['places'] = places;
@@ -268,10 +270,67 @@ app.post('/find-place', function (req, res){
     res.render('pages/settings', res.data);
 }); */
 
-app.get('/user', fetchUser, function(req,res)
+async function getRecent(collection, username){
+    const client = new MongoClient(uri)
+
+    try{
+        await client.connect();
+        recent = await client.db("cmsc129_lagaw").collection("History").aggregate([
+            {
+                $lookup: 
+                {
+                    from: collection,
+                    localField: "varId",
+                    foreignField: "_id",
+                    as: "same"
+                }
+            },
+            {
+                $match: {username: username, same: {$ne: []}}
+            },
+            {
+                $sort: {viewDate: -1}
+            },
+            {
+                $unwind: {
+                    path: "$same",
+                    preserveNullAndEmptyArrays: false,
+                }
+            },
+            {
+                $project: {same: 1, _id: 0},
+            },
+        ]).limit(5).toArray();
+    }
+    catch(e){
+        console.error(e);
+    }
+    finally{
+        await client.close();
+        return recent;
+    }
+
+}
+app.get('/user', checkNotLogin, fetchUser, async function(req,res)
 {
-    // HTTP render response
-    // res.render('pages/home');
+    const client = new MongoClient(uri)
+    try{
+        var [recentFoods, recentHotels, recentPlaces, recentFestivals] = await Promise.all([
+            getRecent('Foods', req.user.username),
+            getRecent('Accommodations', req.user.username),
+            getRecent('Places', req.user.username),
+            getRecent('Festivals', req.user.username),
+        ]);
+    }
+    catch(e){
+        console.log(e);
+    }
+
+    res.data['food_history'] = recentFoods;
+    res.data['hotel_history'] = recentHotels;
+    res.data['place_history'] = recentPlaces;
+    res.data['festival_history'] = recentFestivals;
+
     res.render('pages/user', res.data);
 });
 
@@ -345,7 +404,7 @@ async function updatePassword(password, username){
         await client.connect();
 
         // Make the appropriate DB calls
-        result = await client.db("Trial").collection("check1").updateOne({ username: username }, {$set:{password:password}});
+        result = await client.db("cmsc129_lagaw").collection("Users").updateOne({ username: username }, {$set:{password:password}});
         return result;
 
     } catch (e) {
@@ -354,6 +413,25 @@ async function updatePassword(password, username){
         await client.close();
     }
 }
+
+app.post('/save_recent', async function(req, res){
+    const client = new MongoClient(uri);
+
+    varId = new ObjectId(req.body.varId);
+    category = req.body.Category;
+
+    if(req.user){
+        username = req.user.username;
+        result = await client.db("cmsc129_lagaw").collection("History").updateOne(
+            {$and: [{username: username}, {varId: varId}, {category: category}]},
+            {$set: {viewDate: new Date()}},
+            {upsert: true}
+            )
+    }
+    else{
+        console.log("Not Logged.");
+    }
+})
 
 app.post('/register', async function(req,res)
 {
@@ -439,7 +517,7 @@ async function addUser(newUser){
 
 async function _addUser(client, newUser){
     // Insert values to collection
-    const result = await client.db("Trial").collection("check1").insertOne(newUser);
+    const result = await client.db("cmsc129_lagaw").collection("Users").insertOne(newUser);
     console.log(`New user created with the following id: ${result.insertedId}`);
 }
 
@@ -525,7 +603,7 @@ async function _sortCollectionNum(collection, key, order) {
 async function checkAvailableUsername(username) {
     const newClient = new MongoClient(uri)
     try {
-        const result = await newClient.db("Trial").collection("check1").findOne({username: username});
+        const result = await newClient.db("cmsc129_lagaw").collection("Users").findOne({username: username});
         if (result) {
             return false
         }

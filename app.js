@@ -112,11 +112,21 @@ function checkNotLogin (req, res, next){
 // res represents the HTTP response
 app.get('/', fetchUser, async function(req,res)
 {
-    // HTTP render response
-    //res.render('pages/home');
-
     res.render('pages/home', res.data);
 });
+
+// async function getRandomRecord(collectionName, maxNum, getNumber) {
+//     const newClient = new MongoClient(uri)
+//     try {
+//         await newClient.connect();
+//         var record = await newClient.db("cmsc129_lagaw").collection(collectionName).find().limit(getNumber).skip(maxNum);
+//         return record;
+//     } catch (error) {
+//         console.error(error)
+//     } finally {
+//         await newClient.close()
+//     }
+// }
 
 app.get('/search', fetchUser, async function(req,res)
 {
@@ -138,7 +148,7 @@ app.get('/search', fetchUser, async function(req,res)
             var [foods, accommodations, places, festivals] = await Promise.all([
                 getCollectionRecord('Foods', {Title: {$regex: query, $options: 'i'}}),
                 getCollectionRecord('Accommodations', {Title: {$regex: query, $options: 'i'}}),
-                await getCollectionRecord('Places', {Title: {$regex: query, $options: 'i'}}),
+                getCollectionRecord('Places', {Title: {$regex: query, $options: 'i'}}),
                 getCollectionRecord('Festivals', {Title: {$regex: query, $options: 'i'}})
             ]);
         }
@@ -146,6 +156,7 @@ app.get('/search', fetchUser, async function(req,res)
             console.log(e);
         }
 
+        console.log(places);
         res.data['foods'] = foods;
         res.data['accommodations'] = accommodations;
         res.data['places'] = places;

@@ -850,10 +850,11 @@ input[type=search] {
 }
 
 #home-explore-body>#content {
-    text-indent: 3%;
+    text-indent: 5%;
     font-size: 18px;
-    margin-top: 40px;
-    margin-left: 40px;
+    margin-top: 0;
+    margin-left: 85px;
+    margin-right: 85px;
     max-width: 100%;
 
 }

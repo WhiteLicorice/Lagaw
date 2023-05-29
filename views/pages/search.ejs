@@ -18,7 +18,7 @@
 
             <div id="search-body">
                 <div id="search-header">
-                    <p class="font-white">Search results for <%= search%>:</p>
+                    <p class="font-white" id="title">Search results for <%= search%>:</p>
                 </div>
                 <div id="search-outputs">
                     <div id="wrap">
@@ -29,8 +29,8 @@
                                     <img src=<%= foods[index]['Images Attached']%> />
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black"><%= foods[index]['Title']%></h5>  
-                                  <p class="font-black"><%= foods[index]['Description'] %></p>
+                                  <h2 class="font-black" id="content"><%= foods[index]['Title']%></h5>  
+                                  <p class="font-black" id="content"><%= foods[index]['Description'] %></p>
                                   <% var link = foods[index]['Link']%>
                                   <% var card_state = 'buttoncard'%>
                                   <% if(!link){%>
@@ -49,8 +49,8 @@
                                     <img src=<%= accommodations[index]['Images Attached']%> />
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black"><%= accommodations[index]['Title']%></h5>  
-                                  <p class="font-black"><%= accommodations[index]['Description'] %></p>
+                                  <h2 class="font-black" id="content"><%= accommodations[index]['Title']%></h5>  
+                                  <p class="font-black" id="content"><%= accommodations[index]['Description'] %></p>
                                   <% var link = accommodations[index]['Link']%>
                                   <% var card_state = 'buttoncard'%>
                                   <% if(!link){%>
@@ -69,8 +69,8 @@
                                     <img src=<%= places[index]['Images Attached']%> />
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black"><%= places[index]['Title']%></h5>  
-                                  <p class="font-black"><%= places[index]['Description'] %></p>
+                                  <h2 class="font-black" id="content"><%= places[index]['Title']%></h5>  
+                                  <p class="font-black" id="content"><%= places[index]['Description'] %></p>
                                   <% var link = places[index]['Link']%>
                                   <% var card_state = 'buttoncard'%>
                                   <% if(!link){%>
@@ -89,8 +89,8 @@
                                     <img src=<%= festivals[index]['Images Attached']%> />
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black"><%= festivals[index]['Title']%></h5>  
-                                  <p class="font-black"><%= festivals[index]['Description'] %></p>
+                                  <h2 class="font-black" id="content"><%= festivals[index]['Title']%></h5>  
+                                  <p class="font-black" id="content"><%= festivals[index]['Description'] %></p>
                                   <% var link = festivals[index]['Link']%>
                                   <% var card_state = 'buttoncard'%>
                                   <% if(!link){%>

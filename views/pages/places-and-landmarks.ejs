@@ -13,16 +13,15 @@
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
             <div id="p-a-l-header">
-                <div id="transparent-background-p-a-l">
+                <div id="transparent-background">
                     <div id="p-a-l-header-group">
                         <p class="font-white" id="second-title">PLACES AND LANDMARKS</p>
-                        <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf
-                            parchment wingardium.
-                            Wand betrayal parseltongue soul detention elf lion back his.
-                            Dead bertie hat kedavra aragog gnomes wand palominos erumpent robes.
-                            Hair stroke time-turner newt fantastic bred erised pigwidgeon mine rva.
-                            Bat forbidden cabbage parchment sunshine.
-                            Bag moon ground moon quidditch sight grim.
+                        <p class="font-white" id="content"><span class="font-peach">Get ready to immerse yourself</span>
+                             in the enchanting wonders of Iloilo City, as we unveil the most iconic places and landmarks this captivating destination has to offer. This is your gateway to exploring the rich heritage, vibrant culture, and natural beauty of this remarkable city.
+
+                             Whether you're a local looking to rediscover your roots or a visitor seeking authentic experiences, let this be your guide to unlocking the secrets of Iloilo City.
+
+                            Start your journey now and let the magic of Iloilo captivate your senses. 
                         </p>
                     </div>
                 </div>
@@ -43,12 +42,11 @@
                             <% for (index in places){%>
                                 <div id="horizontal-card-group" class="horizontalcard">
                                     <div class="horizontalcardimg" style="width: auto;">
-                                        <img src=<%= places[index]['Images Attached']%> style="width:500px;height:80;
-                                        style="object-fit:cover;border-radius:10px;padding-top:1px;">
+                                        <img src=<%= places[index]['Images Attached']%>>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="font-black" style="font-size: 50px;" id="content"><%= places[index]['Title']%></h5>
-                                        <p class="font-black" style="font-size: 20px;" id="content"><%= places[index]['Description']%></p>
+                                        <h5 class="font-black" id="title"><%= places[index]['Title']%></h5>
+                                        <p class="font-black" id="content"><%= places[index]['Description']%></p>
                                         <% var link = places[index]['Link']%>
                                         <% if(!link){%>
                                             <% link = '#'%>

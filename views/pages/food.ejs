@@ -13,7 +13,7 @@
         <!-- top-nav-bar.ejs -->
         <%- include('../partials/top-nav-bar'); %>
             <div id="food-header">
-                <div id="transparent-background-food">
+                <div id="transparent-background">
                     <div id="food-header-group">
                         <p class="font-white" id="second-title">THE BEST FOOD IN ILOILO </p>
                         <p class="font-white" id="content"><span class="font-peach">Potter ipsum</span> wand elf
@@ -46,7 +46,7 @@
                                     <img src=<%= foods[index]['Images Attached']%> />
                                 </div>
                                 <div class="card-body">
-                                  <h2 class="font-black" id="content"><%= foods[index]['Title']%></h5>  
+                                  <h2 class="font-black" id="content"><%= foods[index]['Title']%></h2>  
                                   <p class="font-black" id="content"><%= foods[index]['Description'] %></p>
                                   <% var link = foods[index]['Link']%>
                                   <% var card_state = 'buttoncard'%>

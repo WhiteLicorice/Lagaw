@@ -1,10 +1,10 @@
-/****************************************** 
+/*----------------------------------------- 
 
             MAINTENANCE ELEMENTS 
 
-******************************************/
+-----------------------------------------*/
 
-/* {
+/* * {
     border: 1px solid black;
 } */
 
@@ -12,16 +12,11 @@
 
 
 
-
-
-
-
-
-/****************************************** 
+/*----------------------------------------- 
 
             UNIVERSAL ELEMENTS 
 
-******************************************/
+-----------------------------------------*/
 
 a,
 li {
@@ -61,6 +56,7 @@ p {
 }
 
 h5 {
+    font-size: 50px;
     margin: 0;
 }
 
@@ -113,20 +109,51 @@ h5 {
     font-weight: bolder;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    margin: none;
+    padding: none;
+}
+
+ul {
+    padding: 0px;
+}
+
+a:active {
+    color: red;
+    font-weight: bold;
+}
+
+a:active,
+a:hover {
+    cursor: pointer;
+}
+
+#transparent-background {
+    display: flex;
+    align-items: end;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
 
 
 
 
 
 
-/*****************************************
+
+
+/*-----------------------------------------
 
             TOP NAVIGATION BAR 
 
-*****************************************/
+-----------------------------------------*/
 
 #top-nav-bar {
     min-width: 460px;
+    height:70px;
     background: #1B1B1B;
     border-radius: 0px;
     box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.25);
@@ -287,11 +314,11 @@ input[type=search] {
 
 
 
-/******************************************
+/*-----------------------------------------
 
             SIDE NAVIGATION BAR 
 
-******************************************/
+-----------------------------------------*/
 
 #side-nav-bar {
     z-index: 3;
@@ -311,6 +338,7 @@ input[type=search] {
     flex-direction: column;
     text-align: center;
     list-style-type: none;
+    margin-top: 20px;
 }
 
 .side-child>button>#side-menu {
@@ -353,26 +381,6 @@ input[type=search] {
     width: auto;
 }
 
-button {
-    background-color: transparent;
-    border: none;
-    margin: none;
-    padding: none;
-}
-
-ul {
-    padding: 0px;
-}
-
-a:active {
-    color: red;
-    font-weight: bold;
-}
-
-a:active,
-a:hover {
-    cursor: pointer;
-}
 
 
 
@@ -383,12 +391,11 @@ a:hover {
 
 
 
-
-/****************************************** 
+/*----------------------------------------- 
 
                 HOME PAGE 
 
-******************************************/
+-----------------------------------------*/
 
 
 #home-header {
@@ -418,41 +425,9 @@ a:hover {
 }
 
 
-.transparent-background-home {
+.transparent-background-center {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-food {
-    display: flex;
-    align-items: end;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-p-a-l {
-    display: flex;
-    align-items: end;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-festivals {
-    display: flex;
-    align-items: end;
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-}
-
-#transparent-background-accommodation {
-    display: flex;
-    align-items: end;
     background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
@@ -485,9 +460,9 @@ a:hover {
 }
 
 #third-title {
-    font-weight: 600;
+    font-weight: 400;
     text-align: left;
-    font-size: 80px;
+    font-size: 60px;
     margin: 0px;
 }
 
@@ -590,14 +565,6 @@ a:hover {
     font-weight: 400;
 }
 
-/* .transparent-background-left {
-    display: flex;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    width: 50%;
-} */
-
 .two-vertical-panels {
     display: flex;
     align-items: center;
@@ -632,18 +599,18 @@ a:hover {
     transform: scale(0.95) rotateZ(1.1deg);
 }
 
-.horizontalcardimg {
-    height: 290px;
-    width: inherit;
-
+.horizontalcardimg{
+    height: 100%;
 }
 
-.horizontalcardimg img {
-    width: 100%;
+
+.horizontalcardimg>img {
+    width: 400px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-
+    display: flex;
+    align-items: center;
 }
 
 #home-highlights-body {
@@ -653,7 +620,7 @@ a:hover {
     flex-direction: column;
     text-align: justify;
     margin-top: 50px;
-    margin-left:40px;
+    margin-left: 40px;
     width: 100%;
 }
 
@@ -669,17 +636,19 @@ a:hover {
     font-size: 18px;
     margin: 10px 0px 0px 0px;
     max-width: 90%;
+    font-weight: 400;
+    
 }
 
 
 
 
 
-/******************************************
+/*-----------------------------------------
 
                 FOOD PAGE 
 
-******************************************/
+-----------------------------------------*/
 
 #food-body {
     background-image: url("/img/whitebg.jpg");
@@ -754,7 +723,7 @@ a:hover {
     background-position: center;
     background-size: cover;
     height: 100%; */
-    background-image: url("/img/downtown.png");
+    background-image: url("/img/iloilocitypalbg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -776,6 +745,10 @@ a:hover {
     bottom: 0;
     left: 0;
     padding: 50px;
+    width: 1200px;
+    padding-left: 40px;
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 #p-a-l-body {
@@ -797,7 +770,11 @@ a:hover {
  */
 
 
-/*FESTIVALS*/
+/*-----------------------------------------
+                
+                FESTIVALS
+
+-----------------------------------------*/
 
 #festivals-header {
     /* background-image: url("/img/paraw-regatta.png");
@@ -806,7 +783,7 @@ a:hover {
     background-position: absolute;
     background-size: cover;
     height: 800px; */
-    background-image: url("/img/paraw-regatta.png");
+    background-image: url("/img/iloilocityfestivalbg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -828,6 +805,10 @@ a:hover {
     bottom: 0;
     left: 0;
     padding: 50px;
+    width: 1200px;
+    padding-left: 40px;
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 #festivals-body {
@@ -862,7 +843,7 @@ a:hover {
     font-size: 50px;
     margin-top: 40px;
     margin-left: 85px;
-    width:400px;
+    width: 400px;
 
 
 }
@@ -925,7 +906,9 @@ a:hover {
 }
 
 /*----------------------------------------------------
+                
                 LOGIN AND REGISTRATION
+
 ----------------------------------------------------*/
 
 html body .form-background {
@@ -1028,7 +1011,7 @@ input:focus {
     bottom: 10px;
     right: 10px;
     cursor: pointer;
-    font-family: Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-style: normal;
 }
 
@@ -1045,7 +1028,7 @@ input:focus {
     bottom: 10px;
     right: 220px;
     cursor: pointer;
-    font-family: Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-style: normal;
 }
 
@@ -1079,7 +1062,7 @@ input:focus {
 #card-group {
     backdrop-filter: blur(1rem);
     box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.1);
-    background-color: rgba(225, 225, 225, 0.5);
+    background-color: rgba(225, 225, 225, 0.7);
     display: flex;
     justify-content: start;
     align-items: center;
@@ -1101,43 +1084,28 @@ input:focus {
 }
 
 #horizontal-card-group {
-
+    
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
     display: flex;
+    border-radius: 20px;
+    user-select: none;
+    justify-content: left;
+    align-items: left;
     flex-direction: row;
-    /* text-align: justify; */
-    height: 300px;
-    width: 2000px;
+    text-align: left;
+    height: auto;
+    width: 100%;
     border-radius: 10px;
     margin: 10px;
-
-    /* width: 2000px;
-    height: 235px; */
-    background: #FFFFFF;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.5s;
-    align-items: left;
-    justify-content: left;
-    user-select: none;
-    font-weight: bolder;
-    color: #fff;
-    padding: 30px;
-    margin: 15px;
-    margin-bottom: 20px;
-    border-radius: 20px;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    position: relative;
 
     /* border: black;
     border-style: solid; */
 }
-
-.horizontalcardimg>img {
-    width: 500px;
-    height: 80;
-    object-fit: cover;
-    border-radius: 10px;
-    padding-top: 1px;
-}
-
 
 .card-image {
     height: 300px;
@@ -1210,11 +1178,15 @@ input:focus {
     justify-content: left;
 }
 
-/*
 
-    USER PAGE
 
-*/
+
+
+/*-----------------------------------------
+
+                USER PAGE
+
+-----------------------------------------*/
 
 #userbody {
     background: #1B1B1B;
@@ -1231,7 +1203,7 @@ input:focus {
     height: 80px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     padding: 0 30px 0 30px;
 }
 
@@ -1252,9 +1224,13 @@ input:focus {
     border-style: solid;
 }
 
-#userbody>div>p,
-#userheadergroup p {
+#userbody>#userheader,
+#userheadergroup p,
+#userheader>p {
+    display: flex;
     font-size: 30px;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
 }
 
 #userheadergroup {
@@ -1264,11 +1240,15 @@ input:focus {
     width: 450px;
 }
 
-/*
+#userbody #title{
+    font-size: 30px;
+}
 
-SEARCH PAGE
+/*-----------------------------------------
 
-*/
+                SEARCH PAGE
+
+-----------------------------------------*/
 
 #search-body {
     background: #383838;
@@ -1293,10 +1273,14 @@ SEARCH PAGE
 }
 
 
-/*ACCOMMODATION PAGE*/
+/*-----------------------------------------
+
+            ACCOMMODATION PAGE
+
+-----------------------------------------*/
 
 #accommodation-header {
-    background-image: url("/img/downtown.png");
+    background-image: url("/img/iloilocityaccombg.jpg");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
@@ -1314,7 +1298,7 @@ SEARCH PAGE
 }
 
 #accommodation-header-group #content {
-    width: 100%;
+    width: 1000px;
     padding-left: 10px;
     line-height: 1.5;
     font-size: 20px;
@@ -1340,7 +1324,11 @@ SEARCH PAGE
     margin-right: 20px; */
 }
 
-/*ACCOMMODATE FETCH PAGE*/
+/*-----------------------------------------
+
+           ACCOMMODATE FETCH PAGE
+
+-----------------------------------------*/
 
 #accomm-body {
     display: flex;
@@ -1464,7 +1452,7 @@ SEARCH PAGE
         justify-content: center;
     }
 
-    h5 {
+    h5{
         font-size: 10px;
     }
 
@@ -1488,7 +1476,8 @@ SEARCH PAGE
     }
 
     .horizontalcardimg>img {
-        width: auto;
+        width: 100%;
+        height: 100%;
         height: 80;
         align-items: left;
     }

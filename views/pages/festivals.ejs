@@ -50,18 +50,20 @@ Discover the cultural treasures that bring Iloilo City to life. Unearth the capt
                                         <img src=<%= festivals[index]['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                    <h2 class="font-black" id="content"><%= festivals[index]['Title']%></h2>  
-                                    <p class="font-black" id="content"><%= festivals[index]['Description'] %></p>
-                                    <% var link = festivals[index]['Link']%>
-                                    <% var card_state = 'buttoncard'%>
-                                    <% if(!link){%>
-                                        <% link = '#'%>
-                                        <!-- NOTE: Change to disabled_buttoncard once links are complete -->
+                                        <h2 class="font-black" id="content"><%= festivals[index]['Title']%></h2>  
+                                        <p class="font-black" id="content"><%= festivals[index]['Description'] %></p>
+                                        <% var link = festivals[index]['Link']%>
                                         <% var card_state = 'buttoncard'%>
-                                    <% } %>
-                                    <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                    <input type = "hidden" name = "Category" id = "Category" value ='Festivals'>
-                                    <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Festival</a>
+                                        <% if(!link){%>
+                                            <% link = '#'%>
+                                            <!-- NOTE: Change to disabled_buttoncard once links are complete -->
+                                            <% var card_state = 'disabled_buttoncard'%>
+                                        <% } %>
+                                        <div id="link-buttons">
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Festivals'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Festival</a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

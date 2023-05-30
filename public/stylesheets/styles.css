@@ -225,13 +225,13 @@ a:hover {
 #search-bar-input {
     width: 100%;
     height: 30px;
-    border-radius: 12px 0px 0px 12px;
+    border-radius: 20px 0px 0px 20px;
     border: 0;
 }
 
 #search-bar-button {
     display: flex;
-    border-radius: 0px 12px 12px 0px;
+    border-radius: 0px 20px 20px 0px;
     height: 30px;
     width: 60px;
     justify-content: center;
@@ -506,10 +506,11 @@ input[type=search] {
 }
 
 .card-body>p {
-    height: 160px;
+    height: 120px;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll;
+    text-align: left;
 }
 
 .card-body>p::-webkit-scrollbar {
@@ -602,12 +603,14 @@ input[type=search] {
 
 .horizontalcardimg{
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 
 .horizontalcardimg>img {
-    width: 400px;
-    height: 100%;
+    width: 500px;
+    height: inherit;
     object-fit: cover;
     border-radius: 10px;
     display: flex;
@@ -770,9 +773,17 @@ input[type=search] {
 }
  */
 
-#link-form{
+.link-form{
     display: flex;
     flex-direction: row;
+    height: 100%;
+}
+
+#link-buttons{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    justify-content: right;
 }
 
 
@@ -1005,35 +1016,15 @@ input:focus {
 
 /* Added button card styling */
 
-.buttoncard {
+.buttoncard, .buttoncard_location {
     /* Styles for the button inside the card */
     background-color: #F17C1E;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 600;
     border-radius: 4px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-family: 'Raleway', sans-serif;
-    font-style: normal;
-}
-
-.buttoncard_location {
-    /* Styles for the button inside the card */
-    background-color: #F17C1E;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 4px;
-    position: absolute;
-    bottom: 10px;
-    right: 220px;
     cursor: pointer;
     font-family: 'Raleway', sans-serif;
     font-style: normal;
@@ -1045,14 +1036,11 @@ input:focus {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 600;
     border-radius: 4px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
     cursor: pointer;
-    font-family: Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-style: normal;
 }
 
@@ -1116,7 +1104,7 @@ input:focus {
 
 .card-image {
     height: 300px;
-    width: inherit;
+    width: 300px;
 }
 
 .card-image img {

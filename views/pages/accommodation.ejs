@@ -36,7 +36,7 @@
                         <% for (index in accommodations){%>
                             <div id="horizontal-card-group" class="horizontalcard">
                                 <% var varId = accommodations[index]['_id'].toString()%>
-                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
+                                <form id=<%= varId%> class="link-form" name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="horizontalcardimg" style="width: auto;">
                                         <img src=<%= accommodations[index]['Images Attached']%>>
                                     </div>
@@ -46,17 +46,17 @@
                                         <% var link = accommodations[index]['Link']%>
                                         <!--Pls edit the card_state_location below to fetch map coordinates-->
                                         <% var card_state_location = 'buttoncard_location'%>
+                                        <% var card_state = 'buttoncard'%>
                                         <% if(!link){%>
                                             <% link = '#'%>
-                                            <% var card_state = 'disabled_buttoncard'%>
-                                        <% } else { %>
-                                            <% var card_state = 'buttoncard'%>
+                                            <% card_state = 'disabled_buttoncard'%>
                                         <% } %>
-                                        <a href=<%= link%> target="_blank" class=<%= card_state_location%>>Check Location</a>
-                                        <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                        <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
-                                        <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>
-                                    
+                                        <div id="link-buttons">
+                                            <a href=<%= link%> target="_blank" class=<%= card_state_location%>>Check Location</a>
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

@@ -35,17 +35,19 @@
                                         <img src=<%= place_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                    <h2 class="font-black" id="content"><%= place_history[index]['same']['Title']%></h2>  
-                                    <p class="font-black" id="content"><%= place_history[index]['same']['Description'] %></p>
-                                    <% var link = place_history[index]['same']['Link']%>
-                                    <% var card_state = 'buttoncard'%>
-                                    <% if(!link){%>
-                                        <% link = '#'%>
-                                        <% card_state = 'disabled_buttoncard'%>
-                                    <% } %>
-                                    <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                    <input type = "hidden" name = "Category" id = "Category" value ='Places'>
-                                    <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Place</a>
+                                        <h2 class="font-black" id="content"><%= place_history[index]['same']['Title']%></h2>  
+                                        <p class="font-black" id="content"><%= place_history[index]['same']['Description'] %></p>
+                                        <% var link = place_history[index]['same']['Link']%>
+                                        <% var card_state = 'buttoncard'%>
+                                        <% if(!link){%>
+                                            <% link = '#'%>
+                                            <% card_state = 'disabled_buttoncard'%>
+                                        <% } %>
+                                        <div id="link-buttons">
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Places'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Place</a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -71,17 +73,19 @@
                                         <img src=<%= food_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                    <h2 class="font-black" id="content"><%= food_history[index]['same']['Title']%></h2>  
-                                    <p class="font-black" id="content"><%= food_history[index]['same']['Description'] %></p>
-                                    <% var link = food_history[index]['same']['Link']%>
-                                    <% var card_state = 'buttoncard'%>
-                                    <% if(!link){%>
-                                        <% link = '#'%>
-                                        <% card_state = 'disabled_buttoncard'%>
-                                    <% } %>
-                                    <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                    <input type = "hidden" name = "Category" id = "Category" value ='Foods'>
-                                    <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Food</a>
+                                        <h2 class="font-black" id="content"><%= food_history[index]['same']['Title']%></h2>  
+                                        <p class="font-black" id="content"><%= food_history[index]['same']['Description'] %></p>
+                                        <% var link = food_history[index]['same']['Link']%>
+                                        <% var card_state = 'buttoncard'%>
+                                        <% if(!link){%>
+                                            <% link = '#'%>
+                                            <% card_state = 'disabled_buttoncard'%>
+                                        <% } %>
+                                        <div id="link-buttons">
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Foods'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Food</a>
+                                        </div> 
                                     </div>
                                 </form>
                             </div>
@@ -107,17 +111,19 @@
                                         <img src=<%= festival_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                    <h2 class="font-black" id="content"><%= festival_history[index]['same']['Title']%></h2>  
-                                    <p class="font-black" id="content"><%= festival_history[index]['same']['Description'] %></p>
-                                    <% var link = festival_history[index]['same']['Link']%>
-                                    <% var card_state = 'buttoncard'%>
-                                    <% if(!link){%>
-                                        <% link = '#'%>
-                                        <% card_state = 'disabled_buttoncard'%>
-                                    <% } %>
-                                    <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                    <input type = "hidden" name = "Category" id = "Category" value ='Festivals'>
-                                    <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Festival</a>
+                                        <h2 class="font-black" id="content"><%= festival_history[index]['same']['Title']%></h2>  
+                                        <p class="font-black" id="content"><%= festival_history[index]['same']['Description'] %></p>
+                                        <% var link = festival_history[index]['same']['Link']%>
+                                        <% var card_state = 'buttoncard'%>
+                                        <% if(!link){%>
+                                            <% link = '#'%>
+                                            <% card_state = 'disabled_buttoncard'%>
+                                        <% } %>
+                                        <div id="link-buttons">
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Festivals'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Festival</a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -143,17 +149,19 @@
                                         <img src=<%= hotel_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                    <h2 class="font-black" id="content"><%= hotel_history[index]['same']['Title']%></h2>  
-                                    <p class="font-black" id="content"><%= hotel_history[index]['same']['Description'] %></p>
-                                    <% var link = hotel_history[index]['same']['Link']%>
-                                    <% var card_state = 'buttoncard'%>
-                                    <% if(!link){%>
-                                        <% link = '#'%>
-                                        <% card_state = 'disabled_buttoncard'%>
-                                    <% } %>
-                                    <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                    <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
-                                    <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>
+                                        <h2 class="font-black" id="content"><%= hotel_history[index]['same']['Title']%></h2>  
+                                        <p class="font-black" id="content"><%= hotel_history[index]['same']['Description'] %></p>
+                                        <% var link = hotel_history[index]['same']['Link']%>
+                                        <% var card_state = 'buttoncard'%>
+                                        <% if(!link){%>
+                                            <% link = '#'%>
+                                            <% card_state = 'disabled_buttoncard'%>
+                                        <% } %>
+                                        <div id="link-buttons">
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

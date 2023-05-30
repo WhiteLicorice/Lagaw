@@ -770,6 +770,11 @@ input[type=search] {
 }
  */
 
+#link-form{
+    display: flex;
+    flex-direction: row;
+}
+
 
 /*-----------------------------------------
                 
@@ -1400,6 +1405,14 @@ input:focus {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .top-child{
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
 
     #menu-child {

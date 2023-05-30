@@ -42,7 +42,7 @@
                             <% for (index in places){%>
                                 <div id="horizontal-card-group" class="horizontalcard">
                                     <% var varId = places[index]['_id'].toString()%>
-                                    <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
+                                    <form id=<%= varId%> id="link-form" name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                         <div class="horizontalcardimg" style="width: auto;">
                                             <img src=<%= places[index]['Images Attached']%>>
                                         </div>

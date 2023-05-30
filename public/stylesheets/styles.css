@@ -1206,7 +1206,7 @@ input:focus {
 #user_food,
 #user_culture,
 #user_accommodation {
-    background: #383838;
+    background: #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1246,7 +1246,7 @@ input:focus {
 -----------------------------------------*/
 
 #search-body {
-    background: #383838;
+    background: #FFFFFF;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -1258,7 +1258,7 @@ input:focus {
 #search-header,
 #search-outputs {
     padding: 0 30px 0 30px;
-    background-color: #383838;
+    background-color: #FFFFFF;
 }
 
 #search-header>p {
@@ -1470,7 +1470,7 @@ input:focus {
 
     #content,
     .card-body>p {
-        font-size: 9px;
+        font-size: 20px;
         width: auto;
     }
 
@@ -1487,5 +1487,9 @@ input:focus {
 
     .card-body {
         width: auto;
+    }
+
+    .link-form{
+        flex-direction: column;
     }
 }

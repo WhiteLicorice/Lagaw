@@ -248,12 +248,36 @@ app.get('/traffic', fetchUser,function(req,res)
     }
 });
 
-app.post('/find-place', function (req, res){
-    const coordinates = parseCoordinates(req.body.coordinates)
-    req.session.coordinates = coordinates
-    res.redirect('/traffic')
-    return
+// app.post('/find-place', function (req, res){
+//     const coordinates = parseCoordinates(req.body.coordinates)
+//     req.session.coordinates = coordinates
+//     res.redirect('/traffic')
+//     return
+// })
+
+app.get('/find-place', async function (req, res){
+    // const coordinates = parseCoordinates(req.body.coordinates)
+    try{
+        const lat = parseFloat(req.query['lat']);
+        const lng = parseFloat(req.query['lng']);
+        const coordinates = {lat: lat, lng: lng};
+
+        if(!lat || !lng){
+            throw Error("Lat/lng error");
+        }
+        else{
+            req.session.coordinates = coordinates;
+            return;
+        }
+    }
+    catch(e){
+        console.error(e);
+    }
+    finally{
+        res.redirect('/traffic');
+    }
 })
+
 
 //  Scaffold: Used to check if find-place feature works as intended
 /* app.get('/find-place', function (req, res){
@@ -639,15 +663,16 @@ async function validatePassword(password) {
     return passwordRegex.test(password);
 }
 
+// @depreciated
 //  Helper function for parsing a coordinate string of the format: "<latitude>, <longitude>"
-function parseCoordinates(coordinateString) {
-    const coordinate = coordinateString.toString.split(", ")
-    if (!(coordinate.length === 2)) {
-        return null
-    }
-    const processedCoordinates = {lat: coordinate[0], lng: coordinate[1]}
-    return processedCoordinates
-}
+// function parseCoordinates(coordinateString) {
+//     const coordinate = coordinateString.toString.split(", ")
+//     if (!(coordinate.length === 2)) {
+//         return null
+//     }
+//     const processedCoordinates = {lat: coordinate[0], lng: coordinate[1]}
+//     return processedCoordinates
+// }
 
 // Binds and listens for connection on specified host and port.
 // Full syntax: app.listen(port, [host], [backlog], [callback]])

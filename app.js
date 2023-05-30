@@ -420,17 +420,25 @@ app.post('/save_recent', async function(req, res){
     varId = new ObjectId(req.body.varId);
     category = req.body.Category;
 
-    if(req.user){
-        username = req.user.username;
-        result = await client.db("cmsc129_lagaw").collection("History").updateOne(
-            {$and: [{username: username}, {varId: varId}, {category: category}]},
-            {$set: {viewDate: new Date()}},
-            {upsert: true}
-            )
-    }
-    else{
-        console.log("Not Logged.");
-    }
+    try {
+        if(req.user){
+            username = req.user.username;
+            result = await client.db("cmsc129_lagaw").collection("History").updateOne(
+                {$and: [{username: username}, {varId: varId}, {category: category}]},
+                {$set: {viewDate: new Date()}},
+                {upsert: true}
+                )
+        }
+        else{
+            console.log("Not Logged.");
+        }
+     } catch (e) {
+            console.log("Database Error: " + e)
+        } finally {
+            await client.close()
+        }
+
+    
 })
 
 app.post('/register', async function(req,res)

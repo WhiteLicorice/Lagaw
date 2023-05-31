@@ -26,153 +26,29 @@
                 <div id="user_places">
                     <p class="font-black" id="title">Here are the places you've visited</p>
                     <div id="wrap">
-                        <% var place_history = place_history %>
-                        <% for (index in place_history){%>
-                            <div id="card-group">
-                                <% var varId = place_history[index]['same']['_id'].toString()%>
-                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
-                                    <div class="card-image">
-                                        <img ondragstart="return false;" draggable="false" src=<%= place_history[index]['same']['Images Attached']%> />
-                                    </div>
-                                    <div class="card-body">
-                                        <h2 class="font-black" id="title"><%= place_history[index]['same']['Title']%></h2>  
-                                        <p class="font-black" id="content"><%= place_history[index]['same']['Description'] %></p>
-                                        <% var link = place_history[index]['same']['Link']%>
-                                        <% var card_state = 'buttoncard'%>
-                                        <% if(!link){%>
-                                            <% link = '#'%>
-                                            <% card_state = 'disabled_buttoncard'%>
-                                        <% } %>
-                                        <div id="link-buttons">
-                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                            <input type = "hidden" name = "Category" id = "Category" value ='Places'>
-                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class="buttoncard">Check Place</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <script type="text/javascript">
-                                function saveRecent(id){
-                                    document.getElementById(id).submit();
-                                    return true;
-                                }
-                            </script>
-                            <iframe name = "dummyFrame" style="display: none;"></iframe>
-                        <% } %>
+                        <!-- fetch-places-history.ejs -->
+                        <%- include('../partials/fetch-places-history'); %>
                     </div>
                 </div>
                 <div id="user_food">
                     <p class="font-black" id="title">Here are the foods you've viewed</p>
                     <div id="wrap">
-                        <% var food_history = food_history %>
-                        <% for (index in food_history){%>
-                            <div id="card-group">
-                                <% var varId = food_history[index]['same']['_id'].toString()%>
-                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
-                                    <div class="card-image">
-                                        <img ondragstart="return false;" draggable="false" src=<%= food_history[index]['same']['Images Attached']%> />
-                                    </div>
-                                    <div class="card-body">
-                                        <h2 class="font-black" id="title"><%= food_history[index]['same']['Title']%></h2>  
-                                        <p class="font-black" id="content"><%= food_history[index]['same']['Description'] %></p>
-                                        <% var link = food_history[index]['same']['Link']%>
-                                        <% var card_state = 'buttoncard'%>
-                                        <% if(!link){%>
-                                            <% link = '#'%>
-                                            <% card_state = 'disabled_buttoncard'%>
-                                        <% } %>
-                                        <div id="link-buttons">
-                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                            <input type = "hidden" name = "Category" id = "Category" value ='Foods'>
-                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Food</a>
-                                        </div> 
-                                    </div>
-                                </form>
-                            </div>
-                            <script type="text/javascript">
-                                function saveRecent(id){
-                                    document.getElementById(id).submit();
-                                    return true;
-                                }
-                            </script>
-                            <iframe name = "dummyFrame" style="display: none;"></iframe>
-                        <% } %>
+                        <!-- fetch-foods-history.ejs -->
+                        <%- include('../partials/fetch-foods-history'); %>
                     </div>
                 </div>
                 <div id="user_culture">
                     <p class="font-black" id="title">Here are the festivals you've shown</p>
                     <div id="wrap">
-                        <% var festival_history = festival_history %>
-                        <% for (index in festival_history){%>
-                            <div id="card-group">
-                                <% var varId = festival_history[index]['same']['_id'].toString()%>
-                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
-                                    <div class="card-image">
-                                        <img ondragstart="return false;" draggable="false" src=<%= festival_history[index]['same']['Images Attached']%> />
-                                    </div>
-                                    <div class="card-body">
-                                        <h2 class="font-black" id="title"><%= festival_history[index]['same']['Title']%></h2>  
-                                        <p class="font-black" id="content"><%= festival_history[index]['same']['Description'] %></p>
-                                        <% var link = festival_history[index]['same']['Link']%>
-                                        <% var card_state = 'buttoncard'%>
-                                        <% if(!link){%>
-                                            <% link = '#'%>
-                                            <% card_state = 'disabled_buttoncard'%>
-                                        <% } %>
-                                        <div id="link-buttons">
-                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                            <input type = "hidden" name = "Category" id = "Category" value ='Festivals'>
-                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class='buttoncard'>Check Festival</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <script type="text/javascript">
-                                function saveRecent(id){
-                                    document.getElementById(id).submit();
-                                    return true;
-                                }
-                            </script>
-                            <iframe name = "dummyFrame" style="display: none;"></iframe>
-                        <% } %>
+                        <!-- fetch-festivals-history.ejs -->
+                        <%- include('../partials/fetch-festivals-history'); %>
                     </div>
                 </div>
                 <div id="user_accommodation">
                     <p class="font-black" id="title">Here are the accommodations you've looked</p>
                     <div id="wrap">
-                        <% var hotel_history = hotel_history %>
-                        <% for (index in hotel_history){%>
-                            <div id="card-group">
-                                <% var varId = hotel_history[index]['same']['_id'].toString()%>
-                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
-                                    <div class="card-image">
-                                        <img ondragstart="return false;" draggable="false" src=<%= hotel_history[index]['same']['Images Attached']%> />
-                                    </div>
-                                    <div class="card-body">
-                                        <h2 class="font-black" id="title"><%= hotel_history[index]['same']['Title']%></h2>  
-                                        <p class="font-black" id="content"><%= hotel_history[index]['same']['Description'] %></p>
-                                        <% var link = hotel_history[index]['same']['Link']%>
-                                        <% var card_state = 'buttoncard'%>
-                                        <% if(!link){%>
-                                            <% link = '#'%>
-                                            <% card_state = 'disabled_buttoncard'%>
-                                        <% } %>
-                                        <div id="link-buttons">
-                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                            <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
-                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <script type="text/javascript">
-                                function saveRecent(id){
-                                    document.getElementById(id).submit();
-                                    return true;
-                                }
-                            </script>
-                            <iframe name = "dummyFrame" style="display: none;"></iframe>
-                        <% } %>
+                        <!-- fetch-accommodations-history.ejs -->
+                        <%- include('../partials/fetch-accommodations-history'); %>
                     </div>
                 </div>
             </div>

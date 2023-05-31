@@ -41,40 +41,8 @@ Discover the cultural treasures that bring Iloilo City to life. Unearth the capt
                     </div>
                     <!-- Just a dummy to show -->
                     <div id="wrap">
-                        <% var festivals = festivals %>
-                        <% for (index in festivals){%>
-                            <div id="card-group">
-                                <% var varId = festivals[index]['_id'].toString()%>
-                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
-                                    <div class="card-image">
-                                        <img ondragstart="return false;" draggable="false" src=<%= festivals[index]['Images Attached']%> />
-                                    </div>
-                                    <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= festivals[index]['Title']%></h2>  
-                                        <p class="font-black" id="content"><%= festivals[index]['Description'] %></p>
-                                        <% var link = festivals[index]['Link']%>
-                                        <% var card_state = 'buttoncard'%>
-                                        <% if(!link){%>
-                                            <% link = '#'%>
-                                            <!-- NOTE: Change to disabled_buttoncard once links are complete -->
-                                            <% var card_state = 'disabled_buttoncard'%>
-                                        <% } %>
-                                        <div id="link-buttons">
-                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                            <input type = "hidden" name = "Category" id = "Category" value ='Festivals'>
-                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class='buttoncard'>Check Festival</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <script type="text/javascript">
-                                function saveRecent(id){
-                                    document.getElementById(id).submit();
-                                    return true;
-                                }
-                            </script>
-                            <iframe name = "dummyFrame" style="display: none;"></iframe>
-                        <% } %>
+                        <!-- fetch-places-v.ejs -->
+                        <%- include('../partials/fetch-festivals-v'); %>
                     </div>
                 </div>
             </div>

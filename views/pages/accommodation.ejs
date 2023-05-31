@@ -32,40 +32,8 @@
                     </div>-->                  
                     
                     <div id="wraphorizontal">
-                        <% var accommodations = accommodations %>
-                        <% for (index in accommodations){%>
-                            <div id="horizontal-card-group" class="horizontalcard">
-                                <% var varId = accommodations[index]['_id'].toString()%>
-                                <form id=<%= varId%> class="link-form" name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
-                                    <div class="horizontalcardimg" style="width: auto;">
-                                        <img ondragstart="return false;" draggable="false" src=<%= accommodations[index]['Images Attached']%>>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="font-black" style="font-size: 50px;" id="title"><%= accommodations[index]['Title']%></h5>
-                                        <p class="font-black" style="font-size: 20px;" id="content"><%= accommodations[index]['Description']%></p>
-                                        <% var link = accommodations[index]['Link']%>
-                                        <% var card_state = 'buttoncard'%>
-                                        <% if(!link){%>
-                                            <% link = '#'%>
-                                            <% card_state = 'disabled_buttoncard'%>
-                                        <% } %>
-                                        <div id="link-buttons">
-                                            <a data-href="/find-place?lat=<%= accommodations[index]['Lat/Long']['0']%>&lng=<%= accommodations[index]['Lat/Long']['1']%>" target="_blank" class="buttoncard">Check Location</a>
-                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
-                                            <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
-                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <script type="text/javascript">
-                                function saveRecent(id){
-                                    document.getElementById(id).submit();
-                                    return true;
-                                }
-                            </script>
-                            <iframe name = "dummyFrame" style="display: none;"></iframe>
-                        <% } %>
+                        <!-- fetch-accommodations-h.ejs -->
+                        <%- include('../partials/fetch-accommodations-h'); %>
                     </div>
 
                 </div>

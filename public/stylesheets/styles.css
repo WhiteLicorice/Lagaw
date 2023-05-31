@@ -182,7 +182,7 @@ a[data-href] {
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0px;
-    position: sticky;
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1;

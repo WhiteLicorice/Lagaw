@@ -21,7 +21,7 @@
                     <p class="font-black" id="title">Search results for <%= search%>:</p>
                 </div>
                 <div id="search-outputs">
-                    <div id="wrap">
+                    <div id="wrap" ondragstart="return false;" draggable="false">
                         <!-- fetch-foods-v.ejs -->
                         <%- include('../partials/fetch-foods-v'); %>
                         <!-- fetch-accommodations-v.ejs -->

@@ -16,7 +16,7 @@
                                             <% card_state = 'disabled_buttoncard'%>
                                         <% } %>
                                         <div id="link-buttons">
-                                            <a data-href="/find-place?lat=<%= accommodations[index]['Lat/Long']['0']%>&lng=<%= accommodations[index]['Lat/Long']['1']%>" target="_blank" class="buttoncard">Check Location</a>
+                                            <a data-href="/find-place?lat=<%= accommodations[index]['Lat/Long']['0']%>&lng=<%= accommodations[index]['Lat/Long']['1']%>" target="_blank" class="buttoncard" onclick="return saveRecent('<%- varId%>')">Check Location</a>
                                             <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
                                             <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
                                             <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>

@@ -9,6 +9,7 @@
                                     <div class="card-body">
                                         <h2 class="font-black" id="title"><%= place_history[index]['same']['Title']%></h2>  
                                         <p class="font-black" id="content"><%= place_history[index]['same']['Description'] %></p>
+                                        <a data-href="/find-place?lat=<%= place_history[index]['same']['Lat/Long']['0']%>&lng=<%= place_history[index]['same']['Lat/Long']['1']%>" onclick="return saveRecent('<%- varId%>')" target="_blank" class="buttoncard">Check Place</a>
                                     </div>
                                 </form>
                             </div>

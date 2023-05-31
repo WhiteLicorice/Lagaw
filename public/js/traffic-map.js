@@ -27,7 +27,7 @@ function initMap() {
                 //  Instantiate 'map' as an instance of google.maps, call API constructor
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: userLocation,   //  Initial coordinates at the current location of the user
-                    zoom: 12,
+                    zoom: 15,
                     streetViewControl: true,
                     mapTypeControlOptions: {    //  Define the style of the map
                         mapTypeIds: ['roadmap', 'terrain', 'satellite', 'hybrid'],

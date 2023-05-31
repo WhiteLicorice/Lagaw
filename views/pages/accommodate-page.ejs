@@ -15,7 +15,7 @@
     
     <div id="accomm-body">
         <div id="accomm-img">
-            <img src="/img/placeholder.jpg">
+            <img ondragstart="return false;" draggable="false" src="/img/placeholder.jpg">
         </div>
         <div id="accomm-details">
             <div id="accomm-group">
@@ -36,7 +36,7 @@
             <% for (index in accommodation){%>
                 <div id="card-group">
                     <div class="card-image">
-                        <img src=<%= accommodation[index]['Images Attached']%> />
+                        <img ondragstart="return false;" draggable="false" src=<%= accommodation[index]['Images Attached']%> />
                     </div>
                     <div class="card-body">
                       <h2 class="font-black"><%= accommodation[index]['Title']%></h5>  

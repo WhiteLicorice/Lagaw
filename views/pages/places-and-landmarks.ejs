@@ -44,7 +44,7 @@
                                     <% var varId = places[index]['_id'].toString()%>
                                     <form id=<%= varId%> class="link-form" name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                         <div class="horizontalcardimg">
-                                            <img src=<%= places[index]['Images Attached']%>>
+                                            <img ondragstart="return false;" draggable="false" src=<%= places[index]['Images Attached']%>>
                                         </div>
                                         <div class="card-body">
                                             <h5 class="font-black" style="font-size: 50px;" id="title"><%= places[index]['Title']%></h5>
@@ -60,7 +60,7 @@
                                             <div id="link-buttons">
                                                 <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
                                                 <input type = "hidden" name = "Category" id = "Category" value ='Places'>
-                                                <a href="/find-place?lat=<%= places[index]['Lat/Long']['0']%>&lng=<%= places[index]['Lat/Long']['1']%>" onclick="return saveRecent('<%- varId%>')" target="_blank" class="buttoncard">Check Place</a>
+                                                <a data-href="/find-place?lat=<%= places[index]['Lat/Long']['0']%>&lng=<%= places[index]['Lat/Long']['1']%>" onclick="return saveRecent('<%- varId%>')" target="_blank" class="buttoncard">Check Place</a>
                                             </div>
                                         </div>
                                     </form>

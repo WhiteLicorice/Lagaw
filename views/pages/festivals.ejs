@@ -47,7 +47,7 @@ Discover the cultural treasures that bring Iloilo City to life. Unearth the capt
                                 <% var varId = festivals[index]['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= festivals[index]['Images Attached']%> />
+                                        <img ondragstart="return false;" draggable="false" src=<%= festivals[index]['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
                                         <h2 class="font-black" id="content"><%= festivals[index]['Title']%></h2>  

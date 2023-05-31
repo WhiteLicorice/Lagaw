@@ -45,7 +45,7 @@
                                 <% var varId = foods[index]['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= foods[index]['Images Attached']%> />
+                                        <img ondragstart="return false;" draggable="false" src=<%= foods[index]['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
                                         <h2 class="font-black" id="content"><%= foods[index]['Title']%></h2>  

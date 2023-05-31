@@ -32,10 +32,10 @@
                                 <% var varId = place_history[index]['same']['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= place_history[index]['same']['Images Attached']%> />
+                                        <img ondragstart="return false;" draggable="false" src=<%= place_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= place_history[index]['same']['Title']%></h2>  
+                                        <h2 class="font-black" id="title"><%= place_history[index]['same']['Title']%></h2>  
                                         <p class="font-black" id="content"><%= place_history[index]['same']['Description'] %></p>
                                         <% var link = place_history[index]['same']['Link']%>
                                         <% var card_state = 'buttoncard'%>
@@ -70,10 +70,10 @@
                                 <% var varId = food_history[index]['same']['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= food_history[index]['same']['Images Attached']%> />
+                                        <img ondragstart="return false;" draggable="false" src=<%= food_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= food_history[index]['same']['Title']%></h2>  
+                                        <h2 class="font-black" id="title"><%= food_history[index]['same']['Title']%></h2>  
                                         <p class="font-black" id="content"><%= food_history[index]['same']['Description'] %></p>
                                         <% var link = food_history[index]['same']['Link']%>
                                         <% var card_state = 'buttoncard'%>
@@ -108,10 +108,10 @@
                                 <% var varId = festival_history[index]['same']['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= festival_history[index]['same']['Images Attached']%> />
+                                        <img ondragstart="return false;" draggable="false" src=<%= festival_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= festival_history[index]['same']['Title']%></h2>  
+                                        <h2 class="font-black" id="title"><%= festival_history[index]['same']['Title']%></h2>  
                                         <p class="font-black" id="content"><%= festival_history[index]['same']['Description'] %></p>
                                         <% var link = festival_history[index]['same']['Link']%>
                                         <% var card_state = 'buttoncard'%>
@@ -146,10 +146,10 @@
                                 <% var varId = hotel_history[index]['same']['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= hotel_history[index]['same']['Images Attached']%> />
+                                        <img ondragstart="return false;" draggable="false" src=<%= hotel_history[index]['same']['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= hotel_history[index]['same']['Title']%></h2>  
+                                        <h2 class="font-black" id="title"><%= hotel_history[index]['same']['Title']%></h2>  
                                         <p class="font-black" id="content"><%= hotel_history[index]['same']['Description'] %></p>
                                         <% var link = hotel_history[index]['same']['Link']%>
                                         <% var card_state = 'buttoncard'%>

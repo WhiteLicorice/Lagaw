@@ -38,7 +38,7 @@
                                 <% var varId = accommodations[index]['_id'].toString()%>
                                 <form id=<%= varId%> class="link-form" name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="horizontalcardimg" style="width: auto;">
-                                        <img src=<%= accommodations[index]['Images Attached']%>>
+                                        <img ondragstart="return false;" draggable="false" src=<%= accommodations[index]['Images Attached']%>>
                                     </div>
                                     <div class="card-body">
                                         <h5 class="font-black" style="font-size: 50px;" id="title"><%= accommodations[index]['Title']%></h5>
@@ -50,7 +50,7 @@
                                             <% card_state = 'disabled_buttoncard'%>
                                         <% } %>
                                         <div id="link-buttons">
-                                            <a href="/find-place?lat=<%= accommodations[index]['Lat/Long']['0']%>&lng=<%= accommodations[index]['Lat/Long']['1']%>" target="_blank" class="buttoncard">Check Location</a>
+                                            <a data-href="/find-place?lat=<%= accommodations[index]['Lat/Long']['0']%>&lng=<%= accommodations[index]['Lat/Long']['1']%>" target="_blank" class="buttoncard">Check Location</a>
                                             <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
                                             <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
                                             <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>

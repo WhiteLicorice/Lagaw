@@ -60,6 +60,10 @@ h5 {
     margin: 0;
 }
 
+h2{
+    font-size: 20px;
+}
+
 .font-white {
     /* font-family: Arial, sans-serif; */
     font-style: normal;
@@ -139,8 +143,23 @@ a:hover {
     width: 100%;
 }
 
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+}
 
-
+a[data-href]{
+    cursor:pointer;
+}
 
 
 
@@ -154,7 +173,7 @@ a:hover {
 
 #top-nav-bar {
     min-width: 460px;
-    height:70px;
+    height: 70px;
     background: #1B1B1B;
     border-radius: 0px;
     box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.25);
@@ -274,7 +293,6 @@ input[type=search] {
 #greeting #top {
     font-weight: 800;
     font-size: 18px;
-    color: white
 }
 
 #greeting>a>p {
@@ -446,6 +464,7 @@ input[type=search] {
     flex-direction: column;
     text-align: justify;
     width: 100%;
+    padding: 50px;
 }
 
 #home-header-group>#title {
@@ -505,12 +524,19 @@ input[type=search] {
     margin: 0;
 }
 
-.card-body>p {
-    height: 120px;
+.card-body>p{
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll;
     text-align: left;
+}
+
+#card-group>form>.card-body>p {
+    height: 120px;
+}
+
+#horizontal-card-group>form>.card-body>p {
+    height: 150px;
 }
 
 .card-body>p::-webkit-scrollbar {
@@ -579,7 +605,7 @@ input[type=search] {
     height: 235px;
     background: #FFFFFF;
     text-align: left;
-    cursor: pointer;
+    cursor: default;
     transition: all 0.5s;
     display: flex;
     align-items: center;
@@ -601,7 +627,7 @@ input[type=search] {
     transform: scale(0.95) rotateZ(1.1deg);
 }
 
-.horizontalcardimg{
+.horizontalcardimg {
     height: 100%;
     display: flex;
     align-items: center;
@@ -641,10 +667,35 @@ input[type=search] {
     margin: 10px 0px 0px 0px;
     max-width: 90%;
     font-weight: 400;
-    
+
 }
 
+#home-explore-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
 
+#home-explore-body>#title {
+    text-align: left;
+    font-size: 50px;
+    margin-top: 40px;
+    margin-left: 85px;
+    width: 400px;
+
+
+}
+
+#home-explore-body>#content {
+    text-indent: 5%;
+    font-size: 18px;
+    margin-top: 0;
+    margin-left: 85px;
+    margin-right: 85px;
+    max-width: 100%;
+
+}
 
 
 
@@ -750,7 +801,6 @@ input[type=search] {
     left: 0;
     padding: 50px;
     width: 1200px;
-    padding-left: 40px;
     line-height: 1.5;
     font-size: 20px;
 }
@@ -773,13 +823,13 @@ input[type=search] {
 }
  */
 
-.link-form{
+.link-form {
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
-#link-buttons{
+#link-buttons {
     position: absolute;
     bottom: 20px;
     right: 10px;
@@ -846,33 +896,6 @@ input[type=search] {
     width: 100%;
     /* margin-left: 20px;
     margin-right: 20px; */
-}
-
-#home-explore-body {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-}
-
-#home-explore-body>#title {
-    text-align: left;
-    font-size: 50px;
-    margin-top: 40px;
-    margin-left: 85px;
-    width: 400px;
-
-
-}
-
-#home-explore-body>#content {
-    text-indent: 5%;
-    font-size: 18px;
-    margin-top: 0;
-    margin-left: 85px;
-    margin-right: 85px;
-    max-width: 100%;
-
 }
 
 #carousel-body {
@@ -1016,7 +1039,8 @@ input:focus {
 
 /* Added button card styling */
 
-.buttoncard, .buttoncard_location {
+.buttoncard,
+.buttoncard_location {
     /* Styles for the button inside the card */
     background-color: #F17C1E;
     color: #fff;
@@ -1079,7 +1103,7 @@ input:focus {
 }
 
 #horizontal-card-group {
-    
+
     box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.1);
     background: #FFFFFF;
     display: flex;
@@ -1235,10 +1259,6 @@ input:focus {
     width: 450px;
 }
 
-#userbody #title{
-    font-size: 30px;
-}
-
 /*-----------------------------------------
 
                 SEARCH PAGE
@@ -1293,7 +1313,7 @@ input:focus {
 }
 
 #accommodation-header-group #content {
-    width: 1000px;
+    width: 100%;
     padding-left: 10px;
     line-height: 1.5;
     font-size: 20px;
@@ -1398,7 +1418,7 @@ input:focus {
         padding-bottom: 10px;
     }
 
-    .top-child{
+    .top-child {
         margin-top: 3px;
         margin-bottom: 3px;
     }
@@ -1455,7 +1475,7 @@ input:focus {
         justify-content: center;
     }
 
-    h5{
+    h5 {
         font-size: 10px;
     }
 
@@ -1489,7 +1509,7 @@ input:focus {
         width: auto;
     }
 
-    .link-form{
+    .link-form {
         flex-direction: column;
     }
 }

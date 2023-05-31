@@ -3,7 +3,7 @@
     <li class="side-child">
         <button onclick="showHide()">
             <div id="side-menu">
-                <img id="menu-btn" src="/img/side-nav-bar-button.png">
+                <img ondragstart="return false;" draggable="false" id="menu-btn" src="/img/side-nav-bar-button.png">
             </div>
         </button>
     </li>
@@ -11,7 +11,7 @@
     <li class="side-child">
         <a href="/places-and-landmarks" id="link1">
             <div>
-                <img src="/img/places-and-landmarks.png">
+                <img ondragstart="return false;" draggable="false" src="/img/places-and-landmarks.png">
                 <p>PLACES & LANDMARKS</p>
             </div>
         </a>
@@ -20,7 +20,7 @@
     <li class="side-child">
         <a href="/festivals" id="link2">
             <div>
-                <img src="/img/festivals.png">
+                <img ondragstart="return false;" draggable="false" src="/img/festivals.png">
                 <p>FESTIVALS</p>
             </div>
         </a>
@@ -29,7 +29,7 @@
     <li class="side-child">
         <a href="/food" id="link3">
             <div>
-                <img src="/img/food.png">
+                <img ondragstart="return false;" draggable="false" src="/img/food.png">
                 <p>FOOD</p>
             </div>
         </a>
@@ -38,7 +38,7 @@
     <li class="side-child">
         <a href="/accommodation" id="link4">
             <div>
-                <img src="/img/accommodation.png">
+                <img ondragstart="return false;" draggable="false" src="/img/accommodation.png">
                 <!--Accomm. is short for Accommodation-->
                 <p>HOTELS</p>
             </div>
@@ -48,7 +48,7 @@
     <li class="side-child">
         <a href="/traffic" id="link5">
             <div>
-                <img src="/img/traffic.png">
+                <img ondragstart="return false;" draggable="false" src="/img/traffic.png">
                 <p>TRAFFIC</p>
             </div>
         </a>
@@ -60,7 +60,7 @@
         <% if (!(username === 'Guest')) { %>
             <a href="/logout">
                 <div>
-                    <img src="/img/logout.png">
+                    <img ondragstart="return false;" draggable="false" src="/img/logout.png">
                     <p>LOGOUT</p>
                 </div>
             </a>
@@ -68,7 +68,7 @@
         <% } else { %>
             <a href="/login">
                 <div>
-                    <img src="/img/login.png">
+                    <img ondragstart="return false;" draggable="false" src="/img/login.png">
                     <p>LOGIN</p>
                 </div>
             </a>

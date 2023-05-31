@@ -4,7 +4,7 @@
         <!--button for side navigation bar-->
         <div id="menu">
             <button onclick="showHide()">
-                <img id="menu-btn" src="/img/side-nav-bar-button.png">
+                <img ondragstart="return false;" draggable="false" id="menu-btn" src="/img/side-nav-bar-button.png">
             </button>
         </div>
         <!--home link-->
@@ -21,7 +21,7 @@
         <div id="search-bar">
             <form id="search-bar-form" action="/search">
                 <input id="search-bar-input" type="search" id="query" name="query" placeholder="Search..">
-                <button id="search-bar-button"><img src="/img/search.png"></button>
+                <button id="search-bar-button"><img ondragstart="return false;" draggable="false" src="/img/search.png"></button>
             </form>
         </div>
     </li>
@@ -31,16 +31,16 @@
         <!--light/dark mode-->
         <!--<div id="mode">
             <button id="color-theme" onclick="lightDarkMode()">
-                <img src="/img/light.png" id="theme-icon">
+                <img ondragstart="return false;" draggable="false" src="/img/light.png" id="theme-icon">
             </button>
         </div>-->
         <!--greeting-->
         <div id="greeting">
             <% if (username != 'Guest') { %>
-            <a href="/user">
-                <p class="font-white" id="top">Hi, <%= username %>!</p>
-                <p class="font-white" id="bottom">Welcome to <span class="font-peach">Iloilo City!</span></p>
-            </a>
+                <a href="/user">
+                    <p class="font-white" id="top">Hi, <span class="font-peach"><%= username %>!</span></p>
+                    <p class="font-white" id="bottom">Welcome to <span class="font-peach">Iloilo City!</span></p>
+                </a>
             <% } else { %>
                 <p class="font-white" id="top">Hi, Guest!</p>
                 <p class="font-white" id="bottom">Welcome to <span class="font-peach">Iloilo City!</span></p>

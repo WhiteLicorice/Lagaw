@@ -28,10 +28,10 @@
                                 <% var varId = foods[index]['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= foods[index]['Images Attached']%> />
+                                        <img draggable="false" src=<%= foods[index]['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= foods[index]['Title']%></h2>  
+                                        <h2 class="font-black" id="title"><%= foods[index]['Title']%></h2>  
                                         <p class="font-black" id="content"><%= foods[index]['Description'] %></p>
                                         <% var link = foods[index]['Link']%>
                                         <% var card_state = 'buttoncard'%>
@@ -61,10 +61,10 @@
                                 <% var varId = accommodations[index]['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= accommodations[index]['Images Attached']%>>
+                                        <img draggable="false" src=<%= accommodations[index]['Images Attached']%>>
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= accommodations[index]['Title']%></h2>
+                                        <h2 class="font-black" id="title"><%= accommodations[index]['Title']%></h2>
                                         <p class="font-black" id="content"><%= accommodations[index]['Description']%></p>
                                         <% var link = accommodations[index]['Link']%>
                                         <!--Pls edit the card_state_location below to fetch map coordinates-->
@@ -100,10 +100,10 @@
                                 <% var varId = places[index]['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= places[index]['Images Attached']%>>
+                                        <img draggable="false" src=<%= places[index]['Images Attached']%>>
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= places[index]['Title']%></h2>
+                                        <h2 class="font-black" id="title"><%= places[index]['Title']%></h2>
                                         <p class="font-black" id="content"><%= places[index]['Description']%></p>
                                         <% var link = places[index]['Link']%>
                                         <!--Pls edit the card_state_location below to fetch map coordinates-->
@@ -138,10 +138,10 @@
                                 <% var varId = festivals[index]['_id'].toString()%>
                                 <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
                                     <div class="card-image">
-                                        <img src=<%= festivals[index]['Images Attached']%> />
+                                        <img draggable="false" src=<%= festivals[index]['Images Attached']%> />
                                     </div>
                                     <div class="card-body">
-                                        <h2 class="font-black" id="content"><%= festivals[index]['Title']%></h2>  
+                                        <h2 class="font-black" id="title"><%= festivals[index]['Title']%></h2>  
                                         <p class="font-black" id="content"><%= festivals[index]['Description'] %></p>
                                         <% var link = festivals[index]['Link']%>
                                         <% var card_state = 'buttoncard'%>

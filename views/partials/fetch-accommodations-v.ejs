@@ -1,0 +1,36 @@
+                        <% var accommodations = accommodations %>
+                        <% for (index in accommodations){%>
+                            <div id="card-group">
+                                <% var varId = accommodations[index]['_id'].toString()%>
+                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
+                                    <div class="card-image">
+                                        <img draggable="false" src=<%= accommodations[index]['Images Attached']%>>
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="font-black" id="title"><%= accommodations[index]['Title']%></h2>
+                                        <p class="font-black" id="content"><%= accommodations[index]['Description']%></p>
+                                        <% var link = accommodations[index]['Link']%>
+                                        <% var card_state = 'buttoncard'%>
+                                        <% if(!link){%>
+                                            <% link = '#'%>
+                                            <% var card_state = 'disabled_buttoncard'%>
+                                        <% } %>
+                                        <div id="link-buttons">
+                                            <a data-href="/find-place?lat=<%= accommodations[index]['Lat/Long']['0']%>&lng=<%= accommodations[index]['Lat/Long']['1']%>" target="_blank" class="buttoncard">Check Location</a>
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Accommodations'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Accommodation</a>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </form>
+                            </div>
+                            <script type="text/javascript">
+                                function saveRecent(id){
+                                    document.getElementById(id).submit();
+                                    return true;
+                                }
+                            </script>
+                            <iframe name = "dummyFrame" style="display: none;"></iframe>
+                        <% } %>

@@ -1,0 +1,33 @@
+                        <% var festival_history = festival_history %>
+                        <% for (index in festival_history){%>
+                            <div id="card-group">
+                                <% var varId = festival_history[index]['same']['_id'].toString()%>
+                                <form id=<%= varId%> name="save_recent" action = "/save_recent" method = "POST" target = "dummyFrame">
+                                    <div class="card-image">
+                                        <img ondragstart="return false;" draggable="false" src=<%= festival_history[index]['same']['Images Attached']%> />
+                                    </div>
+                                    <div class="card-body">
+                                        <h2 class="font-black" id="title"><%= festival_history[index]['same']['Title']%></h2>  
+                                        <p class="font-black" id="content"><%= festival_history[index]['same']['Description'] %></p>
+                                        <% var link = festival_history[index]['same']['Link']%>
+                                        <% var card_state = 'buttoncard'%>
+                                        <% if(!link){%>
+                                            <% link = '#'%>
+                                            <% card_state = 'disabled_buttoncard'%>
+                                        <% } %>
+                                        <div id="link-buttons">
+                                            <input type = "hidden" name = "varId" id = "varId" value=<%= varId%>>
+                                            <input type = "hidden" name = "Category" id = "Category" value ='Festivals'>
+                                            <a href=<%= link%> onclick="return saveRecent('<%- varId%>')" target="_blank" class=<%= card_state%>>Check Festival</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <script type="text/javascript">
+                                function saveRecent(id){
+                                    document.getElementById(id).submit();
+                                    return true;
+                                }
+                            </script>
+                            <iframe name = "dummyFrame" style="display: none;"></iframe>
+                        <% } %>

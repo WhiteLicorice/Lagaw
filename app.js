@@ -679,7 +679,7 @@ async function validatePassword(password) {
 // Binds and listens for connection on specified host and port.
 // Full syntax: app.listen(port, [host], [backlog], [callback]])
 const server = app.listen(process.env.port, () => {
-    console.log('Server is active on port ' + process.env.port + '.');
+    console.log('Server is active on http://localhost:' + process.env.port + '.');
 });
 
 

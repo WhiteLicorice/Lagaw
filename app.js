@@ -8,6 +8,8 @@
 require('dotenv').config();
 // Port value
 
+////    START SERVER WITH COMMAND: '.\start.bat'
+
 /* Main Code */
 
 const { MongoClient } = require('mongodb');
@@ -676,5 +678,30 @@ async function validatePassword(password) {
 
 // Binds and listens for connection on specified host and port.
 // Full syntax: app.listen(port, [host], [backlog], [callback]])
-app.listen(process.env.port);
-console.log('Server is active on port ' + process.env.port + '.');
+const server = app.listen(process.env.port, () => {
+    console.log('Server is active on port ' + process.env.port + '.');
+});
+
+
+//  For graceful server exit
+const keypress = require ('keypress')
+
+// Listen for keypress events
+keypress(process.stdin);
+
+// Register the 'keypress' event handler
+process.stdin.on('keypress', (ch, key) => {
+  if (key && key.name === 'escape') {
+    // When Esc key is pressed, gracefully shut down the server
+    console.log('Exiting server...');
+    server.close(() => {
+      process.exit(0);
+    });
+  }
+});
+
+// Enable input capturing
+process.stdin.setRawMode(true);
+process.stdin.resume();
+
+console.log('Press Esc to exit the server.');

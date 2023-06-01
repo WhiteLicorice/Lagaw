@@ -26,6 +26,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "http-errors": "^2.0.0",
+    "keypress": "^0.2.1",
     "mongodb": "^5.1.0",
     "mongoose": "^6.10.0",
     "passport": "^0.6.0",

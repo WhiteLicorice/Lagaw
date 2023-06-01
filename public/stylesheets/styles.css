@@ -652,8 +652,7 @@ input[type=search] {
     align-items: center;
     flex-direction: column;
     text-align: justify;
-    margin-top: 50px;
-    margin-left: 40px;
+    margin: 50px 40px 0 40px;
     width: 100%;
 }
 

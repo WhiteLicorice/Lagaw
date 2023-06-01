@@ -694,8 +694,8 @@ process.stdin.on('keypress', (ch, key) => {
   if (key && key.name === 'escape') {
     // When Esc key is pressed, gracefully shut down the server
     console.log('Exiting server...');
-    server.close(() => {
-      process.exit(0);
+    server.close((err) => {
+      process.exit(err ? 1 : 0);
     });
   }
 });

@@ -669,7 +669,9 @@ input[type=search] {
     font-size: 18px;
     margin: 10px 0px 0px 0px;
     max-width: 90%;
-    font-weight: 400;
+    font-weight: 600;
+
+
 
 }
 
@@ -691,7 +693,6 @@ input[type=search] {
 }
 
 #home-explore-body>#content {
-    text-indent: 5%;
     font-size: 18px;
     margin-top: 0;
     margin-left: 85px;

@@ -10,8 +10,6 @@ require('dotenv').config();
 
 ////    START SERVER WITH COMMAND: '.\start.bat'
 
-import serverless from "serverless-http";
-
 /* Main Code */
 
 const { MongoClient } = require('mongodb');
@@ -707,6 +705,3 @@ process.stdin.setRawMode(true);
 process.stdin.resume();
 
 console.log('Press Esc to exit the server.');
-
-export const handler = serverless(express);
-
